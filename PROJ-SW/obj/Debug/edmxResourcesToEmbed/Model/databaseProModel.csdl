@@ -1,0 +1,219 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="databaseProModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Cart">
+    <Key>
+      <PropertyRef Name="cart_id" />
+    </Key>
+    <Property Name="cart_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="User_Id" Type="Int32" />
+    <NavigationProperty Name="User" Relationship="Self.FK__Cart__User_Id__7C1A6C5A" FromRole="Cart" ToRole="User" />
+    <NavigationProperty Name="Cart_Product" Relationship="Self.FK__Cart_Prod__Cart___0D44F85C" FromRole="Cart" ToRole="Cart_Product" />
+    <NavigationProperty Name="Payments" Relationship="Self.FK__Payment__cart_id__607251E5" FromRole="Cart" ToRole="Payment" />
+  </EntityType>
+  <EntityType Name="Cart_Product">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="Cart_Id" Type="Int32" />
+    <Property Name="Prod_Id" Type="Int32" />
+    <NavigationProperty Name="Cart" Relationship="Self.FK__Cart_Prod__Cart___0D44F85C" FromRole="Cart_Product" ToRole="Cart" />
+    <NavigationProperty Name="Product" Relationship="Self.FK__Cart_Prod__Prod___0E391C95" FromRole="Cart_Product" ToRole="Product" />
+  </EntityType>
+  <EntityType Name="Category">
+    <Key>
+      <PropertyRef Name="cate_id" />
+    </Key>
+    <Property Name="cate_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="cate_name" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+    <Property Name="Cate_Image" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+    <NavigationProperty Name="Products" Relationship="Self.FK__Product__cat_id__76619304" FromRole="Category" ToRole="Product" />
+  </EntityType>
+  <EntityType Name="Credit">
+    <Key>
+      <PropertyRef Name="Credit_id" />
+    </Key>
+    <Property Name="Credit_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Credit_Holder_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Credit_Expire" Type="DateTime" Precision="3" />
+    <Property Name="Postal_Code" Type="Int32" />
+    <Property Name="CVV_Number" Type="Int32" />
+    <Property Name="User_Id" Type="Int32" />
+    <NavigationProperty Name="User" Relationship="Self.FK__Credit__User_Id__7A3223E8" FromRole="Credit" ToRole="User" />
+  </EntityType>
+  <EntityType Name="Inventory">
+    <Key>
+      <PropertyRef Name="inventory_id" />
+    </Key>
+    <Property Name="inventory_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="inventory_name" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+    <Property Name="Quantity" Type="Int32" />
+    <NavigationProperty Name="Products" Relationship="Self.FK__Product__invento__7755B73D" FromRole="Inventory" ToRole="Product" />
+  </EntityType>
+  <EntityType Name="Payment">
+    <Key>
+      <PropertyRef Name="payment_id" />
+    </Key>
+    <Property Name="payment_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="date" Type="DateTime" Precision="0" />
+    <Property Name="cart_id" Type="Int32" />
+    <Property Name="total" Type="Int32" />
+    <NavigationProperty Name="Cart" Relationship="Self.FK__Payment__cart_id__607251E5" FromRole="Payment" ToRole="Cart" />
+  </EntityType>
+  <EntityType Name="Product">
+    <Key>
+      <PropertyRef Name="prod_id" />
+    </Key>
+    <Property Name="prod_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="prod_name" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+    <Property Name="Price" Type="Double" />
+    <Property Name="Prod_Image" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="400" FixedLength="false" Unicode="true" />
+    <Property Name="MGF_Date" Type="DateTime" Precision="3" />
+    <Property Name="Expiry_Date" Type="DateTime" Precision="3" />
+    <Property Name="Batch_No" Type="Int32" />
+    <Property Name="Cate_Id" Type="Int32" />
+    <Property Name="inventory_id" Type="Int32" />
+    <NavigationProperty Name="Cart_Product" Relationship="Self.FK__Cart_Prod__Prod___0E391C95" FromRole="Product" ToRole="Cart_Product" />
+    <NavigationProperty Name="Category" Relationship="Self.FK__Product__cat_id__76619304" FromRole="Product" ToRole="Category" />
+    <NavigationProperty Name="Inventory" Relationship="Self.FK__Product__invento__7755B73D" FromRole="Product" ToRole="Inventory" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="user_id" />
+    </Key>
+    <Property Name="user_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FName" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+    <Property Name="LName" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Password" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="Phone" Type="Int32" />
+    <Property Name="Address" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+    <Property Name="City" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+    <Property Name="Role" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <NavigationProperty Name="Carts" Relationship="Self.FK__Cart__User_Id__7C1A6C5A" FromRole="User" ToRole="Cart" />
+    <NavigationProperty Name="Credits" Relationship="Self.FK__Credit__User_Id__7A3223E8" FromRole="User" ToRole="Credit" />
+  </EntityType>
+  <Association Name="FK__Cart__User_Id__7C1A6C5A">
+    <End Role="User" Type="Self.User" Multiplicity="0..1" />
+    <End Role="Cart" Type="Self.Cart" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="user_id" />
+      </Principal>
+      <Dependent Role="Cart">
+        <PropertyRef Name="User_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Cart_Prod__Cart___0D44F85C">
+    <End Role="Cart" Type="Self.Cart" Multiplicity="0..1" />
+    <End Role="Cart_Product" Type="Self.Cart_Product" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cart">
+        <PropertyRef Name="cart_id" />
+      </Principal>
+      <Dependent Role="Cart_Product">
+        <PropertyRef Name="Cart_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Payment__cart_id__607251E5">
+    <End Role="Cart" Type="Self.Cart" Multiplicity="0..1" />
+    <End Role="Payment" Type="Self.Payment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cart">
+        <PropertyRef Name="cart_id" />
+      </Principal>
+      <Dependent Role="Payment">
+        <PropertyRef Name="cart_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Cart_Prod__Prod___0E391C95">
+    <End Role="Product" Type="Self.Product" Multiplicity="0..1" />
+    <End Role="Cart_Product" Type="Self.Cart_Product" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="prod_id" />
+      </Principal>
+      <Dependent Role="Cart_Product">
+        <PropertyRef Name="Prod_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Product__cat_id__76619304">
+    <End Role="Category" Type="Self.Category" Multiplicity="0..1" />
+    <End Role="Product" Type="Self.Product" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Category">
+        <PropertyRef Name="cate_id" />
+      </Principal>
+      <Dependent Role="Product">
+        <PropertyRef Name="Cate_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Credit__User_Id__7A3223E8">
+    <End Role="User" Type="Self.User" Multiplicity="0..1" />
+    <End Role="Credit" Type="Self.Credit" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="user_id" />
+      </Principal>
+      <Dependent Role="Credit">
+        <PropertyRef Name="User_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Product__invento__7755B73D">
+    <End Role="Inventory" Type="Self.Inventory" Multiplicity="0..1" />
+    <End Role="Product" Type="Self.Product" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Inventory">
+        <PropertyRef Name="inventory_id" />
+      </Principal>
+      <Dependent Role="Product">
+        <PropertyRef Name="inventory_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="databaseProEntities5" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Carts" EntityType="Self.Cart" />
+    <EntitySet Name="Cart_Product" EntityType="Self.Cart_Product" />
+    <EntitySet Name="Categories" EntityType="Self.Category" />
+    <EntitySet Name="Credits" EntityType="Self.Credit" />
+    <EntitySet Name="Inventories" EntityType="Self.Inventory" />
+    <EntitySet Name="Payments" EntityType="Self.Payment" />
+    <EntitySet Name="Products" EntityType="Self.Product" />
+    <EntitySet Name="Users" EntityType="Self.User" />
+    <AssociationSet Name="FK__Cart__User_Id__7C1A6C5A" Association="Self.FK__Cart__User_Id__7C1A6C5A">
+      <End Role="User" EntitySet="Users" />
+      <End Role="Cart" EntitySet="Carts" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Cart_Prod__Cart___0D44F85C" Association="Self.FK__Cart_Prod__Cart___0D44F85C">
+      <End Role="Cart" EntitySet="Carts" />
+      <End Role="Cart_Product" EntitySet="Cart_Product" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Payment__cart_id__607251E5" Association="Self.FK__Payment__cart_id__607251E5">
+      <End Role="Cart" EntitySet="Carts" />
+      <End Role="Payment" EntitySet="Payments" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Cart_Prod__Prod___0E391C95" Association="Self.FK__Cart_Prod__Prod___0E391C95">
+      <End Role="Product" EntitySet="Products" />
+      <End Role="Cart_Product" EntitySet="Cart_Product" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Product__cat_id__76619304" Association="Self.FK__Product__cat_id__76619304">
+      <End Role="Category" EntitySet="Categories" />
+      <End Role="Product" EntitySet="Products" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Credit__User_Id__7A3223E8" Association="Self.FK__Credit__User_Id__7A3223E8">
+      <End Role="User" EntitySet="Users" />
+      <End Role="Credit" EntitySet="Credits" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Product__invento__7755B73D" Association="Self.FK__Product__invento__7755B73D">
+      <End Role="Inventory" EntitySet="Inventories" />
+      <End Role="Product" EntitySet="Products" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
