@@ -131,8 +131,55 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ProductsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Cart.cs">
+      <DependentUpon>databaseProjectModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Cart_Product.cs">
+      <DependentUpon>databaseProjectModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Category.cs">
+      <DependentUpon>databaseProjectModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Credit.cs">
+      <DependentUpon>databaseProjectModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\CustomizeProduct.cs" />
+    <Compile Include="Model\databaseProjectModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>databaseProjectModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\databaseProjectModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>databaseProjectModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\databaseProjectModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>databaseProjectModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Inventory.cs">
+      <DependentUpon>databaseProjectModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Login.cs">
+      <DependentUpon>databaseProjectModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Payment.cs">
+      <DependentUpon>databaseProjectModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Product.cs">
+      <DependentUpon>databaseProjectModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Role.cs">
+      <DependentUpon>databaseProjectModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\User.cs">
+      <DependentUpon>databaseProjectModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -146,12 +193,31 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\bootstrap_noura.css" />
+    <Content Include="Content\footer.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Images\logo.jpg" />
+    <Content Include="Model\databaseProjectModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>databaseProjectModel.edmx</DependentUpon>
+      <LastGenOutput>databaseProjectModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Model\databaseProjectModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>databaseProjectModel.edmx</DependentUpon>
+      <LastGenOutput>databaseProjectModel.cs</LastGenOutput>
+    </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <EntityDeploy Include="Model\databaseProjectModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>databaseProjectModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Model\databaseProjectModel.edmx.diagram">
+      <DependentUpon>databaseProjectModel.edmx</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -177,10 +243,13 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Products\Create.cshtml" />
+    <Content Include="Views\Products\Delete.cshtml" />
+    <Content Include="Views\Products\Details.cshtml" />
+    <Content Include="Views\Products\Edit.cshtml" />
+    <Content Include="Views\Products\Index.cshtml" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Model\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

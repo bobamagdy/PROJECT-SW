@@ -1,0 +1,90 @@
+﻿@model PROJ_SW.Model.Product
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Product</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.prod_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.prod_name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Price)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Price)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Prod_Image)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Prod_Image)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MGF_Date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MGF_Date)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Expiry_Date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Expiry_Date)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Batch_No)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Batch_No)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Category.cate_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Category.cate_name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Inventory.inventory_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Inventory.inventory_name)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.prod_id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

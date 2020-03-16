@@ -1,0 +1,120 @@
+﻿@model IEnumerable<PROJ_SW.Model.Product>
+
+@{
+    ViewBag.Title = "PRODUCT";
+}
+<style>
+    .data
+    {
+        font-family:'Times New Roman', Times, serif;
+        font-size:larger;
+        font-weight:bolder
+    }
+
+    .header-table
+    {
+        color:darkblue;
+        font-size:x-large;
+        font-family:'Times New Roman', Times, serif 
+    }
+    h1{
+        font-family:'Aboriginebats One';
+        font-weight:900;
+        color:midnightblue
+    }
+
+</style>
+
+<h1 style="margin-top:50px;text-align:center">PRODUCT</h1>
+
+<a href="@Url.Action("Create", "Products")" target="_blank" class="btn btn-primary" style="text-align :center">
+    <span class="glyphicon glyphicon-plus"></span>
+    Create New Product
+</a>
+    
+<table class="table" style="margin-top:30px">
+    <tr class="header-table">
+        <th >
+            @Html.DisplayNameFor(model => model.prod_name)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.Price)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.Prod_Image)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.MGF_Date)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.Expiry_Date)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Batch_No)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.Category.cate_name)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.Inventory.inventory_name)
+        </th>
+
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+<tr class="data">
+    <td >
+        @Html.DisplayFor(modelItem => item.prod_name)
+    </td>
+    <td >
+        @Html.DisplayFor(modelItem => item.Price)
+    </td>
+    <td >
+        <img src="@Url.Content(item.Prod_Image)" width="200" height="200" />
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Description)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.MGF_Date)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Expiry_Date)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Batch_No)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Category.cate_name)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Inventory.inventory_name)
+    </td>
+    <td>
+        <a href="@Url.Action("Edit","Products", new { id=item.prod_id })" class="btn btn-success" target="_blank">
+            <span class="glyphicon glyphicon-ok"> Edit</span>
+        </a>
+        <br />
+
+        
+        <br />
+
+        <a href="@Url.Action("Delete","Products", new { id=item.prod_id })" class="btn btn-danger" target="_blank">
+            <span class="glyphicon glyphicon-trash"> Delete</span>
+        </a>
+    </td>
+</tr>
+}
+
+</table>
