@@ -1,0 +1,40 @@
+﻿@model PROJ_SW.Model.Inventory
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2 style="margin-top:50px">Details</h2>
+
+<div>
+    <h4>Inventory</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.inventory_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.inventory_name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Quantity)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Quantity)
+        </dd>
+
+    </dl>
+</div>
+<p>
+
+
+
+    <a href="@Url.Action("Edit","Inventories", new { id=Model.inventory_id })" class="btn btn-info">
+        <span> Edit</span>
+    </a>
+
+    @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-info" })
+</p>
