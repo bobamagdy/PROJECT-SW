@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="databaseProModelStoreContainer" CdmEntityContainer="databaseProEntities3">
+  <EntityContainerMapping StorageEntityContainer="databaseProModelStoreContainer" CdmEntityContainer="databaseProEntities">
     <EntitySetMapping Name="Carts">
       <EntityTypeMapping TypeName="databaseProModel.Cart">
         <MappingFragment StoreEntitySet="Cart">
@@ -48,6 +48,18 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="Logins">
+      <EntityTypeMapping TypeName="databaseProModel.Login">
+        <MappingFragment StoreEntitySet="Login">
+          <ScalarProperty Name="Login_Id" ColumnName="Login_Id" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Isdeleted" ColumnName="Isdeleted" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="Role_Id" ColumnName="Role_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="Payments">
       <EntityTypeMapping TypeName="databaseProModel.Payment">
         <MappingFragment StoreEntitySet="Payment">
@@ -74,10 +86,17 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="Roles">
+      <EntityTypeMapping TypeName="databaseProModel.Role">
+        <MappingFragment StoreEntitySet="Role">
+          <ScalarProperty Name="Role_Id" ColumnName="Role_Id" />
+          <ScalarProperty Name="RoleName" ColumnName="RoleName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="Users">
       <EntityTypeMapping TypeName="databaseProModel.User">
         <MappingFragment StoreEntitySet="User">
-          <ScalarProperty Name="Login_Id" ColumnName="Login_Id" />
           <ScalarProperty Name="user_id" ColumnName="user_id" />
           <ScalarProperty Name="FName" ColumnName="FName" />
           <ScalarProperty Name="LName" ColumnName="LName" />
@@ -86,26 +105,7 @@
           <ScalarProperty Name="Phone" ColumnName="Phone" />
           <ScalarProperty Name="Address" ColumnName="Address" />
           <ScalarProperty Name="City" ColumnName="City" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Logins">
-      <EntityTypeMapping TypeName="databaseProModel.Login">
-        <MappingFragment StoreEntitySet="Login">
-          <ScalarProperty Name="Role_Id" ColumnName="Role_Id" />
-          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
-          <ScalarProperty Name="Isdeleted" ColumnName="Isdeleted" />
-          <ScalarProperty Name="Password" ColumnName="Password" />
-          <ScalarProperty Name="Email" ColumnName="Email" />
           <ScalarProperty Name="Login_Id" ColumnName="Login_Id" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Roles">
-      <EntityTypeMapping TypeName="databaseProModel.Role">
-        <MappingFragment StoreEntitySet="Role">
-          <ScalarProperty Name="RoleName" ColumnName="RoleName" />
-          <ScalarProperty Name="Role_Id" ColumnName="Role_Id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

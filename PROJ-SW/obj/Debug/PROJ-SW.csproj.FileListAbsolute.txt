@@ -404,3 +404,4 @@ C:\Users\mac\source\repos\PROJECT-SW-master\PROJ-SW\bin\Microsoft.CodeDom.Provid
 C:\Users\mac\source\repos\PROJECT-SW-master\PROJ-SW\obj\Debug\PROJ-SW.csproj.CopyComplete
 C:\Users\mac\source\repos\PROJECT-SW-master\PROJ-SW\obj\Debug\PROJ-SW.dll
 C:\Users\mac\source\repos\PROJECT-SW-master\PROJ-SW\obj\Debug\PROJ-SW.pdb
+C:\Users\mac\source\repos\PROJECT-SW-master\PROJ-SW\obj\Debug\PROJ-SW.csprojAssemblyReference.cache

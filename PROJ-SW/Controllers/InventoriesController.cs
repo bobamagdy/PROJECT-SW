@@ -12,7 +12,7 @@ namespace PROJ_SW.Controllers
 {
     public class InventoriesController : Controller
     {
-        private databaseProEntities3 db = new databaseProEntities3();
+        private databaseProEntities db = new databaseProEntities();
 
         // GET: Inventories
         public ActionResult Index()
