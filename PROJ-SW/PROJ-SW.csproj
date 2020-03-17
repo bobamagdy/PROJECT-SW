@@ -134,6 +134,7 @@
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\InventoriesController.cs" />
+    <Compile Include="Controllers\LatestFeaturedController.cs" />
     <Compile Include="Controllers\ProductsController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
@@ -217,17 +218,23 @@
     <Content Include="Images\Bamb.png" />
     <Content Include="Images\Bamb2.png" />
     <Content Include="Images\beauty.jpg" />
+    <Content Include="Images\beesline.jpg" />
     <Content Include="Images\bg.png" />
+    <Content Include="Images\bioblas.jpg" />
     <Content Include="Images\Broncho.png" />
     <Content Include="Images\Broncho2.png" />
     <Content Include="Images\Burinex.png" />
     <Content Include="Images\Burinex2.png" />
     <Content Include="Images\capsule.jpg" />
+    <Content Include="Images\cleo.jpg" />
     <Content Include="Images\cold-bill.jpg" />
     <Content Include="Images\Color Cop v5.4.5  Arabic.exe" />
+    <Content Include="Images\cosmoapp.jpg" />
+    <Content Include="Images\creem.jpg" />
     <Content Include="Images\delivered.png" />
     <Content Include="Images\Delta.png" />
     <Content Include="Images\Delta2.png" />
+    <Content Include="Images\derma.jpg" />
     <Content Include="Images\fb.png" />
     <Content Include="Images\fish-oil-1915423_1920.jpg" />
     <Content Include="Images\foundation.jpg" />
@@ -341,6 +348,20 @@
     <Content Include="Views\Admin\Index.cshtml" />
     <Content Include="Views\User\Index.cshtml" />
     <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\LatestFeatured\FeaturedProducts.cshtml" />
+    <Content Include="Views\LatestFeatured\FProduct1.cshtml" />
+    <Content Include="Views\LatestFeatured\FProduct2.cshtml" />
+    <Content Include="Views\LatestFeatured\FProduct3.cshtml" />
+    <Content Include="Views\LatestFeatured\FProduct4.cshtml" />
+    <Content Include="Views\LatestFeatured\FProduct5.cshtml" />
+    <Content Include="Views\LatestFeatured\FProduct6.cshtml" />
+    <Content Include="Views\LatestFeatured\LatestOffer.cshtml" />
+    <Content Include="Views\LatestFeatured\Product1.cshtml" />
+    <Content Include="Views\LatestFeatured\product2.cshtml" />
+    <Content Include="Views\LatestFeatured\Product3.cshtml" />
+    <Content Include="Views\LatestFeatured\Product4.cshtml" />
+    <Content Include="Views\LatestFeatured\Product5.cshtml" />
+    <Content Include="Views\LatestFeatured\Product6.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

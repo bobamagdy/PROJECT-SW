@@ -1,0 +1,579 @@
+﻿
+@{
+    ViewBag.Title = "FeaturedProducts";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .divCon {
+
+            display: inline-block;
+        }
+
+        .rating {
+            display: inline-block;
+            height: 60px;
+            line-height: 50px;
+            margin-left: 270px;
+        }
+
+            .rating label {
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 100%;
+                cursor: pointer;
+                margin-left: -20px;
+            }
+
+                .rating label:last-child {
+                    position: static;
+                }
+
+                .rating label:nth-child(1) {
+                    z-index: 5;
+                }
+
+                .rating label:nth-child(2) {
+                    z-index: 4;
+                }
+
+                .rating label:nth-child(3) {
+                    z-index: 3;
+                }
+
+                .rating label:nth-child(4) {
+                    z-index: 2;
+                }
+
+                .rating label:nth-child(5) {
+                    z-index: 1;
+                }
+
+                .rating label input {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    opacity: 0;
+                }
+
+                .rating label .icon {
+                    float: left;
+                    color: transparent;
+                    font-size:25px;
+                }
+
+                .rating label:last-child .icon {
+                    color: gray;
+                }
+
+            .rating:not(:hover) label input:checked ~ .icon,
+            .rating:hover label:hover input ~ .icon {
+                color: #79f;
+            }
+
+            .rating label input:focus:not(:checked) ~ .icon:last-child {
+                color: #000;
+                text-shadow: 0 0 5px #09f;
+            }
+
+        .button {
+            background-color: dodgerblue;
+            border: none;
+            color: white;
+            padding: 16px 32px;
+            text-align: center;
+            font-size: 18px;
+            margin: 4px 2px;
+            opacity: 0.6;
+            transition: 0.3s;
+            display: inline-block;
+            text-decoration: none;
+            cursor: pointer;
+            border-radius: 10px;
+            height: 50px;
+            margin-top: -15px;
+        }
+
+            .button:hover {
+                opacity: 1
+            }
+
+        .button2 {
+            background-color: dodgerblue;
+            border: none;
+            color: white;
+            padding: 16px 32px;
+            text-align: center;
+            font-size: 18px;
+            margin: 4px 2px;
+            opacity: 0.6;
+            transition: 0.3s;
+            display: inline-block;
+            text-decoration: none;
+            cursor: pointer;
+            border-radius: 10px;
+            height: 50px;
+            margin-top: -15px;
+        }
+
+            .button2:hover {
+                opacity: 1
+            }
+            img:hover {
+                opacity: 0.5;
+                      }
+            .name{
+                margin-bottom:25px; 
+                margin-top:25px;
+                font-weight: bold;
+                color: black;
+                 }
+            .name:hover{
+                color: dodgerblue;
+            }
+    </style>
+    <script>
+        $(':radio').change(function () {
+            console.log('New star rating: ' + this.value);
+        });
+    </script>
+</head>
+<body>
+
+    <div class="divCon">
+
+        <h1 style="text-align: center; color: dodgerblue; font-size: 35px; font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; font-weight: bold;">
+            Featured Products
+        </h1>
+
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="#" style="font-size: x-large">Home</a></li>
+            <li class="breadcrumb-item"><a href="https://localhost:44333/Medicine/FeaturedProducts" style="font-size: large">Featured Products</a></li>
+            
+        </ol>
+
+        <div class="row">
+            <div class="col-md-4" style="width: 270px; height: 450px;   border-style: solid;
+        border-color: lightgray;
+           display: inline-block;  border-radius: 5px; background-color: white; margin-top: 30px; margin-left: 30px;">
+                <a href="https://localhost:44344/LatestFeatured/FProduct1">
+                    <img src="../Images/Broncho.png" style="width: 240px; height: 200px; margin-top: 10px;"/>
+                </a>
+
+                <p class="name">
+                    Bronchopro 15 Mg/ 5 Ml 100 Ml syrup
+                </p>
+                <p style="text-align:left; margin-top:-20px; font-size:15px; color: gray; font-family:'Times New Roman', Times, serif;">
+                    100 Ml
+                </p>
+
+                <div class="rating" style="transform: translate(-50%,-50%); display: block; width: 150px; margin-top: 45px;margin-left: 240px;">
+                    <label>
+                        <input type="radio" name="stars" value="1" />
+                        <span class="icon">★</span>
+                    </label>
+                    <label>
+                        <input type="radio" name="stars" value="2" />
+                        <span class="icon">★</span>
+                        <span class="icon">★</span>
+                    </label>
+                    <label>
+                        <input type="radio" name="stars" value="3" />
+                        <span class="icon">★</span>
+
+                    </label>
+                    <label>
+                        <input type="radio" name="stars" value="4" />
+                        <span class="icon">★</span>
+                        <span class="icon">★</span>
+                        <span class="icon">★</span>
+                        <span class="icon">★</span>
+                    </label>
+                    <label>
+                        <input type="radio" name="stars" value="5" />
+                        <span class="icon">★</span>
+                        <span class="icon">★</span>
+                        <span class="icon">★</span>
+                        <span class="icon">★</span>
+                        <span class="icon">★</span>
+                    </label>
+
+                </div>
+
+                <p style="margin-top:-75px; color:red; font-size:20px; font-weight: bold;">11.25 EGP</p>
+
+
+                <hr style="border: 1px solid lightgray; margin-top:5px" />
+                <button class="button2">Add To Cart</button>
+
+                <div class="rating" style="transform: translate(-50%,-50%); margin-left:300px; margin-top:-25px; display:block; width:150px; ">
+                    <label>
+                        <input type="radio" name="stars" value="1" />
+                        <span class="icon" style="font-size:50px;">♥</span>
+                    </label>
+                </div>
+
+
+
+
+
+
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4" style="width:270px; height:450px;   border-style: solid;
+        border-color: lightgray;position: center; border-radius: 5px; background-color: white; margin-top:-450px; margin-left:460px; ">
+                <a href="https://localhost:44344/LatestFeatured/FProduct2">
+                    <img src="../Images/Bamb.png" style="width: 240px; height:200px; margin-top:10px;" />
+                </a>
+                <p class="name">
+
+                    Bambedil 10 Mg 30 tablet 3 Strips
+                </p>
+                <p style="text-align:left; margin-top:-10px; font-size:15px; color: gray; font-family:'Times New Roman', Times, serif;">
+                    20 Tab
+                </p>
+                <div class="rating" style="transform: translate(-50%,-50%); margin-left:235px; display:block; width:150px; margin-top:40px;">
+                    <label>
+                        <input type="radio" name="stars" value="1" />
+                        <span class="icon">★</span>
+                    </label>
+                    <label>
+                        <input type="radio" name="stars" value="2" />
+                        <span class="icon">★</span>
+                        <span class="icon">★</span>
+                    </label>
+                    <label>
+                        <input type="radio" name="stars" value="3" />
+                        <span class="icon">★</span>
+
+                    </label>
+                    <label>
+                        <input type="radio" name="stars" value="4" />
+                        <span class="icon">★</span>
+                        <span class="icon">★</span>
+                        <span class="icon">★</span>
+                        <span class="icon">★</span>
+                    </label>
+                    <label>
+                        <input type="radio" name="stars" value="5" />
+                        <span class="icon">★</span>
+                        <span class="icon">★</span>
+                        <span class="icon">★</span>
+                        <span class="icon">★</span>
+                        <span class="icon">★</span>
+                    </label>
+
+                </div>
+
+                <p style="margin-top:-75px; color:red; font-size:20px; font-weight:bold;">47.25 EGP</p>
+
+
+
+
+                <hr style="border: 1px solid lightgray; margin-top:-5px" />
+                <button class="button2">Add To Cart</button>
+
+                <div class="rating" style="transform: translate(-50%,-50%); margin-left:300px; margin-top:-25px; display:block; width:150px; ">
+                    <label>
+                        <input type="radio" name="stars" value="1" />
+                        <span class="icon" style="font-size:50px;">♥</span>
+                    </label>
+                </div>
+
+
+
+
+
+
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-md-4" style="width:270px; height:450px; position: center;  border-style: solid;
+        border-color: lightgray; border-radius: 5px; background-color: white; margin-top:-450px; margin-left:890px; ">
+                <a href="https://localhost:44344/LatestFeatured/FProduct3">
+                    <img src="../Images/Qatra.png" style="width: 240px; height:200px; margin-top:10px;" />
+                </a>
+
+                <p class="name">
+                    Mydrapid 1% 10 Ml drop
+                </p>
+                <p style="text-align:left; margin-top:-10px; font-size:15px; color: gray; font-family:'Times New Roman', Times, serif;">
+                    10 Ml
+                </p>
+
+                <div class="rating" style="transform: translate(-50%,-50%); margin-left:235px; display:block; width:150px; margin-top:55px;">
+                    <label>
+                        <input type="radio" name="stars" value="1" />
+                        <span class="icon">★</span>
+                    </label>
+                    <label>
+                        <input type="radio" name="stars" value="2" />
+                        <span class="icon">★</span>
+                        <span class="icon">★</span>
+                    </label>
+                    <label>
+                        <input type="radio" name="stars" value="3" />
+                        <span class="icon">★</span>
+
+                    </label>
+                    <label>
+                        <input type="radio" name="stars" value="4" />
+                        <span class="icon">★</span>
+                        <span class="icon">★</span>
+                        <span class="icon">★</span>
+                        <span class="icon">★</span>
+                    </label>
+                    <label>
+                        <input type="radio" name="stars" value="5" />
+                        <span class="icon">★</span>
+                        <span class="icon">★</span>
+                        <span class="icon">★</span>
+                        <span class="icon">★</span>
+                        <span class="icon">★</span>
+                    </label>
+
+                </div>
+
+                <p style="margin-top:-75px; color:red; font-size:20px; font-weight: bold;">11.00 EGP</p>
+
+
+                <hr style="border: 1px solid lightgray; margin-top:-5px" />
+                <button class="button2">Add To Cart</button>
+
+                <div class="rating" style="transform: translate(-50%,-50%); margin-left:300px; margin-top:-25px; display:block; width:150px; ">
+                    <label>
+                        <input type="radio" name="stars" value="1" />
+                        <span class="icon" style="font-size:50px;">♥</span>
+                    </label>
+                </div>
+
+
+
+
+
+
+            </div>
+        </div>
+
+
+
+        <div class="row">
+            <div class="col-md-4" style="border-style: solid;
+        border-color: lightgray; width: 270px;
+        height: 450px;
+        position: center;
+        border-radius: 5px;
+        background-color: white;
+        margin-top: 50px;
+        margin-left: 33px;">
+                <a href="https://localhost:44344/LatestFeatured/FProduct4">
+                    <img src="../Images/Burinex.png" style="width: 240px; height:200px; margin-top:10px;" />
+                </a>
+
+                <p class="name">
+                    Burinex 1 Mg 20 tablet 2 Strips
+                </p>
+                <p style="text-align:left; margin-top:-10px; font-size:15px; color: gray; font-family:'Times New Roman', Times, serif;">
+                    20 Tab
+                </p>
+                <div class="rating" style="transform: translate(-50%,-50%); margin-left:235px; display:block; width:150px; margin-top:55px;">
+                    <label>
+                        <input type="radio" name="stars" value="1" />
+                        <span class="icon">★</span>
+                    </label>
+                    <label>
+                        <input type="radio" name="stars" value="2" />
+                        <span class="icon">★</span>
+                        <span class="icon">★</span>
+                    </label>
+                    <label>
+                        <input type="radio" name="stars" value="3" />
+                        <span class="icon">★</span>
+
+                    </label>
+                    <label>
+                        <input type="radio" name="stars" value="4" />
+                        <span class="icon">★</span>
+                        <span class="icon">★</span>
+                        <span class="icon">★</span>
+                        <span class="icon">★</span>
+                    </label>
+                    <label>
+                        <input type="radio" name="stars" value="5" />
+                        <span class="icon">★</span>
+                        <span class="icon">★</span>
+                        <span class="icon">★</span>
+                        <span class="icon">★</span>
+                        <span class="icon">★</span>
+                    </label>
+
+                </div>
+
+                <p style="margin-top:-75px; color:red; font-size:20px; font-weight: bold;">06.35 EGP</p>
+
+
+
+                <hr style="border: 1px solid lightgray; margin-top:-5px" />
+                <button class="button2">Add To Cart</button>
+
+                <div class="rating" style="transform: translate(-50%,-50%); margin-left:300px; margin-top:-25px; display:block; width:150px; ">
+                    <label>
+                        <input type="radio" name="stars" value="1" />
+                        <span class="icon" style="font-size:50px;">♥</span>
+                    </label>
+                </div>
+
+
+
+
+
+
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4" style="width:270px; height:450px; position: center;  border-style: solid;
+        border-color: lightgray; border-radius: 5px; background-color: white; margin-top:-450px; margin-left:460px; ">
+                <a href="https://localhost:44344/LatestFeatured/FProduct5">
+                    <img src="../Images/Delta.png" style="width: 240px; height:200px; margin-top:10px;" />
+                </a>
+                <p class="name">
+                    DELTASONE 0.75 MG 30 TAB
+                </p>
+                <p style="text-align:left; margin-top:-10px; font-size:15px; color: gray; font-family:'Times New Roman', Times, serif;">
+                    30 Tab
+                </p>
+
+                <div class="rating" style="transform: translate(-50%,-50%); margin-left:235px; display:block; width:150px; margin-top:55px;">
+                    <label>
+                        <input type="radio" name="stars" value="1" />
+                        <span class="icon">★</span>
+                    </label>
+                    <label>
+                        <input type="radio" name="stars" value="2" />
+                        <span class="icon">★</span>
+                        <span class="icon">★</span>
+                    </label>
+                    <label>
+                        <input type="radio" name="stars" value="3" />
+                        <span class="icon">★</span>
+
+                    </label>
+                    <label>
+                        <input type="radio" name="stars" value="4" />
+                        <span class="icon">★</span>
+                        <span class="icon">★</span>
+                        <span class="icon">★</span>
+                        <span class="icon">★</span>
+                    </label>
+                    <label>
+                        <input type="radio" name="stars" value="5" />
+                        <span class="icon">★</span>
+                        <span class="icon">★</span>
+                        <span class="icon">★</span>
+                        <span class="icon">★</span>
+                        <span class="icon">★</span>
+                    </label>
+
+                </div>
+
+                <p style="margin-top: -75px; color: red; font-size: 20px; font-weight: bold;">18.00 EGP</p>
+                <hr style="border: 1px solid lightgray; margin-top:-5px" />
+
+                <button class="button2">Add To Cart</button>
+
+                <div class="rating" style="transform: translate(-50%,-50%); margin-left:300px; margin-top:-25px; display:block; width:150px; ">
+                    <label>
+                        <input type="radio" name="stars" value="1" />
+                        <span class="icon" style="font-size:50px;">♥</span>
+                    </label>
+                </div>
+
+
+
+
+
+
+
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4" style="width:270px; height:450px; position: center;  border-style: solid;
+        border-color: lightgray; border-radius: 5px; background-color: white; margin-top:-450px; margin-left:890px; ">
+                <a href="https://localhost:44344/LatestFeatured/FProduct6">
+                    <img src="../Images/Aller.png" style="width: 240px; height:200px; margin-top:10px;" />
+                </a>
+                <p class="name">
+                    ALLERFEN 60 MG 30 tablet
+                </p>
+                <p style="text-align:left; margin-top:-10px; font-size:15px; color: gray; font-family:'Times New Roman', Times, serif;">
+                    30 Tab
+                </p>
+                <div class="rating" style="transform: translate(-50%,-50%); margin-left:235px; display:block; width:150px; margin-top:55px;">
+                    <label>
+                        <input type="radio" name="stars" value="1" />
+                        <span class="icon">★</span>
+                    </label>
+                    <label>
+                        <input type="radio" name="stars" value="2" />
+                        <span class="icon">★</span>
+                        <span class="icon">★</span>
+                    </label>
+                    <label>
+                        <input type="radio" name="stars" value="3" />
+                        <span class="icon">★</span>
+
+                    </label>
+                    <label>
+                        <input type="radio" name="stars" value="4" />
+                        <span class="icon">★</span>
+                        <span class="icon">★</span>
+                        <span class="icon">★</span>
+                        <span class="icon">★</span>
+                    </label>
+                    <label>
+                        <input type="radio" name="stars" value="5" />
+                        <span class="icon">★</span>
+                        <span class="icon">★</span>
+                        <span class="icon">★</span>
+                        <span class="icon">★</span>
+                        <span class="icon">★</span>
+                    </label>
+
+                </div>
+
+                <p style="margin-top: -75px;
+        color: red;
+        font-size: 20px;
+        font-weight: bold;">18.00 EGP</p>
+
+                <hr style="border: 1px solid lightgray; margin-top:-5px" />
+                <button class="button2">Add To Cart</button>
+
+                <div class="rating" style="transform: translate(-50%,-50%); margin-left:300px; margin-top:-25px; display:block; width:150px; ">
+                    <label>
+                        <input type="radio" name="stars" value="1" />
+                        <span class="icon" style="font-size:50px;">♥</span>
+                    </label>
+                </div>
+
+
+
+
+
+
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>
+

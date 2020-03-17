@@ -1,0 +1,230 @@
+﻿
+@{
+    ViewBag.Title = "product2";
+}
+
+<html>
+<head>
+    <style>
+
+        .rating {
+            display: inline-block;
+            height: 60px;
+            line-height: 50px;
+            font-size: 25px;
+            margin-top: 80px;
+        }
+
+            .rating label {
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 100%;
+                cursor: pointer;
+                margin-left: -120px;
+                margin-bottom: -50px;
+            }
+
+                .rating label:last-child {
+                    position: static;
+                }
+
+                .rating label:nth-child(1) {
+                    z-index: 5;
+                }
+
+                .rating label:nth-child(2) {
+                    z-index: 4;
+                }
+
+                .rating label:nth-child(3) {
+                    z-index: 3;
+                }
+
+                .rating label:nth-child(4) {
+                    z-index: 2;
+                }
+
+                .rating label:nth-child(5) {
+                    z-index: 1;
+                }
+
+                .rating label input {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    opacity: 0;
+                }
+
+                .rating label .icon {
+                    float: left;
+                    color: transparent;
+                    font-size: 25px;
+                    margin-top: -30px;
+                }
+
+                .rating label:last-child .icon {
+                    color: gray;
+                }
+
+            .rating:not(:hover) label input:checked ~ .icon,
+            .rating:hover label:hover input ~ .icon {
+                color: #79f;
+            }
+
+            .rating label input:focus:not(:checked) ~ .icon:last-child {
+                color: #000;
+                text-shadow: 0 0 5px #09f;
+            }
+
+        .button {
+            background-color: dodgerblue;
+            border: none;
+            color: white;
+            padding: 16px 32px;
+            text-align: center;
+            font-size: 18px;
+            margin: 4px 2px;
+            opacity: 0.6;
+            transition: 0.3s;
+            display: inline-block;
+            text-decoration: none;
+            cursor: pointer;
+            border-radius: 10px;
+            height: 50px;
+            margin-top: 10px;
+            margin-left: 10px;
+        }
+
+            .button:hover {
+                opacity: 1
+            }
+
+
+
+        .info {
+            width: 400px;
+            height: 600px;
+            background-color: white;
+            margin-left: 500px;
+            margin-top: 50px;
+        }
+
+            .info.p1 {
+                margin-bottom: 20px;
+            }
+    </style>
+    <script>
+        $(':radio').change(function () {
+            console.log('New star rating: ' + this.value);
+        });
+    </script>
+</head>
+<body>
+    <ol class="breadcrumb" style="margin-top:60px;">
+        <li class="breadcrumb-item"><a href="#" style="font-size: x-large">Home</a></li>
+        <li class="breadcrumb-item"><a href="https://localhost:44344/LatestFeatured/LatestOffer" style="font-size: large">Latest Offers</a></li>
+        <li class="breadcrumb-item active" style="font-size: medium">Biobias Anti Hair Loss Mask</li>
+    </ol>
+    <div class="row">
+        <div class="col-md-4" style=" width: 500px; height: 550px; position: center; border-radius: 5px; background-color: white;
+                                        border-style:solid; border-color: lightgray;  margin-top: 30px; margin-left: -30px;">
+
+            <img src="../Images/cosmoapp.jpg" style="width: 470px; height:546px; margin-top:0px;" />
+        </div>
+
+        <div class="info">
+
+            <p class="p1" style="background-color: dodgerblue; border-bottom-right-radius: 15px;border-top-right-radius:15px;
+                            color: white; font-size: 15px;height:35px; width:250px; ">
+                Buy One Get One Free
+            </p>
+
+            <p style="margin-bottom:25px; margin-top:25px;color:black; font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+                        font-size:23px; text-align: left; font-weight: bold;">
+                COSMO APPE RENEWAL FACE CREAM 50ML
+            </p>
+
+
+
+
+            <div class="rating" style="transform: translate(-50%,-50%); margin-left:220px; display:block; width:150px;">
+                <label>
+                    <input type="radio" name="stars" value="1" />
+                    <span class="icon">★</span>
+                </label>
+                <label>
+                    <input type="radio" name="stars" value="2" />
+                    <span class="icon">★</span>
+                    <span class="icon">★</span>
+                </label>
+                <label>
+                    <input type="radio" name="stars" value="3" />
+                    <span class="icon">★</span>
+
+                </label>
+                <label>
+                    <input type="radio" name="stars" value="4" />
+                    <span class="icon">★</span>
+                    <span class="icon">★</span>
+                    <span class="icon">★</span>
+                    <span class="icon">★</span>
+                </label>
+                <label>
+                    <input type="radio" name="stars" value="5" />
+                    <span class="icon">★</span>
+                    <span class="icon">★</span>
+                    <span class="icon">★</span>
+                    <span class="icon">★</span>
+                    <span class="icon">★</span>
+                </label>
+
+            </div>
+
+            <p style="        margin-top: -120px;
+        margin-left: 15px;
+        color: red;
+        font-size: 25px;">360.00 EGP</p>
+
+            <p style=" margin-top: -40px;margin-left: 200px;color: gray;font-size: 15px;text-decoration: line-through">700.00 EGP</p>
+
+
+            <p style=" margin-top:100px; color:black; font-size: 15px; text-align:left;height:35px; width:250px; font-weight: bold;">
+                Buy One Get One Free
+            </p>
+
+            <p style=" margin-top:10px; color:black; font-size: 15px; text-align:left;height:35px; width:280px; ">
+                COSOMO APPE RENEWAL EYE CREAM 30ML
+            </p>
+
+            <hr style="border: 1px solid lightgray; " />
+
+            <p style=" margin-top:-5px; color:black; font-size: 15px; text-align:left;height:35px; width:280px; font-weight: bold; ">
+                Product O<span style="color: gray" ;>ff</span>er
+            </p>
+            <p style=" margin-top:-10px; color:black; font-size: 15px; text-align:left;height:35px; width:310px; ">
+                COSOMO APPE RENEWAL EYE CREAM 30ML
+            </p>
+
+            <div style="background-color:white; height: 70px; border-radius: 3px; border-top-color: lightgray; border-top-style:solid; margin-top: 30px;">
+                <button class="button">Add To Cart</button>
+
+                <div class="rating" style="transform: translate(-50%,-50%); margin-left:300px; margin-top:-25px; display:block; width:150px; ">
+                    <label>
+                        <input type="radio" name="stars" value="1" />
+                        <span class="icon" style="font-size:50px; margin-left: 250px; margin-top:-27px;">♥</span>
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+</body>
+</html>
+
