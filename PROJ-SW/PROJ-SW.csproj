@@ -130,12 +130,9 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\InventoriesController.cs" />
     <Compile Include="Controllers\ProductsController.cs" />
-    <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -174,7 +171,6 @@
     <Compile Include="Model\Login.cs">
       <DependentUpon>databaseProjectModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Model\Metadata.cs" />
     <Compile Include="Model\Payment.cs">
       <DependentUpon>databaseProjectModel.tt</DependentUpon>
     </Compile>
@@ -184,7 +180,6 @@
     <Compile Include="Model\Role.cs">
       <DependentUpon>databaseProjectModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Model\SiteRole.cs" />
     <Compile Include="Model\User.cs">
       <DependentUpon>databaseProjectModel.tt</DependentUpon>
     </Compile>
@@ -201,86 +196,11 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\bootstrap_noura.css" />
     <Content Include="Content\footer.css" />
-    <Content Include="Content\style.css" />
-    <Content Include="Content\UserIndex.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
-    <Content Include="Images\1.png" />
-    <Content Include="Images\2.png" />
-    <Content Include="Images\Aller.png" />
-    <Content Include="Images\Aller2.png" />
-    <Content Include="Images\aspirin.jpg" />
-    <Content Include="Images\avent.jpg" />
-    <Content Include="Images\baby.jpg" />
-    <Content Include="Images\Bamb.png" />
-    <Content Include="Images\Bamb2.png" />
-    <Content Include="Images\beauty.jpg" />
-    <Content Include="Images\bg.png" />
-    <Content Include="Images\Broncho.png" />
-    <Content Include="Images\Broncho2.png" />
-    <Content Include="Images\Burinex.png" />
-    <Content Include="Images\Burinex2.png" />
-    <Content Include="Images\capsule.jpg" />
-    <Content Include="Images\cold-bill.jpg" />
-    <Content Include="Images\Color Cop v5.4.5  Arabic.exe" />
-    <Content Include="Images\delivered.png" />
-    <Content Include="Images\Delta.png" />
-    <Content Include="Images\Delta2.png" />
-    <Content Include="Images\fb.png" />
-    <Content Include="Images\fish-oil-1915423_1920.jpg" />
-    <Content Include="Images\foundation.jpg" />
-    <Content Include="Images\gel.png" />
-    <Content Include="Images\gray.jpg" />
-    <Content Include="Images\green.jpg" />
-    <Content Include="Images\hands.jpg" />
-    <Content Include="Images\hands2.jpg" />
-    <Content Include="Images\health.png" />
-    <Content Include="Images\home1.png" />
-    <Content Include="Images\home10.jpg" />
-    <Content Include="Images\home11.jpg" />
-    <Content Include="Images\home12.jpg" />
-    <Content Include="Images\home13.jpg" />
-    <Content Include="Images\home14.jpg" />
-    <Content Include="Images\home15.jpg" />
-    <Content Include="Images\home16.jpg" />
-    <Content Include="Images\home2.jpg" />
-    <Content Include="Images\home3.jpg" />
-    <Content Include="Images\home4.jpg" />
-    <Content Include="Images\home5.jpg" />
-    <Content Include="Images\home6.jpg" />
-    <Content Include="Images\home7.jpg" />
-    <Content Include="Images\home8.jpg" />
-    <Content Include="Images\home9.jpg" />
-    <Content Include="Images\hypertension.jpg" />
-    <Content Include="Images\lapland.jpg" />
     <Content Include="Images\logo.jpg" />
-    <Content Include="Images\medicine.jpg" />
-    <Content Include="Images\orange.jpg" />
-    <Content Include="Images\order1.jpg" />
-    <Content Include="Images\order2.jpg" />
-    <Content Include="Images\people.jpg" />
-    <Content Include="Images\pharmacy.png" />
-    <Content Include="Images\pills.jpg" />
-    <Content Include="Images\pink.jpg" />
-    <Content Include="Images\Qatra.png" />
-    <Content Include="Images\Qatra2.png" />
-    <Content Include="Images\red.jpg" />
-    <Content Include="Images\shampo.jpg" />
-    <Content Include="Images\shoveling.jpg" />
-    <Content Include="Images\shower.jpg" />
-    <Content Include="Images\Silver.jpg" />
-    <Content Include="Images\supply.jpg" />
-    <Content Include="Images\teeth.jpg" />
-    <Content Include="Images\thermometer.jpg" />
-    <Content Include="Images\treatment.png" />
-    <Content Include="Images\tw.png" />
-    <Content Include="Images\v1.jpg" />
-    <Content Include="Images\Victoria-Secret.jpg" />
-    <Content Include="Images\vitamen.jpg" />
-    <Content Include="Images\vitamins.jpg" />
-    <Content Include="Images\woman.jpg" />
     <Content Include="Model\databaseProjectModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>databaseProjectModel.edmx</DependentUpon>
@@ -293,7 +213,6 @@
     </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <Content Include="fonts\Oswald-Regular.ttf" />
     <EntityDeploy Include="Model\databaseProjectModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>databaseProjectModel.Designer.cs</LastGenOutput>
@@ -336,11 +255,6 @@
     <Content Include="Views\Inventories\Details.cshtml" />
     <Content Include="Views\Inventories\Edit.cshtml" />
     <Content Include="Views\Inventories\Index.cshtml" />
-    <Content Include="Views\Shared\_LayoutUser.cshtml" />
-    <Content Include="Views\Shared\_LayoutAdmin.cshtml" />
-    <Content Include="Views\Admin\Index.cshtml" />
-    <Content Include="Views\User\Index.cshtml" />
-    <Content Include="Views\Account\Login.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

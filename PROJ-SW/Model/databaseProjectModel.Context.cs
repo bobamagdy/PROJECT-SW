@@ -13,10 +13,10 @@ namespace PROJ_SW.Model
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class databaseProEntities : DbContext
+    public partial class databaseProEntities3 : DbContext
     {
-        public databaseProEntities()
-            : base("name=databaseProEntities")
+        public databaseProEntities3()
+            : base("name=databaseProEntities3")
         {
         }
     
@@ -30,10 +30,10 @@ namespace PROJ_SW.Model
         public virtual DbSet<Category> Categories { get; set; }
         public virtual DbSet<Credit> Credits { get; set; }
         public virtual DbSet<Inventory> Inventories { get; set; }
-        public virtual DbSet<Login> Logins { get; set; }
         public virtual DbSet<Payment> Payments { get; set; }
         public virtual DbSet<Product> Products { get; set; }
-        public virtual DbSet<Role> Roles { get; set; }
         public virtual DbSet<User> Users { get; set; }
+        public virtual DbSet<Login> Logins { get; set; }
+        public virtual DbSet<Role> Roles { get; set; }
     }
 }
