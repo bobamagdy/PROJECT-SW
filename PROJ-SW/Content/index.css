@@ -1,0 +1,715 @@
+﻿
+
+body {
+    margin: 0;
+    padding: 0;
+    background: white;
+    height: 2500Px;
+    font-family: "montserrat", sans-serif;
+}
+
+.container {
+}
+
+.slidershow {
+    height: 650px;
+    width: 1140px;
+    overflow: hidden;
+}
+
+.middle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate( -50%,-50% );
+}
+
+.navigation {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+}
+
+.bar {
+    width: 50px;
+    height: 10px;
+    border: 2px solid #fff;
+    margin: 6px;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+    .bar:hover {
+        background: #0094ff;
+    }
+
+input[name="r"] {
+    position: absolute;
+    visibility: hidden;
+}
+
+.slides {
+    width: 500%;
+    height: 100%;
+    display: flex;
+}
+
+.slide {
+    width: 20%;
+    transition: 0.6s;
+}
+
+    .slide img {
+        width: 100%;
+        height: 100%;
+    }
+
+#r1:checked ~ .s1 {
+    margin-left: 0;
+}
+
+#r2:checked ~ .s1 {
+    margin-left: -20%;
+}
+
+#r3:checked ~ .s1 {
+    margin-left: -40%;
+}
+
+#r4:checked ~ .s1 {
+    margin-left: -60%;
+}
+
+#r5:checked ~ .s1 {
+    margin-left: -80%;
+}
+
+.serbody {
+    margin-top: 700px
+}
+
+.services {
+    text-align: center;
+}
+
+    .services h1 {
+        display: inline-block;
+        text-transform: uppercase;
+        border-bottom: 4px solid #3498db;
+        font-size: 20px;
+        padding-bottom: 10px;
+        margin-top: 40px;
+        font-weight: bold;
+    }
+
+.BlueText {
+    color: #3498db;
+    font-weight: lighter;
+}
+
+.cen {
+    max-width: 1200px;
+    margin: auto;
+    overflow: hidden;
+    padding: 20px;
+}
+
+.service {
+    display: inline-block;
+    margin: 25px;
+    width: calc(100% / 4);
+    box-sizing: border-box;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+    .service:hover {
+        background: #ddd;
+    }
+
+    .service h2 {
+        font-size: 20px;
+        text-transform: uppercase;
+        font-weight: 500;
+        margin: 20px;
+    }
+
+.head {
+    font-size: 35px;
+    text-transform: uppercase;
+    font-weight: 500;
+    margin: 20px;
+    font-weight: bold;
+}
+
+.service p {
+    color: dimgray;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.read-more-state {
+    display: none;
+}
+
+.read-more-target {
+    opacity: 0;
+    max-height: 0;
+    font-size: 0;
+    transition: .25s ease;
+}
+
+.read-more-state:checked ~ .read-more-wrap .read-more-target {
+    opacity: 1;
+    font-size: inherit;
+    max-height: 999em;
+}
+
+.read-more-state ~ .read-more-trigger:before {
+    content: 'Show more';
+}
+
+.read-more-state:checked ~ .read-more-trigger:before {
+    content: 'Show less';
+}
+
+.read-more-trigger {
+    cursor: pointer;
+    display: inline-block;
+    padding: 0 .5em;
+    color: #666;
+    font-size: .9em;
+    line-height: 2;
+    border: 1px solid #3498db;
+    border-radius: .25em;
+}
+
+    .read-more-trigger:hover {
+        color: #fff;
+        background: #3498db;
+        transition: 0.5s;
+    }
+
+.column {
+    margin: 0 15px 25px;
+    border-radius: 10px;
+    height: 700px;
+    width: 98%;
+    flex-basis: 33%;
+    margin-top: 30px;
+}
+
+.card {
+    padding: 15px 25px;
+}
+
+
+.btn {
+    font-family: Arial;
+    text-transform: uppercase;
+    font-size: 30px;
+    width: 170px;
+    height: 50px;
+    border-radius: 80px;
+    line-height: 30px;
+    text-align: center;
+    border: 3px solid #3498db;
+    color: #3498db;
+    display: block;
+    text-decoration: none;
+    margin-top: 10px;
+    margin-left: 875px;
+    font-size: 20px;
+    font-weight: bold;
+    font-weight: 500;
+    position: relative;
+    overflow: hidden;
+    background: transparent;
+    transition: 0.3s;
+}
+
+    .btn:before {
+        content: '';
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        background: #3498db;
+        top: -100%;
+        left: 0;
+        z-index: -1;
+        transition: 0.3s;
+        opacity: 0.5;
+    }
+
+    .btn:after {
+        content: '';
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        background: #3498db;
+        top: -100%;
+        left: 0;
+        z-index: -1;
+        transition: 0.3s;
+        transition-delay: 0.2s;
+    }
+
+    .btn:hover {
+        color: #fff;
+    }
+
+        .btn:hover:before {
+            top: 0;
+        }
+
+        .btn:hover:after {
+            top: 0;
+        }
+
+.button {
+    padding: 0;
+    margin: 5px;
+    width: 200px;
+    height: 300px;
+    text-align: center;
+    position: relative;
+    border: 3px solid #555;
+    border-radius: 5px;
+    transition-duration: 0.60s;
+}
+
+.button1 {
+    box-shadow: 0 30px 60px rgba(0,0,0,0.5);
+    background: url(/Images/gray.jpg);
+    background-size: cover;
+}
+
+    .button1:hover {
+        box-shadow: 0 5px 10px rgba(0,0,0,0.5);
+        transform: scale(0.95);
+        background: #3498db;
+    }
+
+.button2 {
+    box-shadow: 0 30px 60px rgba(0,0,0,0.5);
+    background: url(/Images/green.jpg);
+    background-size: cover;
+}
+
+    .button2:hover {
+        box-shadow: 0 5px 10px rgba(0,0,0,0.5);
+        transform: scale(0.95);
+        background: #66AB69;
+    }
+
+.button3 {
+    box-shadow: 0 30px 60px rgba(0,0,0,0.5);
+    background: url(/Images/red.jpg);
+    background-size: cover;
+}
+
+    .button3:hover {
+        box-shadow: 0 5px 10px rgba(0,0,0,0.5);
+        transform: scale(0.95);
+        background: #E7281F;
+    }
+
+.button4 {
+    box-shadow: 0 30px 60px rgba(0,0,0,0.5);
+    background: url(/Images/pink.jpg);
+    background-size: cover;
+}
+
+    .button4:hover {
+        box-shadow: 0 5px 10px rgba(0,0,0,0.5);
+        transform: scale(0.95);
+        background: #E7599D;
+    }
+
+.button5 {
+    box-shadow: 0 30px 60px rgba(0,0,0,0.5);
+    background: url(/Images/orange.jpg);
+    background-size: cover;
+}
+
+    .button5:hover {
+        box-shadow: 0 5px 10px rgba(0,0,0,0.5);
+        transform: scale(0.95);
+        background: #FB8303;
+    }
+
+.catfont1 {
+    font-family: cursive;
+    font-weight: bold;
+    font-size: 40px;
+}
+
+    .catfont1:hover {
+        color: white;
+        transition: 0.8s;
+    }
+
+.catfont2 {
+    font-family: cursive;
+    font-weight: bold;
+    font-size: 40px;
+    color: #66AB69;
+}
+
+    .catfont2:hover {
+        color: white;
+        transition: 0.8s;
+    }
+
+.catfont3 {
+    font-family: cursive;
+    font-weight: bold;
+    font-size: 40px;
+    color: #E7281F;
+}
+
+    .catfont3:hover {
+        color: white;
+        transition: 0.8s;
+    }
+
+.catfont4 {
+    font-family: cursive;
+    font-weight: bold;
+    font-size: 40px;
+    color: #E7599D;
+}
+
+    .catfont4:hover {
+        color: white;
+        transition: 0.8s;
+    }
+
+.catfont5 {
+    font-family: cursive;
+    font-weight: bold;
+    font-size: 40px;
+    color: #FB8303;
+}
+
+    .catfont5:hover {
+        color: white;
+        transition: 0.8s;
+    }
+
+.container7 {
+    min-width: 992px !important
+}
+
+.row {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px
+}
+
+.col-xl-4 {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 33.333333%;
+    flex: 0 0 33.333333%;
+    max-width: 33.333333%
+}
+
+.col-xl-4,
+.col-md-6,
+.col-lg-4 {
+    position: relative;
+    width: 100%;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px
+}
+
+.section_title h1 {
+    font-size: 36px;
+    font-weight: 500;
+    line-height: 48px;
+    color: Black;
+    position: relative;
+    z-index: 9;
+    padding-bottom: 15px;
+}
+
+    .section_title h1::before {
+        position: absolute;
+        left: 0;
+        background: #5DB2FF;
+        height: 2px;
+        width: 50px;
+        content: '';
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 0;
+    }
+
+.col-xl-12 {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 100%;
+    flex: 0 0 100%;
+    max-width: 100%
+}
+
+.our_department_area {
+    background: white;
+    padding-top: 10px;
+    padding-bottom: 90px;
+    height: 500px;
+    box-shadow: 0 30px 60px rgba(0,0,0,0.5);
+}
+
+    /* line 5, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_department.scss */
+    .our_department_area .single_department {
+        background: #fff;
+        margin-left: 5px;
+        margin-right: 5px;
+        margin-bottom: 30px;
+        -webkit-box-shadow: 0 6px 10px rgba(0, 0, 0, 0.04);
+        -moz-box-shadow: 0 6px 10px rgba(0, 0, 0, 0.04);
+        box-shadow: 0 6px 10px rgba(0, 0, 0, 0.04);
+    }
+
+/* line 9, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_department.scss */
+
+.department_thumb {
+    padding-top: 40px;
+    width: 300px;
+    height: 250px;
+    margin-bottom: 10px;
+    overflow: hidden;
+}
+
+    .department_thumb > img {
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+        transition: all .3s ease-in-out;
+    }
+
+    .department_thumb:hover > img {
+        transform: scale(1.2);
+    }
+/* line 19, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_department.scss */
+.our_department_area .single_department .department_content {
+    padding: 22px 20px 24px 30px;
+}
+
+    /* line 21, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_department.scss */
+    .our_department_area .single_department .department_content h1 {
+        margin-bottom: 0;
+    }
+
+        /* line 23, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_department.scss */
+        .our_department_area .single_department .department_content h1 a {
+            font-size: 22px;
+            color: #1F1F1F;
+            font-weight: 500;
+        }
+
+            /* line 28, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_department.scss */
+            .our_department_area .single_department .department_content h1 a:hover {
+                color: #5DB2FF;
+            }
+
+    /* line 33, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_department.scss */
+    .our_department_area .single_department .department_content p {
+        font-size: 18px;
+        line-height: 28px;
+        color: #727272;
+        margin-top: 5px;
+        margin-bottom: 0px;
+    }
+
+    /* line 40, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_department.scss */
+    .our_department_area .single_department .department_content a.learn_more {
+        color: slategrey;
+        font-size: 16px;
+        font-weight: bold;
+    }
+
+        /* line 43, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_department.scss */
+        .our_department_area .single_department .department_content a.learn_more:hover {
+            text-decoration: none;
+            transition: 0.5s;
+        }
+
+/* line 50, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_department.scss */
+
+.rating {
+    display: inline-block;
+    position: relative;
+    height: 50px;
+    line-height: 50px;
+    font-size: 50px;
+}
+
+    .rating label {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        cursor: pointer;
+    }
+
+        .rating label:last-child {
+            position: static;
+        }
+
+        .rating label:nth-child(1) {
+            z-index: 5;
+        }
+
+        .rating label:nth-child(2) {
+            z-index: 4;
+        }
+
+        .rating label:nth-child(3) {
+            z-index: 3;
+        }
+
+        .rating label:nth-child(4) {
+            z-index: 2;
+        }
+
+        .rating label:nth-child(5) {
+            z-index: 1;
+        }
+
+        .rating label input {
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+        }
+
+        .rating label .icon {
+            float: left;
+            color: transparent;
+            font-size: 25px
+        }
+
+        .rating label:last-child .icon {
+            color: #000;
+        }
+
+    .rating:not(:hover) label input:checked ~ .icon,
+    .rating:hover label:hover input ~ .icon {
+        color: #09f;
+    }
+
+    .rating label input:focus:not(:checked) ~ .icon:last-child {
+        color: #000;
+        text-shadow: 0 0 5px #09f;
+    }
+
+.rating1 {
+    display: inline-block;
+    position: relative;
+    height: 50px;
+    line-height: 50px;
+    font-size: 50px;
+}
+
+    .rating1 label {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        cursor: pointer;
+    }
+
+        .rating1 label:last-child {
+            position: static;
+        }
+
+        .rating1 label:nth-child(1) {
+            z-index: 5;
+        }
+
+        .rating1 label:nth-child(2) {
+            z-index: 4;
+        }
+
+        .rating1 label:nth-child(3) {
+            z-index: 3;
+        }
+
+        .rating1 label:nth-child(4) {
+            z-index: 2;
+        }
+
+        .rating1 label:nth-child(5) {
+            z-index: 1;
+        }
+
+        .rating1 label input {
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+        }
+
+        .rating1 label .icon1 {
+            float: left;
+            color: transparent;
+            font-size: 50px
+        }
+
+        .rating1 label:last-child .icon1 {
+            color: lightslategrey;
+            margin-right: 100px;
+        }
+
+    .rating1:not(:hover) label input:checked ~ .icon1,
+    .rating1:hover label:hover input ~ .icon1 {
+        color: red;
+    }
+
+    .rating1 label input:focus:not(:checked) ~ .icon1:last-child {
+        color: #000;
+        text-shadow: 0 0 5px #09f;
+    }
+
+.order {
+    height: 300px;
+    width: 1070px;
+    background-image: url(/Images/order1.jpg);
+    background-position: center;
+    background-size: cover;
+}
+
+.feat {
+    text-align: center;
+    padding: 50px;
+}
+
+    .feat p {
+        font-size: 17px;
+        font-stretch: expanded;
+    }
+
+.but {
+    border: 2px solid white;
+    padding: 10px 30px;
+    color: white;
+    text-decoration: none;
+    background-color: #3498db;
+    font-family: "roboto", sans-serif;
+    font-weight: bold;
+}
+
+    .but:hover {
+        color: #3498db;
+        background-color: white;
+        transition: 0.5s;
+        font-weight: bold;
+    }

@@ -11,7 +11,7 @@
     <Key>
       <PropertyRef Name="Id" />
     </Key>
-    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Cart_Id" Type="int" />
     <Property Name="Prod_Id" Type="int" />
   </EntityType>
@@ -42,6 +42,17 @@
     <Property Name="inventory_name" Type="nchar" MaxLength="50" />
     <Property Name="Quantity" Type="int" />
   </EntityType>
+  <EntityType Name="Login">
+    <Key>
+      <PropertyRef Name="Login_Id" />
+    </Key>
+    <Property Name="Login_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Email" Type="nvarchar" MaxLength="50" />
+    <Property Name="Password" Type="nvarchar" MaxLength="50" />
+    <Property Name="Isdeleted" Type="bit" />
+    <Property Name="CreatedOn" Type="date" />
+    <Property Name="Role_Id" Type="int" />
+  </EntityType>
   <EntityType Name="Payment">
     <Key>
       <PropertyRef Name="payment_id" />
@@ -66,6 +77,13 @@
     <Property Name="Cate_Id" Type="int" />
     <Property Name="inventory_id" Type="int" />
   </EntityType>
+  <EntityType Name="Role">
+    <Key>
+      <PropertyRef Name="Role_Id" />
+    </Key>
+    <Property Name="Role_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RoleName" Type="nvarchar" MaxLength="50" />
+  </EntityType>
   <EntityType Name="User">
     <Key>
       <PropertyRef Name="user_id" />
@@ -78,7 +96,7 @@
     <Property Name="Phone" Type="int" />
     <Property Name="Address" Type="nchar" MaxLength="100" />
     <Property Name="City" Type="nchar" MaxLength="20" />
-    <Property Name="Role" Type="nchar" MaxLength="10" />
+    <Property Name="Login_Id" Type="int" />
   </EntityType>
   <Association Name="FK__Cart__User_Id__7C1A6C5A">
     <End Role="User" Type="Self.User" Multiplicity="0..1" />
@@ -92,7 +110,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Cart_Prod__Cart___0D44F85C">
+  <Association Name="FK__Cart_Prod__Cart___1B9317B3">
     <End Role="Cart" Type="Self.Cart" Multiplicity="0..1" />
     <End Role="Cart_Product" Type="Self.Cart_Product" Multiplicity="*" />
     <ReferentialConstraint>
@@ -104,7 +122,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Cart_Prod__Prod___0E391C95">
+  <Association Name="FK__Cart_Prod__Prod___1C873BEC">
     <End Role="Product" Type="Self.Product" Multiplicity="0..1" />
     <End Role="Cart_Product" Type="Self.Cart_Product" Multiplicity="*" />
     <ReferentialConstraint>
@@ -125,6 +143,18 @@
       </Principal>
       <Dependent Role="Credit">
         <PropertyRef Name="User_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Login__Role_Id__308E3499">
+    <End Role="Role" Type="Self.Role" Multiplicity="0..1" />
+    <End Role="Login" Type="Self.Login" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Role">
+        <PropertyRef Name="Role_Id" />
+      </Principal>
+      <Dependent Role="Login">
+        <PropertyRef Name="Role_Id" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -164,30 +194,48 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK__User__Login_Id__318258D2">
+    <End Role="Login" Type="Self.Login" Multiplicity="0..1" />
+    <End Role="User" Type="Self.User" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Login">
+        <PropertyRef Name="Login_Id" />
+      </Principal>
+      <Dependent Role="User">
+        <PropertyRef Name="Login_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <EntityContainer Name="databaseProModelStoreContainer">
     <EntitySet Name="Cart" EntityType="Self.Cart" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Cart_Product" EntityType="Self.Cart_Product" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Category" EntityType="Self.Category" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Credit" EntityType="Self.Credit" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Inventory" EntityType="Self.Inventory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Login" EntityType="Self.Login" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Payment" EntityType="Self.Payment" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Product" EntityType="Self.Product" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Role" EntityType="Self.Role" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
     <AssociationSet Name="FK__Cart__User_Id__7C1A6C5A" Association="Self.FK__Cart__User_Id__7C1A6C5A">
       <End Role="User" EntitySet="User" />
       <End Role="Cart" EntitySet="Cart" />
     </AssociationSet>
-    <AssociationSet Name="FK__Cart_Prod__Cart___0D44F85C" Association="Self.FK__Cart_Prod__Cart___0D44F85C">
+    <AssociationSet Name="FK__Cart_Prod__Cart___1B9317B3" Association="Self.FK__Cart_Prod__Cart___1B9317B3">
       <End Role="Cart" EntitySet="Cart" />
       <End Role="Cart_Product" EntitySet="Cart_Product" />
     </AssociationSet>
-    <AssociationSet Name="FK__Cart_Prod__Prod___0E391C95" Association="Self.FK__Cart_Prod__Prod___0E391C95">
+    <AssociationSet Name="FK__Cart_Prod__Prod___1C873BEC" Association="Self.FK__Cart_Prod__Prod___1C873BEC">
       <End Role="Product" EntitySet="Product" />
       <End Role="Cart_Product" EntitySet="Cart_Product" />
     </AssociationSet>
     <AssociationSet Name="FK__Credit__User_Id__7A3223E8" Association="Self.FK__Credit__User_Id__7A3223E8">
       <End Role="User" EntitySet="User" />
       <End Role="Credit" EntitySet="Credit" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Login__Role_Id__308E3499" Association="Self.FK__Login__Role_Id__308E3499">
+      <End Role="Role" EntitySet="Role" />
+      <End Role="Login" EntitySet="Login" />
     </AssociationSet>
     <AssociationSet Name="FK__Payment__cart_id__607251E5" Association="Self.FK__Payment__cart_id__607251E5">
       <End Role="Cart" EntitySet="Cart" />
@@ -200,6 +248,10 @@
     <AssociationSet Name="FK__Product__invento__7755B73D" Association="Self.FK__Product__invento__7755B73D">
       <End Role="Inventory" EntitySet="Inventory" />
       <End Role="Product" EntitySet="Product" />
+    </AssociationSet>
+    <AssociationSet Name="FK__User__Login_Id__318258D2" Association="Self.FK__User__Login_Id__318258D2">
+      <End Role="Login" EntitySet="Login" />
+      <End Role="User" EntitySet="User" />
     </AssociationSet>
   </EntityContainer>
 </Schema>

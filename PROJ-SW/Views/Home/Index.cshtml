@@ -2,30 +2,515 @@
     ViewBag.Title = "Home Page";
 }
 
-<div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
-</div>
 
-<div class="row">
-    <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
-        </p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+<html>
+<head>
+    <title> Home </title>
+    <link href="~/Content/index.css" type="text/css" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+<body>
+    <div class="container">
+        <div class="slidershow middle">
+            <div class="slides">
+                <input type="radio" name="r" id="r1" checked />
+                <input type="radio" name="r" id="r2" />
+                <input type="radio" name="r" id="r3" />
+                <input type="radio" name="r" id="r4" />
+                <input type="radio" name="r" id="r5" />
+
+                <div class="slide s1">
+                    <img src="~/Images/home1.png" style="height:620px; width:1140px;">
+                </div>
+                <div class="slide">
+                    <img src="~/Images/home14.jpg" style="height:620px; width:1140px;">
+                </div>
+                <div class="slide">
+                    <img src="~/Images/home15.jpg" style="height:620px; width:1140px;">
+                </div>
+                <div class="slide">
+                    <img src="~/Images/home3.jpg" style="height:620px; width:1140px;">
+                </div>
+                <div class="slide">
+                    <img src="~/Images/home9.jpg" style="height:620px; width:1140px;">
+                </div>
+            </div>
+            <div class="navigation">
+                <label for="r1" class="bar"></label>
+                <label for="r2" class="bar"></label>
+                <label for="r3" class="bar"></label>
+                <label for="r4" class="bar"></label>
+                <label for="r5" class="bar"></label>
+            </div>
+        </div>
     </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
+    <div class="serbody">
+        <div class="services">
+            <h1> <span class="BlueText">Our Services </span> <br> <br /><span class="head"> LifeServe Pharmacy </span> </h1>
+
+            <div class="cin">
+                <div class="service">
+                    <img src="~/Images/delivered.png">
+                    <h2> You Shop We Deliver </h2>
+                    <input type="checkbox" class="read-more-state" id="post-1" />
+                    <p class="read-more-wrap">
+                        Now you can shop online, select all what you need from the pharmacy through our online store on web or on mobile app.<span class="read-more-target">
+                            and we will deliver it to you directly from our diffuse branches. Select products through the Shop menu or access one of the categories and then add the products to the cart then follow the process, just select all
+                            what you need from the pharmacy, thank you very much.
+                        </span>
+                    </p>
+                    <label for="post-1" class="read-more-trigger"></label>
+                </div>
+
+                <div class="service">
+                    <img src="~/Images/health.png">
+                    <h2> Health Indicator </h2>
+                    <input type="checkbox" class="read-more-state" id="post-2" />
+                    <p class="read-more-wrap">
+                        Blood pressure, sugar, and weight… etc. results are important indicators on your health status and are necessary when<span class="read-more-target">
+                            pursuing chronic treatment or  go to a new doctor or in cases of emergency or in diet programs! Now you can track all your vital measurements and visualize their progress over specific time periods through your profile!
+                            Go to one of our branches-measure.
+                        </span>
+                    </p>
+                    <label for="post-2" class="read-more-trigger"></label>
+                </div>
+
+                <div class="service">
+                    <img src="~/Images/treatment.png">
+                    <h2> My Prescriptions </h2>
+                    <input type="checkbox" class="read-more-state" id="post-3" />
+                    <p class="read-more-wrap">
+                        From now and then you will not lose a prescription again! You can keep all your prescriptions you ordered from Fouda<span class="read-more-target">
+                            pharmacies or through our website or mobile app. with full details of all medications and dosages in your profile; This will make it easier to re-order or share with your doctor or recall the dosage of the medication.
+                            Log in to "my profile" and click on "my prescriptions",
+                        </span>
+                    </p>
+                    <label for="post-3" class="read-more-trigger"></label>
+                </div>
+
+
+            </div>
+        </div>
     </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+    <div class="conta">
+        <div class="column">
+            <div class="card">
+                <div class="services">
+                    <h1> <span class="BlueText">BROWSE PRODUCTS BY </span> <br> <br /> <span class="head"> OUR CATEGORIES </span> </h1><br /><br /><br /><br /><br />
+                    <button class="button button2" onclick="window.location.href = 'https://w3docs.com';"> <span class=" catfont2"> Medicine </span> </button>
+                    <button class="button button1" onclick="window.location.href = 'https://w3docs.com';"> <span class=" catfont1"> Skin Care </span> </button>
+                    <button class="button button3" onclick="window.location.href = 'https://w3docs.com';"> <span class=" catfont3"> Beauty </span> </button>
+                    <button class="button button4" onclick="window.location.href = 'https://w3docs.com';"> <span class=" catfont4"> Hair Care </span> </button>
+                    <button class="button button5" onclick="window.location.href = 'https://w3docs.com';"> <span class=" catfont5"> Perfume </span> </button><br /><br /><br /><br />
+                    <a href="https://localhost:44344/Categories/CategoryPage" class="btn">View All >> </a>
+
+                </div>
+            </div>
+        </div>
     </div>
-</div>
+
+    <div class="column">
+        <div class="card">
+            <div class="services">
+                <h1> <span class="BlueText">DON'T MISS OUR </span> <br> <br /> <span class="head"> Latest Offers </span> </h1>
+                <div class="our_department_area">
+                    <div class="container7">
+                        <div class="row">
+                            <div class="col-xl-4 col-md-6 col-lg-4">
+                                <div class="single_department">
+                                    <div class="department_thumb">
+                                        <img src="~/Images/foundation.jpg" style="width:340px;height:400px;" alt="">
+                                    </div>
+                                    <div class="department_content">
+                                        <h1><a href="#">Vectoria Secret</a></h1>
+                                        <p>
+                                            270.00 EGP
+                                        </p>
+                                        <form class="rating">
+                                            <label>
+                                                <input type="radio" name="stars" value="1" />
+                                                <span class="icon">★</span>
+                                            </label>
+                                            <label>
+                                                <input type="radio" name="stars" value="2" />
+                                                <span class="icon">★</span>
+                                                <span class="icon">★</span>
+                                            </label>
+                                            <label>
+                                                <input type="radio" name="stars" value="3" />
+                                                <span class="icon">★</span>
+                                                <span class="icon">★</span>
+                                                <span class="icon">★</span>
+                                            </label>
+                                            <label>
+                                                <input type="radio" name="stars" value="4" />
+                                                <span class="icon">★</span>
+                                                <span class="icon">★</span>
+                                                <span class="icon">★</span>
+                                                <span class="icon">★</span>
+                                            </label>
+                                            <label>
+                                                <input type="radio" name="stars" value="5" />
+                                                <span class="icon">★</span>
+                                                <span class="icon">★</span>
+                                                <span class="icon">★</span>
+                                                <span class="icon">★</span>
+                                                <span class="icon">★</span>
+                                            </label>
+                                        </form>
+                                        <a href="#" class="learn_more">Learn More</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-4 col-md-6 col-lg-4">
+                                <div class="single_department">
+                                    <div class="department_thumb">
+                                        <img src="~/Images/Victoria-Secret.jpg" style="width:340px;height:400px;" alt="">
+                                    </div>
+                                    <div class="department_content">
+                                        <h1><a href="#">Derma</a></h1>
+                                        <p>
+                                            270.00 EGP
+                                        </p>
+                                        <form class="rating">
+                                            <label>
+                                                <input type="radio" name="stars" value="1" />
+                                                <span class="icon">★</span>
+                                            </label>
+                                            <label>
+                                                <input type="radio" name="stars" value="2" />
+                                                <span class="icon">★</span>
+                                                <span class="icon">★</span>
+                                            </label>
+                                            <label>
+                                                <input type="radio" name="stars" value="3" />
+                                                <span class="icon">★</span>
+                                                <span class="icon">★</span>
+                                                <span class="icon">★</span>
+                                            </label>
+                                            <label>
+                                                <input type="radio" name="stars" value="4" />
+                                                <span class="icon">★</span>
+                                                <span class="icon">★</span>
+                                                <span class="icon">★</span>
+                                                <span class="icon">★</span>
+                                            </label>
+                                            <label>
+                                                <input type="radio" name="stars" value="5" />
+                                                <span class="icon">★</span>
+                                                <span class="icon">★</span>
+                                                <span class="icon">★</span>
+                                                <span class="icon">★</span>
+                                                <span class="icon">★</span>
+                                            </label>
+                                        </form>
+                                        <a href="#" class="learn_more">Learn More</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-4 col-md-6 col-lg-4">
+                                <div class="single_department">
+                                    <div class="department_thumb">
+                                        <img src="~/Images/shower.jpg" style="width:340px;height:400px;" alt="">
+                                    </div>
+                                    <div class="department_content">
+                                        <h1><a href="#">Shawer</a></h1>
+                                        <p>
+                                            270.00 EGP
+                                        </p>
+                                        <form class="rating">
+                                            <label>
+                                                <input type="radio" name="stars" value="1" />
+                                                <span class="icon">★</span>
+                                            </label>
+                                            <label>
+                                                <input type="radio" name="stars" value="2" />
+                                                <span class="icon">★</span>
+                                                <span class="icon">★</span>
+                                            </label>
+                                            <label>
+                                                <input type="radio" name="stars" value="3" />
+                                                <span class="icon">★</span>
+                                                <span class="icon">★</span>
+                                                <span class="icon">★</span>
+                                            </label>
+                                            <label>
+                                                <input type="radio" name="stars" value="4" />
+                                                <span class="icon">★</span>
+                                                <span class="icon">★</span>
+                                                <span class="icon">★</span>
+                                                <span class="icon">★</span>
+                                            </label>
+                                            <label>
+                                                <input type="radio" name="stars" value="5" />
+                                                <span class="icon">★</span>
+                                                <span class="icon">★</span>
+                                                <span class="icon">★</span>
+                                                <span class="icon">★</span>
+                                                <span class="icon">★</span>
+                                            </label>
+                                        </form>
+                                        <a href="#" class="learn_more">Learn More</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div> <br /><br />
+                <a href="#" class="btn">View All >> </a> <br /> <br />
+
+                <div class="conta">
+                    <div class="column">
+                        <div class="card">
+                            <div class="services">
+                                <h1> <span class="BlueText">BEST SELLERS </span> <br> <br /> <span class="head">Featured products </span></h1>
+                                <div class="our_department_area">
+                                    <div class="container7">
+                                        <div class="row">
+                                            <div class="col-xl-4 col-md-6 col-lg-4">
+                                                <div class="single_department">
+                                                    <div class="department_thumb">
+                                                        <img src="~/Images/vitamen.jpg" style="width:340px;height:400px;" alt="">
+                                                    </div>
+                                                    <div class="department_content">
+                                                        <h1><a href="#">Vitamen A</a></h1>
+                                                        <p>
+                                                            95.00 EGP
+                                                        </p>
+                                                        <form class="rating">
+                                                            <label>
+                                                                <input type="radio" name="stars" value="1" />
+                                                                <span class="icon">★</span>
+                                                            </label>
+                                                            <label>
+                                                                <input type="radio" name="stars" value="2" />
+                                                                <span class="icon">★</span>
+                                                                <span class="icon">★</span>
+                                                            </label>
+                                                            <label>
+                                                                <input type="radio" name="stars" value="3" />
+                                                                <span class="icon">★</span>
+                                                                <span class="icon">★</span>
+                                                                <span class="icon">★</span>
+                                                            </label>
+                                                            <label>
+                                                                <input type="radio" name="stars" value="4" />
+                                                                <span class="icon">★</span>
+                                                                <span class="icon">★</span>
+                                                                <span class="icon">★</span>
+                                                                <span class="icon">★</span>
+                                                            </label>
+                                                            <label>
+                                                                <input type="radio" name="stars" value="5" />
+                                                                <span class="icon">★</span>
+                                                                <span class="icon">★</span>
+                                                                <span class="icon">★</span>
+                                                                <span class="icon">★</span>
+                                                                <span class="icon">★</span>
+                                                            </label>
+                                                        </form>
+                                                        <a href="#" class="learn_more">Learn More</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-xl-4 col-md-6 col-lg-4">
+                                                <div class="single_department">
+                                                    <div class="department_thumb">
+                                                        <img src="~/Images/cold-bill.jpg" style="width:340px;height:400px;" alt="">
+                                                    </div>
+                                                    <div class="department_content">
+                                                        <h1><a href="#">Cold-Bill</a></h1>
+                                                        <p>
+                                                            45.00 EGP
+                                                        </p>
+                                                        <form class="rating">
+                                                            <label>
+                                                                <input type="radio" name="stars" value="1" />
+                                                                <span class="icon">★</span>
+                                                            </label>
+                                                            <label>
+                                                                <input type="radio" name="stars" value="2" />
+                                                                <span class="icon">★</span>
+                                                                <span class="icon">★</span>
+                                                            </label>
+                                                            <label>
+                                                                <input type="radio" name="stars" value="3" />
+                                                                <span class="icon">★</span>
+                                                                <span class="icon">★</span>
+                                                                <span class="icon">★</span>
+                                                            </label>
+                                                            <label>
+                                                                <input type="radio" name="stars" value="4" />
+                                                                <span class="icon">★</span>
+                                                                <span class="icon">★</span>
+                                                                <span class="icon">★</span>
+                                                                <span class="icon">★</span>
+                                                            </label>
+                                                            <label>
+                                                                <input type="radio" name="stars" value="5" />
+                                                                <span class="icon">★</span>
+                                                                <span class="icon">★</span>
+                                                                <span class="icon">★</span>
+                                                                <span class="icon">★</span>
+                                                                <span class="icon">★</span>
+                                                            </label>
+                                                        </form>
+                                                        <a href="#" class="learn_more">Learn More</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-xl-4 col-md-6 col-lg-4">
+                                                <div class="single_department">
+                                                    <div class="department_thumb">
+                                                        <img src="~/Images/aspirin.jpg" style="width:340px;height:400px;" alt="">
+                                                    </div>
+                                                    <div class="department_content">
+                                                        <h1><a href="#">Aspirin</a></h1>
+                                                        <p>
+                                                            27.00 EGP
+                                                        </p>
+                                                        <form class="rating">
+                                                            <label>
+                                                                <input type="radio" name="stars" value="1" />
+                                                                <span class="icon">★</span>
+                                                            </label>
+                                                            <label>
+                                                                <input type="radio" name="stars" value="2" />
+                                                                <span class="icon">★</span>
+                                                                <span class="icon">★</span>
+                                                            </label>
+                                                            <label>
+                                                                <input type="radio" name="stars" value="3" />
+                                                                <span class="icon">★</span>
+                                                                <span class="icon">★</span>
+                                                                <span class="icon">★</span>
+                                                            </label>
+                                                            <label>
+                                                                <input type="radio" name="stars" value="4" />
+                                                                <span class="icon">★</span>
+                                                                <span class="icon">★</span>
+                                                                <span class="icon">★</span>
+                                                                <span class="icon">★</span>
+                                                            </label>
+                                                            <label>
+                                                                <input type="radio" name="stars" value="5" />
+                                                                <span class="icon">★</span>
+                                                                <span class="icon">★</span>
+                                                                <span class="icon">★</span>
+                                                                <span class="icon">★</span>
+                                                                <span class="icon">★</span>
+                                                            </label>
+                                                        </form>
+                                                        <a href="#" class="learn_more">Learn More</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div> <br /><br />
+                                <a href="https://localhost:44344/Home/FeaturedProducts" class="btn" style="margin-left: 800px;"> <span class="viewall">View All </span> </a>
+                            </div>
+                        </div>
+                    </div>
+                    <br /><br /><br /><br /><br />
+                    <div class="order">
+                        <div class="orderback">
+                            <div class="feat">
+                                <p>ORDER YOUR</p>
+                                <p style="font-size: 50px;font-stretch: extra-expanded;font-weight:bold;">PRESCRIPTION</p>
+                                <p>Now You Can Upload Your Prescription in Here and It Will <br /> be translated Item In Your Card. </p>
+                                <br />
+                                <a href="" class="but"> ORDER NOW </a>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="card">
+                            <div class="services">
+                                <h1> <span class="BlueText">READ OUR </span> <br> <br /> <span class="head"> Recent Articles </span> </h1>
+                                <div class="our_department_area">
+                                    <div class="container7">
+                                        <div class="row">
+                                            <div class="col-xl-4 col-md-6 col-lg-4">
+                                                <div class="single_department">
+                                                    <div class="department_thumb">
+                                                        <img src="~/Images/shoveling.jpg" style="width:340px;height:400px;" alt="">
+                                                    </div>
+                                                    <div class="department_content">
+                                                        <h1><a href="https://localhost:44344/Home/Atrical3">How Does a Person Freeze To Death?</a></h1>
+                                                        <p>
+
+                                                        </p>
+                                                        <form class="rating1">
+                                                            <label>
+                                                                <input type="radio" name="stars" value="1" />
+                                                                <span class="icon1">♥</span>
+                                                            </label>
+                                                        </form>
+                                                        <a href="#" class="learn_more" style="color:#3498db;"> 05 Mar 2020</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-xl-4 col-md-6 col-lg-4">
+                                                <div class="single_department">
+                                                    <div class="department_thumb">
+                                                        <img src="~/Images/people.jpg" style="width:340px;height:400px;" alt="">
+                                                    </div>
+                                                    <div class="department_content">
+                                                        <h1><a href="https://localhost:44344/Home/Artical1"> Brain Woman Is 3 Y.Younger Than Man </a></h1>
+                                                        <p>
+
+                                                        </p>
+                                                        <form class="rating1">
+                                                            <label>
+                                                                <input type="radio" name="stars" value="1" />
+                                                                <span class="icon1">♥</span>
+                                                            </label>
+
+                                                        </form>
+                                                        <a href="#" class="learn_more" style="color:#3498db;"> 05 Mar 2020</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-xl-4 col-md-6 col-lg-4">
+                                                <div class="single_department">
+                                                    <div class="department_thumb">
+                                                        <img src="~/Images/hands.jpg" style="width:340px;height:400px;" alt="">
+                                                    </div>
+                                                    <div class="department_content">
+                                                        <h1><a href="https://localhost:44344/home/Artical2">Climate Change May Hurt Babies Hearts </a></h1>
+                                                        <p>
+
+                                                        </p>
+                                                        <form class="rating1">
+                                                            <label>
+                                                                <input type="radio" name="stars" value="1" />
+                                                                <span class="icon1">♥</span>
+                                                            </label>
+
+                                                        </form>
+                                                        <a href="#" class="learn_more" style="color:#3498db;"> 05 Mar 2020</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div> <br /><br />
+                                <a href="https://localhost:44344/Home/Artical" class="btn" style="margin-left: 820px;">View All >> </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+</body>
+</html>
+
+
+
+
+
+
