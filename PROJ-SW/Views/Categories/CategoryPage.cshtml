@@ -1,0 +1,36 @@
+﻿@model IEnumerable<PROJ_SW.Model.Category>
+
+@{
+    ViewBag.Title = "CategoryPage";
+}
+
+<style>
+    .thumbnail:hover {
+        box-shadow: 0 5px 10px rgba(0,0,0,0.5);
+        transform: scale(0.95);
+        transition:0.5s;
+    }
+</style>
+
+<br />
+<br />
+
+<h2 style="color: #3498db; font-weight: lighter; border-bottom: 4px solid #3498db; text-transform: uppercase; font-size: 20px; font-weight: bold; text-align: center; " >our Categories</h2>
+<br />
+<div class="row">
+
+    @foreach (var item in Model)
+    {
+
+    <div class="col-xs-6 col-md-3">
+        <a href="#" class="thumbnail">
+            <img src="@Url.Content(item.Cate_Image)" alt="..." width="171" height="180">
+
+        </a>
+        <h1 style="text-align:center; font-size:x-large; font-weight:500; font-stretch:extra-expanded"> @item.cate_name  </h1>
+    </div>
+       
+
+}
+
+</div >

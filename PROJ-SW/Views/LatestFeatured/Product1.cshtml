@@ -1,8 +1,9 @@
 ﻿
 @{
-    ViewBag.Title = "Med1";
+    ViewBag.Title = "Product1";
 }
-    <html>
+
+<html>
 <head>
     <style>
 
@@ -11,7 +12,7 @@
             height: 60px;
             line-height: 50px;
             font-size: 25px;
-            margin-top:80px;
+            margin-top: 80px;
         }
 
             .rating label {
@@ -59,14 +60,11 @@
                     float: left;
                     color: transparent;
                     font-size: 25px;
-                    margin-top:-30px;
-                 
-                    
+                    margin-top: -30px;
                 }
 
                 .rating label:last-child .icon {
                     color: gray;
-                   
                 }
 
             .rating:not(:hover) label input:checked ~ .icon,
@@ -102,18 +100,18 @@
                 opacity: 1
             }
 
-       
 
-            .info{
-                width: 400px;
-                height: 600px;
-                background-color: white;
-                margin-left:500px;
-                margin-top: 50px;
 
-            }
-            .info.p1{
-                margin-bottom:20px;
+        .info {
+            width: 400px;
+            height: 600px;
+            background-color: white;
+            margin-left: 500px;
+            margin-top: 50px;
+        }
+
+            .info.p1 {
+                margin-bottom: 20px;
             }
     </style>
     <script>
@@ -121,7 +119,7 @@
             console.log('New star rating: ' + this.value);
         });
     </script>
-    </head>
+</head>
 <body>
     <ol class="breadcrumb" style="margin-top:60px;">
         <li class="breadcrumb-item"><a href="#" style="font-size: x-large">Home</a></li>
@@ -132,7 +130,7 @@
         <div class="col-md-4" style=" width: 500px; height: 550px; position: center; border-radius: 5px; background-color: white;
                                         border-style:solid; border-color: lightgray;  margin-top: 30px; margin-left: -30px;">
 
-            <img src="../Images/bioblas.jpg" style="width: 470px; height:546px; margin-top:0px;" />
+            <img src="~/Images/bioblas.jpg" style="width: 470px; height:546px; margin-top:0px;" />
         </div>
 
         <div class="info">
@@ -229,3 +227,5 @@
 
 </body>
 </html>
+
+

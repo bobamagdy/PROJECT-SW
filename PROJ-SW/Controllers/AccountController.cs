@@ -33,7 +33,7 @@ namespace PROJ_SW.Controllers
                 }
                 else if (result[0].Role_Id == 2)
                 {
-                    return RedirectToAction("https://localhost:44344/Home/index");
+                    return RedirectToAction("../User/Index");
                 }
             }
             else

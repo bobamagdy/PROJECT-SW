@@ -3,7 +3,6 @@
     ViewBag.Title = "FProduct4";
 }
 
-
 <html>
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -120,9 +119,10 @@
         .image {
             display: none;
         }
+
         img:hover {
-  opacity: 0.5;
-}
+            opacity: 0.5;
+        }
     </style>
     <script>
         $(':radio').change(function () {
@@ -134,7 +134,7 @@
 <body>
     <ol class="breadcrumb" style="margin-top:60px;">
         <li class="breadcrumb-item"><a href="#" style="font-size: x-large">Home</a></li>
-        <li class="breadcrumb-item"><a href="https://localhost:44344/LatestFeatured" style="font-size: large">Featured Products</a></li>
+        <li class="breadcrumb-item"><a href="https://localhost:44344/LatestFeatured/FeaturedProducts" style="font-size: large">Featured Products</a></li>
         <li class="breadcrumb-item active" style="font-size: medium">Burinex  </li>
     </ol>
     <div class="row">
@@ -148,8 +148,8 @@
         margin-top: 30px;
         margin-left: -30px;">
 
-            <img class="image" src="../Images/Burinex.png" style="width: 470px; height:546px; margin-top:0px;" />
-            <img class="image" src="../Images/Burinex2.png" style="width: 470px; height:546px; margin-top:0px;" />
+            <img class="image" src="~/Images/Burinex.png" style="width: 470px; height:546px; margin-top:0px;" />
+            <img class="image" src="~/Images/Burinex2.png" style="width: 470px; height:546px; margin-top:0px;" />
 
             <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
             <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button>
@@ -243,10 +243,5 @@
 
 </body>
 </html>
-
-
-
-
-
 
 

@@ -1,0 +1,53 @@
+﻿@model IEnumerable<PROJ_SW.Model.Category>
+
+@{
+    ViewBag.Title = "Index";
+}
+<br />
+<br />
+
+<h2 style="text-align:center; font-size:xx-large; font-weight:500">Category</h2>
+
+<p>
+    <a href="@Url.Action("Create","Categories")" class="btn btn-primary">
+        <span class="glyphicon glyphicon-plus"></span>
+        Create
+    </a>
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.cate_name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Cate_Image)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.cate_name)
+            </td>
+            <td>
+
+                <img src="@Url.Content(item.Cate_Image)" width="171" height="180" />
+            </td>
+            <td>
+                @*@Html.ActionLink("Edit", "Edit", new { id=item.cate_id } , new { @class="btn btn-success" }) |*@
+                <a href="@Url.Action("Edit","Categories", new { id= item.cate_id} )" class="btn btn-success">
+                    <span class="glyphicon glyphicon-pencil"></span>
+                    Edit
+                </a>
+
+                <a href="@Url.Action("Delete","Categories", new { id= item.cate_id} )" class="btn btn-danger">
+                    <span class="glyphicon glyphicon-remove"></span>
+                    Delete
+                </a>
+            </td>
+        </tr>
+    }
+
+</table>

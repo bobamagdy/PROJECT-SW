@@ -1,0 +1,215 @@
+﻿body {
+    font-family: sans-serif;
+    background-color: white;
+}
+
+.all {
+    padding: 20px;
+    background-color: white;
+    box-sizing: border-box;
+    border-radius: 4px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+    display: flex;
+    margin-top: 20px;
+}
+
+    .all:hover {
+        box-shadow: 15px 30px 60px rgba(0,0,0,0.6);
+        transition: 0.6s;
+    }
+
+.imgbox {
+    height: 400px;
+    width: 400px;
+    flex: 0 0 400px;
+}
+
+.all .content1 .imgbox img {
+    max-width: 100%;
+}
+
+.all .content2 {
+    padding-left: 20px;
+}
+
+.services {
+    text-align: center;
+}
+
+    .services h1 {
+        display: inline-block;
+        text-transform: uppercase;
+        border-bottom: 4px solid #3498db;
+        font-size: 20px;
+        padding-bottom: 10px;
+        margin-top: 40px;
+        font-weight: bold;
+    }
+
+.BlueText {
+    color: #3498db;
+    font-weight: lighter;
+    font-size: 20px;
+}
+
+.topicname {
+    color: #3498db;
+    font-weight: bold;
+    font-size: 40px;
+}
+
+.paragraph {
+    text-align: justify;
+}
+
+.rating {
+    display: inline-block;
+    position: relative;
+    height: 50px;
+    line-height: 50px;
+    font-size: 50px;
+}
+
+    .rating label {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        cursor: pointer;
+    }
+
+        .rating label:last-child {
+            position: static;
+        }
+
+        .rating label:nth-child(1) {
+            z-index: 5;
+        }
+
+        .rating label:nth-child(2) {
+            z-index: 4;
+        }
+
+        .rating label:nth-child(3) {
+            z-index: 3;
+        }
+
+        .rating label:nth-child(4) {
+            z-index: 2;
+        }
+
+        .rating label:nth-child(5) {
+            z-index: 1;
+        }
+
+        .rating label input {
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+        }
+
+        .rating label .icon {
+            float: left;
+            color: transparent;
+            font-size: 25px
+        }
+
+        .rating label:last-child .icon {
+            color: #000;
+        }
+
+    .rating:not(:hover) label input:checked ~ .icon,
+    .rating:hover label:hover input ~ .icon {
+        color: #09f;
+    }
+
+    .rating label input:focus:not(:checked) ~ .icon:last-child {
+        color: #000;
+        text-shadow: 0 0 5px #09f;
+    }
+
+.rating1 {
+    display: inline-block;
+    position: relative;
+    height: 50px;
+    line-height: 50px;
+    font-size: 50px;
+}
+
+    .rating1 label {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        cursor: pointer;
+    }
+
+        .rating1 label:last-child {
+            position: static;
+        }
+
+        .rating1 label:nth-child(1) {
+            z-index: 5;
+        }
+
+        .rating1 label:nth-child(2) {
+            z-index: 4;
+        }
+
+        .rating1 label:nth-child(3) {
+            z-index: 3;
+        }
+
+        .rating1 label:nth-child(4) {
+            z-index: 2;
+        }
+
+        .rating1 label:nth-child(5) {
+            z-index: 1;
+        }
+
+        .rating1 label input {
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+        }
+
+        .rating1 label .icon1 {
+            float: left;
+            color: transparent;
+            font-size: 50px
+        }
+
+        .rating1 label:last-child .icon1 {
+            color: lightslategrey;
+            margin-right: 100px;
+        }
+
+    .rating1:not(:hover) label input:checked ~ .icon1,
+    .rating1:hover label:hover input ~ .icon1 {
+        color: red;
+    }
+
+    .rating1 label input:focus:not(:checked) ~ .icon1:last-child {
+        color: #000;
+        text-shadow: 0 0 5px #09f;
+    }
+
+.but {
+    border: 2px solid white;
+    padding: 10px 30px;
+    color: white;
+    text-decoration: none;
+    background-color: #3498db;
+    font-family: "roboto", sans-serif;
+    font-weight: bold;
+}
+
+    .but:hover {
+        color: #3498db;
+        background-color: white;
+        transition: 0.5s;
+        font-weight: bold;
+    }
