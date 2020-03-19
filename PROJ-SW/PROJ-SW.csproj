@@ -134,60 +134,59 @@
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\InventoriesController.cs" />
-    <Compile Include="Controllers\LatestFeaturedController.cs" />
     <Compile Include="Controllers\ProductsController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Model\Cart.cs">
-      <DependentUpon>databaseProjectModel.tt</DependentUpon>
+      <DependentUpon>databaseProModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\Cart_Product.cs">
-      <DependentUpon>databaseProjectModel.tt</DependentUpon>
+      <DependentUpon>databaseProModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\Category.cs">
-      <DependentUpon>databaseProjectModel.tt</DependentUpon>
+      <DependentUpon>databaseProModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\Credit.cs">
-      <DependentUpon>databaseProjectModel.tt</DependentUpon>
+      <DependentUpon>databaseProModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\CustomizeInventory.cs" />
     <Compile Include="Model\CustomizeProduct.cs" />
-    <Compile Include="Model\databaseProjectModel.Context.cs">
+    <Compile Include="Model\databaseProModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>databaseProjectModel.Context.tt</DependentUpon>
+      <DependentUpon>databaseProModel.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Model\databaseProjectModel.cs">
+    <Compile Include="Model\databaseProModel.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>databaseProjectModel.tt</DependentUpon>
+      <DependentUpon>databaseProModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Model\databaseProjectModel.Designer.cs">
+    <Compile Include="Model\databaseProModel.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>databaseProjectModel.edmx</DependentUpon>
+      <DependentUpon>databaseProModel.edmx</DependentUpon>
     </Compile>
     <Compile Include="Model\Inventory.cs">
-      <DependentUpon>databaseProjectModel.tt</DependentUpon>
+      <DependentUpon>databaseProModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\Login.cs">
-      <DependentUpon>databaseProjectModel.tt</DependentUpon>
+      <DependentUpon>databaseProModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\Metadata.cs" />
     <Compile Include="Model\Payment.cs">
-      <DependentUpon>databaseProjectModel.tt</DependentUpon>
+      <DependentUpon>databaseProModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\Product.cs">
-      <DependentUpon>databaseProjectModel.tt</DependentUpon>
+      <DependentUpon>databaseProModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\Role.cs">
-      <DependentUpon>databaseProjectModel.tt</DependentUpon>
+      <DependentUpon>databaseProModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\SiteRole.cs" />
     <Compile Include="Model\User.cs">
-      <DependentUpon>databaseProjectModel.tt</DependentUpon>
+      <DependentUpon>databaseProModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -202,111 +201,30 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\bootstrap_noura.css" />
     <Content Include="Content\footer.css" />
-    <Content Include="Content\style.css" />
-    <Content Include="Content\UserIndex.css" />
+    <Content Include="Content\index.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
-    <Content Include="Images\1.png" />
-    <Content Include="Images\2.png" />
-    <Content Include="Images\Aller.png" />
-    <Content Include="Images\Aller2.png" />
-    <Content Include="Images\aspirin.jpg" />
-    <Content Include="Images\avent.jpg" />
-    <Content Include="Images\baby.jpg" />
-    <Content Include="Images\Bamb.png" />
-    <Content Include="Images\Bamb2.png" />
-    <Content Include="Images\beauty.jpg" />
-    <Content Include="Images\beesline.jpg" />
-    <Content Include="Images\bg.png" />
-    <Content Include="Images\bioblas.jpg" />
-    <Content Include="Images\Broncho.png" />
-    <Content Include="Images\Broncho2.png" />
-    <Content Include="Images\Burinex.png" />
-    <Content Include="Images\Burinex2.png" />
-    <Content Include="Images\capsule.jpg" />
-    <Content Include="Images\cleo.jpg" />
-    <Content Include="Images\cold-bill.jpg" />
-    <Content Include="Images\Color Cop v5.4.5  Arabic.exe" />
-    <Content Include="Images\cosmoapp.jpg" />
-    <Content Include="Images\creem.jpg" />
-    <Content Include="Images\delivered.png" />
-    <Content Include="Images\Delta.png" />
-    <Content Include="Images\Delta2.png" />
-    <Content Include="Images\derma.jpg" />
-    <Content Include="Images\fb.png" />
-    <Content Include="Images\fish-oil-1915423_1920.jpg" />
-    <Content Include="Images\foundation.jpg" />
-    <Content Include="Images\gel.png" />
-    <Content Include="Images\gray.jpg" />
-    <Content Include="Images\green.jpg" />
-    <Content Include="Images\hands.jpg" />
-    <Content Include="Images\hands2.jpg" />
-    <Content Include="Images\health.png" />
-    <Content Include="Images\home1.png" />
-    <Content Include="Images\home10.jpg" />
-    <Content Include="Images\home11.jpg" />
-    <Content Include="Images\home12.jpg" />
-    <Content Include="Images\home13.jpg" />
-    <Content Include="Images\home14.jpg" />
-    <Content Include="Images\home15.jpg" />
-    <Content Include="Images\home16.jpg" />
-    <Content Include="Images\home2.jpg" />
-    <Content Include="Images\home3.jpg" />
-    <Content Include="Images\home4.jpg" />
-    <Content Include="Images\home5.jpg" />
-    <Content Include="Images\home6.jpg" />
-    <Content Include="Images\home7.jpg" />
-    <Content Include="Images\home8.jpg" />
-    <Content Include="Images\home9.jpg" />
-    <Content Include="Images\hypertension.jpg" />
-    <Content Include="Images\lapland.jpg" />
     <Content Include="Images\logo.jpg" />
-    <Content Include="Images\medicine.jpg" />
-    <Content Include="Images\orange.jpg" />
-    <Content Include="Images\order1.jpg" />
-    <Content Include="Images\order2.jpg" />
-    <Content Include="Images\people.jpg" />
-    <Content Include="Images\pharmacy.png" />
-    <Content Include="Images\pills.jpg" />
-    <Content Include="Images\pink.jpg" />
-    <Content Include="Images\Qatra.png" />
-    <Content Include="Images\Qatra2.png" />
-    <Content Include="Images\red.jpg" />
-    <Content Include="Images\shampo.jpg" />
-    <Content Include="Images\shoveling.jpg" />
-    <Content Include="Images\shower.jpg" />
-    <Content Include="Images\Silver.jpg" />
-    <Content Include="Images\supply.jpg" />
-    <Content Include="Images\teeth.jpg" />
-    <Content Include="Images\thermometer.jpg" />
-    <Content Include="Images\treatment.png" />
-    <Content Include="Images\tw.png" />
-    <Content Include="Images\v1.jpg" />
-    <Content Include="Images\Victoria-Secret.jpg" />
-    <Content Include="Images\vitamen.jpg" />
-    <Content Include="Images\vitamins.jpg" />
-    <Content Include="Images\woman.jpg" />
-    <Content Include="Model\databaseProjectModel.Context.tt">
+    <Content Include="Model\databaseProModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>databaseProjectModel.edmx</DependentUpon>
-      <LastGenOutput>databaseProjectModel.Context.cs</LastGenOutput>
+      <DependentUpon>databaseProModel.edmx</DependentUpon>
+      <LastGenOutput>databaseProModel.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Model\databaseProjectModel.tt">
+    <Content Include="Model\databaseProModel.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>databaseProjectModel.edmx</DependentUpon>
-      <LastGenOutput>databaseProjectModel.cs</LastGenOutput>
+      <DependentUpon>databaseProModel.edmx</DependentUpon>
+      <LastGenOutput>databaseProModel.cs</LastGenOutput>
     </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <Content Include="fonts\Oswald-Regular.ttf" />
-    <EntityDeploy Include="Model\databaseProjectModel.edmx">
+    <EntityDeploy Include="Model\databaseProModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>databaseProjectModel.Designer.cs</LastGenOutput>
+      <LastGenOutput>databaseProModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="Model\databaseProjectModel.edmx.diagram">
-      <DependentUpon>databaseProjectModel.edmx</DependentUpon>
+    <Content Include="Model\databaseProModel.edmx.diagram">
+      <DependentUpon>databaseProModel.edmx</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
@@ -330,9 +248,6 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Products\Create.cshtml" />
     <Content Include="Views\Products\Delete.cshtml" />
     <Content Include="Views\Products\Details.cshtml" />
@@ -343,11 +258,9 @@
     <Content Include="Views\Inventories\Details.cshtml" />
     <Content Include="Views\Inventories\Edit.cshtml" />
     <Content Include="Views\Inventories\Index.cshtml" />
-    <Content Include="Views\Shared\_LayoutUser.cshtml" />
-    <Content Include="Views\Shared\_LayoutAdmin.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
     <Content Include="Views\Admin\Index.cshtml" />
     <Content Include="Views\User\Index.cshtml" />
-    <Content Include="Views\Account\Login.cshtml" />
     <Content Include="Views\LatestFeatured\FeaturedProducts.cshtml" />
     <Content Include="Views\LatestFeatured\FProduct1.cshtml" />
     <Content Include="Views\LatestFeatured\FProduct2.cshtml" />
@@ -362,6 +275,9 @@
     <Content Include="Views\LatestFeatured\Product4.cshtml" />
     <Content Include="Views\LatestFeatured\Product5.cshtml" />
     <Content Include="Views\LatestFeatured\Product6.cshtml" />
+    <Content Include="Views\Shared\_LayoutAdmin.cshtml" />
+    <Content Include="Views\Shared\_LayoutUser.cshtml" />
+    <Content Include="Views\Home\index.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

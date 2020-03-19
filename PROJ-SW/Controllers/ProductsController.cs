@@ -12,7 +12,7 @@ namespace PROJ_SW.Controllers
 {
     public class ProductsController : Controller
     {
-        private databaseProEntities db = new databaseProEntities();
+        private databaseProEntities3 db = new databaseProEntities3();
        
         
         // GET: Products
