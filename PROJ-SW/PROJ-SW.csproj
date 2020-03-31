@@ -200,6 +200,7 @@
       <DependentUpon>databasePro.mdf</DependentUpon>
     </Content>
     <Content Include="Content\about.css" />
+    <Content Include="Content\AdminIndex.css" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
