@@ -10,6 +10,7 @@
     <link href="~/Content/UserIndex.css" type="text/css" rel="stylesheet" />
     <link href="~/Content/footer.css" type="text/css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://use.fontawesome.com/releases/v5.13.0/css/all.css" type="text/css" rel="stylesheet" />
 
     <style>
         .wrapper {
@@ -482,9 +483,14 @@
                     </div>
                     <br /><br /><br /><br />
 
-              
-        </div>
-    </div>
+
+                </div>
+            </div>
+
+
+
+
+
             <div class="container body-content">
                 @RenderBody()
                 <hr />
@@ -534,17 +540,17 @@
                             We offer training and skill building courses across Technology, Design, Management, Science and Humanities.
                         </p>
                         <div class="footer-icons">
-                            <a href="#"><i class="fa fa-facebook"></i></a>
-                            <a href="#"><i class="fa fa-instagram"></i></a>
-                            <a href="#"><i class="fa fa-linkedin"></i></a>
-                            <a href="#"><i class="fa fa-youtube"></i></a>
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-youtube"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
                         </div>
                     </div>
                 </footer>
-            </div>
+                </div>
 
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
-    @RenderSection("scripts", required: false)
+                @Scripts.Render("~/bundles/jquery")
+                @Scripts.Render("~/bundles/bootstrap")
+                @RenderSection("scripts", required: false)
 </body>
 </html>
