@@ -13,6 +13,7 @@ namespace PROJ_SW.Controllers
     public class CategoriesController : Controller
     {
         private databaseProEntities db = new databaseProEntities();
+        private bool id;
 
         // GET: Categories
         public ActionResult Index()
@@ -129,5 +130,11 @@ namespace PROJ_SW.Controllers
             var recs = db.Categories.ToList();
             return View(recs);
         }
+        public ActionResult ViewProduct(int? id)
+        {
+            var rrecss = db.Products.Where(m => m.Cate_Id == id).ToList();
+            return View(rrecss);
+        }
+
     }
 }

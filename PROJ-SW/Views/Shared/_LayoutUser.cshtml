@@ -8,6 +8,9 @@
     @Scripts.Render("~/bundles/modernizr")
     <title> Home </title>
     <link href="~/Content/UserIndex.css" type="text/css" rel="stylesheet" />
+    <link href="~/Content/footer.css" type="text/css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
     <style>
         .wrapper {
             position: absolute;
@@ -31,15 +34,15 @@
                 font-weight: bold;
                 color: #3498db;
             }
-    .searchbtn {
-    margin-top: 0px;
-    display: flex;
-    top: 0px;
-    }
 
-    .searchbtn .fas {
-    }
- 
+        .searchbtn {
+            margin-top: 0px;
+            display: flex;
+            top: 0px;
+        }
+
+            .searchbtn .fas {
+            }
     </style>
 </head>
 <body>
@@ -90,7 +93,7 @@
                 <input type="radio" name="r" id="r3" />
                 <input type="radio" name="r" id="r4" />
                 <input type="radio" name="r" id="r5" />
-                <div class="slide s1">
+                <div class="slide s1" style="margin-top:50px">
                     <img src="~/Images/home1.png" style="height:620px; width:1140px;">
                 </div>
                 <div class="slide">
@@ -479,92 +482,66 @@
                     </div>
                     <br /><br /><br /><br />
 
-                    <div class="column">
-                        <div class="card">
-                            <div class="services">
-                                <h1> <span class="BlueText">READ OUR </span> <br> <br /> <span class="head"> Recent Articles </span> </h1>
-                                <div class="our_department_area">
-                                    <div class="container7">
-                                        <div class="row">
-                                            <div class="col-xl-4 col-md-6 col-lg-4">
-                                                <div class="single_department">
-                                                    <div class="department_thumb">
-                                                        <img src="~/Images/shoveling.jpg" style="width:340px;height:400px;" alt="">
-                                                    </div>
-                                                    <div class="department_content">
-                                                        <h1><a href="https://localhost:44350/Home/Atrical3">How Does a Person Freeze To Death?</a></h1>
-                                                        <p>
-
-                                                        </p>
-                                                        <form class="rating1">
-                                                            <label>
-                                                                <input type="radio" name="stars" value="1" />
-                                                                <span class="icon1">♥</span>
-                                                            </label>
-                                                        </form>
-                                                        <a href="#" class="learn_more" style="color:#3498db;"> 05 Mar 2020</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-xl-4 col-md-6 col-lg-4">
-                                                <div class="single_department">
-                                                    <div class="department_thumb">
-                                                        <img src="~/Images/people.jpg" style="width:340px;height:400px;" alt="">
-                                                    </div>
-                                                    <div class="department_content">
-                                                        <h1><a href="https://localhost:44350/Home/Artical1"> Brain Woman Is 3 Y.Younger Than Man </a></h1>
-                                                        <p>
-
-                                                        </p>
-                                                        <form class="rating1">
-                                                            <label>
-                                                                <input type="radio" name="stars" value="1" />
-                                                                <span class="icon1">♥</span>
-                                                            </label>
-                                                        </form>
-                                                        <a href="#" class="learn_more" style="color:#3498db;"> 05 Mar 2020</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-xl-4 col-md-6 col-lg-4">
-                                                <div class="single_department">
-                                                    <div class="department_thumb">
-                                                        <img src="~/Images/hands.jpg" style="width:340px;height:400px;" alt="">
-                                                    </div>
-                                                    <div class="department_content">
-                                                        <h1><a href="https://localhost:44350/home/Artical2">Climate Change May Hurt Babies Hearts </a></h1>
-                                                        <p>
-
-                                                        </p>
-                                                        <form class="rating1">
-                                                            <label>
-                                                                <input type="radio" name="stars" value="1" />
-                                                                <span class="icon1">♥</span>
-                                                            </label>
-                                                        </form>
-                                                        <a href="#" class="learn_more" style="color:#3498db;"> 05 Mar 2020</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                </div> <br /><br />
-                                <a href="https://localhost:44350/Home/Artical" class="btn" style="margin-left: 1000px;">View All >> </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+              
         </div>
     </div>
-    <div class="container body-content">
-        @RenderBody()
-        <footer class="footer-distributed">
+            <div class="container body-content">
+                @RenderBody()
+                <hr />
+                <footer class="footer-distributed">
 
-            
-        </footer>
-    </div>
+                    <div class="footer-left">
+                        <img src="~/Images/pharmacy.png">
+                        <h3>Lif<span>eS</span>erve<span>Phar</span>macy</h3>
+
+                        <p class="footer-links">
+                            <a href="#">Home</a>
+                            |
+                            <a href="#">Blog</a>
+                            |
+                            <a href="#">About</a>
+                            |
+                            <a href="#">Contact</a>
+                        </p>
+
+                        <p class="footer-company-name">© 2020 Medical Serviving Patients .</p>
+                    </div>
+
+                    <div class="footer-center">
+                        <div>
+                            <i class="fa fa-map-marker"></i>
+                            <p>
+                                <span>
+                                    309 - Rupa Solitaire,
+                                    Bldg. No. A - 1, Sector - 1
+                                </span>
+                                Mahape, Navi Mumbai - 400710
+                            </p>
+                        </div>
+
+                        <div>
+                            <i class="fa fa-phone"></i>
+                            <p>+91 22-27782183</p>
+                        </div>
+                        <div>
+                            <i class="fa fa-envelope"></i>
+                            <p><a href="mailto:support@eduonix.com">support@eduonix.com</a></p>
+                        </div>
+                    </div>
+                    <div class="footer-right">
+                        <p class="footer-company-about">
+                            <span>About the Pharmacy</span>
+                            We offer training and skill building courses across Technology, Design, Management, Science and Humanities.
+                        </p>
+                        <div class="footer-icons">
+                            <a href="#"><i class="fa fa-facebook"></i></a>
+                            <a href="#"><i class="fa fa-instagram"></i></a>
+                            <a href="#"><i class="fa fa-linkedin"></i></a>
+                            <a href="#"><i class="fa fa-youtube"></i></a>
+                        </div>
+                    </div>
+                </footer>
+            </div>
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")

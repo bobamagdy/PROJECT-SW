@@ -141,7 +141,11 @@ namespace PROJ_SW.Controllers
              db.SaveChanges();
             return RedirectToAction("Index");
         }
-
+        public ActionResult ProductPage()
+        {
+            var recs = db.Products.ToList();
+            return View(recs);
+        }
         protected override void Dispose(bool disposing)
         {
             if (disposing)

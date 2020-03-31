@@ -137,6 +137,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\InventoriesController.cs" />
     <Compile Include="Controllers\LatestFeaturedController.cs" />
+    <Compile Include="Controllers\MedicinesController.cs" />
     <Compile Include="Controllers\ProductsController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
@@ -208,6 +209,7 @@
     <Content Include="Content\index.css" />
     <Content Include="Content\style.css" />
     <Content Include="Content\Styles.css" />
+    <Content Include="Content\UserIndex.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -340,6 +342,13 @@
     <Content Include="Views\Artical\Artical1.cshtml" />
     <Content Include="Views\Artical\Artical2.cshtml" />
     <Content Include="Views\Artical\Atrical3.cshtml" />
+    <Content Include="Views\Categories\ViewProduct.cshtml" />
+    <Content Include="Views\Products\ProductPage.cshtml" />
+    <Content Include="Views\Medicines\Beauty.cshtml" />
+    <Content Include="Views\Medicines\Hair_Care.cshtml" />
+    <Content Include="Views\Medicines\Medication.cshtml" />
+    <Content Include="Views\Medicines\Skin_Care.cshtml" />
+    <Content Include="Views\Medicines\Supplements.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

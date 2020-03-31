@@ -218,7 +218,7 @@ input[name="r"] {
     display: block;
     text-decoration: none;
     margin-top: 10px;
-    
+    margin-left: 875px;
     font-size: 20px;
     font-weight: bold;
     font-weight: 500;
@@ -299,7 +299,7 @@ input[name="r"] {
     .button2:hover {
         box-shadow: 0 5px 10px rgba(0,0,0,0.5);
         transform: scale(0.95);
-        background: #3498db;
+        background: #66AB69;
     }
 
 .button3 {
@@ -342,7 +342,6 @@ input[name="r"] {
     font-family: cursive;
     font-weight: bold;
     font-size: 40px;
-    color: blue;
 }
 
     .catfont1:hover {
@@ -463,7 +462,6 @@ input[name="r"] {
     padding-top: 10px;
     padding-bottom: 90px;
     height: 500px;
-   
     box-shadow: 0 30px 60px rgba(0,0,0,0.5);
 }
 
