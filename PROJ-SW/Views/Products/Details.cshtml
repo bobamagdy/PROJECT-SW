@@ -4,10 +4,9 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
+<h1 style="color:blue;text-align:center;margin-top:50px">Details Of Product</h1>
 
 <div>
-    <h4>Product</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -85,6 +84,12 @@
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.prod_id }) |
-    @Html.ActionLink("Back to List", "Index")
+    <a href="@Url.Action("Edit","Products", new {  id = Model.prod_id })" class="btn btn-success" target="_blank">
+        <span class="glyphicon glyphicon-ok"> Edit</span>
+    </a>
+    <br />
+    <br />    <a href="@Url.Action("Index", "Products")" class="btn btn-primary" style="text-align :center;margin-bottom:10px">
+        <span class="glyphicon glyphicon-backward"></span>
+        Back to List
+    </a>
 </p>

@@ -30,7 +30,7 @@ namespace PROJ_SW.Model
         public Nullable<int> Batch_No { get; set; }
         [Display(Name = "Category Name")]
         public Nullable<int> Cate_Id { get; set; }
-        [Display(Name = "Category Name")]
+        [Display(Name = "Inventory Name")]
         public Nullable<int> inventory_id { get; set; }
     }
 

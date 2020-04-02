@@ -1,12 +1,29 @@
 ﻿@model IEnumerable<PROJ_SW.Model.Category>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Category";
 }
-<br />
-<br />
+    <style>
+        .data {
+            font-family: 'Times New Roman', Times, serif;
+            font-size: larger;
+            font-weight: bolder
+        }
 
-<h2 style="text-align:center; font-size:xx-large; font-weight:500">Category</h2>
+        .header-table {
+            color: darkblue;
+            font-size: x-large;
+            font-family: 'Times New Roman', Times, serif
+        }
+
+        h1 {
+            font-weight: 900;
+            color: midnightblue
+        }
+    </style>
+
+
+<h1 style="margin-top:50px;text-align:center">Category</h1>
 
 <p>
     <a href="@Url.Action("Create","Categories")" class="btn btn-primary">
@@ -15,7 +32,7 @@
     </a>
 </p>
 <table class="table">
-    <tr>
+    <tr class="header-table">
         <th>
             @Html.DisplayNameFor(model => model.cate_name)
         </th>
@@ -27,7 +44,7 @@
 
     @foreach (var item in Model)
     {
-        <tr>
+        <tr class="data">
             <td>
                 @Html.DisplayFor(modelItem => item.cate_name)
             </td>

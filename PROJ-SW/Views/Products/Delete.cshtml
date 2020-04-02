@@ -4,7 +4,7 @@
     ViewBag.Title = "Delete";
 }
 
-<h2>Delete</h2>
+<h1 style="color:blue;text-align:center ;margin-top:50px">Delete Product</h1>
 
 <h3>Are you sure you want to delete this?</h3>
 <div>
@@ -85,12 +85,18 @@
 
     </dl>
 
-    @using (Html.BeginForm()) {
+    @using (Html.BeginForm())
+    {
         @Html.AntiForgeryToken()
 
-        <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-default" /> |
-            @Html.ActionLink("Back to List", "Index")
-        </div>
+<div class="form-actions no-color">
+        <input type="submit" value="Delete" class="btn btn-primary"  style="margin-left:100px"/>
+        <br />
+        <br />
+        <a href="@Url.Action("Index", "Products")" class="btn btn-primary" style="text-align :center;margin-bottom:10px">
+            <span class="glyphicon glyphicon-backward"></span>
+            Back to List
+        </a>
+    </div>
     }
 </div>

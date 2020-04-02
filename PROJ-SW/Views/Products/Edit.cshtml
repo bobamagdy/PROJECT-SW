@@ -4,14 +4,13 @@
     ViewBag.Title = "Edit";
 }
 
-<h2>Edit</h2>
+<h1 style="color:blue;text-align:center;margin-top:50px">Edit Product</h1>
 
-@using (Html.BeginForm("Edit","Products",FormMethod.Post,new {enctype="multipart/form-data"}))
+@using (Html.BeginForm("Edit", "Products", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
     @Html.AntiForgeryToken()
-    
+
     <div class="form-horizontal">
-        <h4>Product</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         @Html.HiddenFor(model => model.prod_id)
@@ -88,14 +87,17 @@
             </div>
         </div>
 
-        <div class="form-group">
+        <div class="form-group" style="margin-left:100px">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Save" class="btn btn-default" />
+                <input type="submit" value="Save" class="btn btn-primary" />
             </div>
         </div>
     </div>
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    <a href="@Url.Action("Index", "Products")" class="btn btn-primary" style="text-align :center;margin-bottom:10px">
+        <span class="glyphicon glyphicon-backward"></span>
+        Back to List
+    </a>
 </div>
