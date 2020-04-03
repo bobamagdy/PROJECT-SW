@@ -154,5 +154,12 @@ namespace PROJ_SW.Controllers
             }
             base.Dispose(disposing);
         }
+        public ActionResult HomePage()
+        {
+
+            var res = db.Products.ToList();
+
+            return View(res);
+        }
     }
 }

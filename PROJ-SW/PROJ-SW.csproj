@@ -350,6 +350,7 @@
     <Content Include="Views\Medicines\Medication.cshtml" />
     <Content Include="Views\Medicines\Skin_Care.cshtml" />
     <Content Include="Views\Medicines\Supplements.cshtml" />
+    <Content Include="Views\Products\HomePage.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
