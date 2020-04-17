@@ -344,7 +344,6 @@
     <Content Include="Views\Artical\Artical2.cshtml" />
     <Content Include="Views\Artical\Atrical3.cshtml" />
     <Content Include="Views\Categories\ViewProduct.cshtml" />
-    <Content Include="Views\Products\ProductPage.cshtml" />
     <Content Include="Views\Medicines\Beauty.cshtml" />
     <Content Include="Views\Medicines\Hair_Care.cshtml" />
     <Content Include="Views\Medicines\Medication.cshtml" />

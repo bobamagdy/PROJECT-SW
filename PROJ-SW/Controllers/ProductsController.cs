@@ -64,7 +64,9 @@ namespace PROJ_SW.Controllers
 
                 db.Products.Add(product);
                 db.SaveChanges();
+                //////////////////////////////////heba////////////////////////////////////////////////////
                 return RedirectToAction("Index");
+                //////////////////////////////////heba////////////////////////////////////////////////////
             }
 
             ViewBag.Cate_Id = new SelectList(db.Categories, "cate_id", "cate_name", product.Cate_Id);
@@ -80,6 +82,7 @@ namespace PROJ_SW.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             Product product = db.Products.Find(id);
+            TempData["imgpath"] = product.Prod_Image;
             if (product == null)
             {
                 return HttpNotFound();
@@ -94,23 +97,39 @@ namespace PROJ_SW.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "prod_id,prod_name,Price,Prod_Image,Description,MGF_Date,Expiry_Date,Batch_No,Cate_Id,inventory_id")] Product product, HttpPostedFileBase Prod_Image)
+        public ActionResult Edit([Bind(Include = "prod_id,prod_name,Price,Prod_Image,Description,MGF_Date,Expiry_Date,Batch_No,Cate_Id,inventory_id")] Product product, HttpPostedFileBase file)
         {
-            if (ModelState.IsValid)
+            String path = "";
+            if (/*file.FileName.Length > 0*/file != null)
             {
-                String path = "";
-                if (Prod_Image.FileName.Length > 0)
-                {
-                    path = "~/Images/" + Path.GetFileName(Prod_Image.FileName);
-                    Prod_Image.SaveAs(Server.MapPath(path));
-                }
-                product.Prod_Image = path;
-
-                db.Products.Add(product);
-                db.Entry(product).State = EntityState.Modified;
-                db.SaveChanges();
-                return RedirectToAction("Index");
+                path = "~/Images/" + Path.GetFileName(file.FileName);
+                file.SaveAs(Server.MapPath(path));
             }
+            else
+            {
+                product.Prod_Image = TempData["imgpath"].ToString();
+                db.Entry(product).State = EntityState.Modified;
+                if (db.SaveChanges() > 0)
+                {
+                    TempData["msg"] = "Data Updated successfully";
+                    return RedirectToAction("Index");
+                }
+            }
+            //if (ModelState.IsValid)
+            //{
+            //    String path = "";
+            //    if (file.FileName.Length > 0)
+            //    {
+            //        path = "~/Images/" + Path.GetFileName(file.FileName);
+            //        file.SaveAs(Server.MapPath(path));
+            //    }
+            //    product.Prod_Image = path;
+
+            //    db.Products.Add(product);
+            //    db.Entry(product).State = EntityState.Modified;
+            //    db.SaveChanges();
+            //    return RedirectToAction("Index");
+            //}
             ViewBag.Cate_Id = new SelectList(db.Categories, "cate_id", "cate_name", product.Cate_Id);
             ViewBag.inventory_id = new SelectList(db.Inventories, "inventory_id", "inventory_name", product.inventory_id);
             return View(product);
@@ -141,11 +160,11 @@ namespace PROJ_SW.Controllers
              db.SaveChanges();
             return RedirectToAction("Index");
         }
-        public ActionResult ProductPage()
-        {
-            var recs = db.Products.ToList();
-            return View(recs);
-        }
+        //public ActionResult ProductPage()
+        //{
+        //    var recs = db.Products.ToList();
+        //    return View(recs);
+        //}
         protected override void Dispose(bool disposing)
         {
             if (disposing)
@@ -154,11 +173,13 @@ namespace PROJ_SW.Controllers
             }
             base.Dispose(disposing);
         }
-        public ActionResult HomePage()
+        public ActionResult HomePage(int ? id)
         {
 
-            var res = db.Products.ToList();
+            //var res = db.Products.ToList();
 
+            //return View(res);
+            var res = db.Products.Where(m => m.Cate_Id == id).ToList();
             return View(res);
         }
     }

@@ -30,7 +30,8 @@
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Prod_Image)
+            <img src="@Url.Content(Model.Prod_Image)" width="300" height="350" />
+           
         </dd>
 
         <dt>
@@ -57,13 +58,13 @@
             @Html.DisplayFor(model => model.Expiry_Date)
         </dd>
 
-        <dt>
+        @*<dt>
             @Html.DisplayNameFor(model => model.Batch_No)
         </dt>
 
         <dd>
             @Html.DisplayFor(model => model.Batch_No)
-        </dd>
+        </dd>*@
 
         <dt>
             @Html.DisplayNameFor(model => model.Category.cate_name)
@@ -73,22 +74,20 @@
             @Html.DisplayFor(model => model.Category.cate_name)
         </dd>
 
-        <dt>
+        @*<dt>
             @Html.DisplayNameFor(model => model.Inventory.inventory_name)
         </dt>
 
         <dd>
             @Html.DisplayFor(model => model.Inventory.inventory_name)
-        </dd>
+        </dd>*@
 
     </dl>
 </div>
 <p>
-    <a href="@Url.Action("Edit","Products", new {  id = Model.prod_id })" class="btn btn-success" target="_blank">
-        <span class="glyphicon glyphicon-ok"> Edit</span>
-    </a>
+   
     <br />
-    <br />    <a href="@Url.Action("Index", "Products")" class="btn btn-primary" style="text-align :center;margin-bottom:10px">
+    <br />    <a href="@Url.Action("CategoryPage", "Categories")" class="btn btn-primary" style="text-align :center;margin-bottom:10px">
         <span class="glyphicon glyphicon-backward"></span>
         Back to List
     </a>

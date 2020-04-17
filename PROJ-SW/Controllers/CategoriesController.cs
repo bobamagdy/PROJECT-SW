@@ -67,6 +67,7 @@ namespace PROJ_SW.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             Category category = db.Categories.Find(id);
+            TempData["imgpath"] = category.Cate_Image;
             if (category == null)
             {
                 return HttpNotFound();
@@ -79,14 +80,28 @@ namespace PROJ_SW.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "cate_id,cate_name,Cate_Image")] Category category)
+        public ActionResult Edit([Bind(Include = "cate_id,cate_name,Cate_Image")] Category category, HttpPostedFileBase file)
         {
-            if (ModelState.IsValid)
+            String path = "";
+            if (/*file.FileName.Length > 0*/file != null)
             {
-                db.Entry(category).State = EntityState.Modified;
-                db.SaveChanges();
-                return RedirectToAction("Index");
+                //path = "~/Images/" + Path.GetFileName(file.FileName);
+                //file.SaveAs(Server.MapPath(path));
             }
+            else
+            {
+                category.Cate_Image = TempData["imgpath"].ToString();
+                db.Entry(category).State = EntityState.Modified;
+                if (db.SaveChanges() > 0)
+                {
+                    TempData["msg"] = "Data Updated successfully";
+                    ////////////////////////////////////////////heba/////////////////////////////////////////////////
+                    return RedirectToAction("Index");
+                    ///////////////////////////////////////////////////////////////heba//////////////////////
+                }
+            }
+            return RedirectToAction("Index");
+            //}
             return View(category);
         }
 
@@ -130,6 +145,8 @@ namespace PROJ_SW.Controllers
             var recs = db.Categories.ToList();
             return View(recs);
         }
+
+
         public ActionResult ViewProduct(int? id)
         {
             var rrecss = db.Products.Where(m => m.Cate_Id == id).ToList();

@@ -1225,3 +1225,4 @@ C:\Users\mac\Source\sw\PROJ-SW\bin\roslyn\vbc.exe.config
 C:\Users\mac\Source\sw\PROJ-SW\bin\roslyn\vbc.rsp
 C:\Users\mac\Source\sw\PROJ-SW\bin\roslyn\VBCSCompiler.exe
 C:\Users\mac\Source\sw\PROJ-SW\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\ht\source\repos\PROJECT-SW\PROJ-SW\obj\Debug\PROJ-SW.csproj.CoreCompileInputs.cache
