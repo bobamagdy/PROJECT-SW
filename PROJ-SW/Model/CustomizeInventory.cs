@@ -15,7 +15,7 @@ namespace PROJ_SW.Model
     {
         [Display(Name = "ID")]
         public int inventory_id { get; set; }
-        [Display(Name = "Name")]
+        [Display(Name = "Inventory Name")]
         public string inventory_name { get; set; }
         public Nullable<int> Quantity { get; set; }
 

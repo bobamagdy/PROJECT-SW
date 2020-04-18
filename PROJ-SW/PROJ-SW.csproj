@@ -155,6 +155,7 @@
     <Compile Include="Model\Credit.cs">
       <DependentUpon>databaseProModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Model\CustomizeCategory.cs" />
     <Compile Include="Model\CustomizeInventory.cs" />
     <Compile Include="Model\CustomizeProduct.cs" />
     <Compile Include="Model\databaseProModel.Context.cs">
@@ -344,12 +345,8 @@
     <Content Include="Views\Artical\Artical2.cshtml" />
     <Content Include="Views\Artical\Atrical3.cshtml" />
     <Content Include="Views\Categories\ViewProduct.cshtml" />
-    <Content Include="Views\Medicines\Beauty.cshtml" />
-    <Content Include="Views\Medicines\Hair_Care.cshtml" />
-    <Content Include="Views\Medicines\Medication.cshtml" />
-    <Content Include="Views\Medicines\Skin_Care.cshtml" />
-    <Content Include="Views\Medicines\Supplements.cshtml" />
     <Content Include="Views\Products\HomePage.cshtml" />
+    <Content Include="Views\Products\viewProductUSER.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

@@ -182,5 +182,18 @@ namespace PROJ_SW.Controllers
             var res = db.Products.Where(m => m.Cate_Id == id).ToList();
             return View(res);
         }
+        public ActionResult viewProductUSER(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Product product = db.Products.Find(id);
+            if (product == null)
+            {
+                return HttpNotFound();
+            }
+            return View(product);
+        }
     }
 }
