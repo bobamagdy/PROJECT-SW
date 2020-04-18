@@ -133,6 +133,8 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\ArticalController.cs" />
+    <Compile Include="Controllers\CartsController.cs" />
+    <Compile Include="Controllers\Cart_ProductController.cs" />
     <Compile Include="Controllers\CategoriesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\InventoriesController.cs" />
@@ -212,6 +214,7 @@
     <Content Include="Content\style.css" />
     <Content Include="Content\Styles.css" />
     <Content Include="Content\UserIndex.css" />
+    <Content Include="Content\viewProductUSER.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -347,6 +350,16 @@
     <Content Include="Views\Categories\ViewProduct.cshtml" />
     <Content Include="Views\Products\HomePage.cshtml" />
     <Content Include="Views\Products\viewProductUSER.cshtml" />
+    <Content Include="Views\Carts\Create.cshtml" />
+    <Content Include="Views\Carts\Delete.cshtml" />
+    <Content Include="Views\Carts\Details.cshtml" />
+    <Content Include="Views\Carts\Edit.cshtml" />
+    <Content Include="Views\Carts\Index.cshtml" />
+    <Content Include="Views\Cart_Product\Create.cshtml" />
+    <Content Include="Views\Cart_Product\Delete.cshtml" />
+    <Content Include="Views\Cart_Product\Details.cshtml" />
+    <Content Include="Views\Cart_Product\Edit.cshtml" />
+    <Content Include="Views\Cart_Product\Index.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

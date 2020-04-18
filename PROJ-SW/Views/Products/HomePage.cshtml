@@ -41,10 +41,15 @@
 
                 </div>
                 <div class="department_content">
+                    <p>
+                        <a href="@Url.Action("viewProductUSER","Products", new { id=item.prod_id} )" class="btn btn-success" target="_blank" style="margin-left:30px">
+                            <span class="glyphicon glyphicon-camera"> More Info</span>
+                        </a>
+                        <a href="@Url.Action("viewProductUSER","Products", new { id=item.prod_id} )" class="btn btn-primary" target="_blank" style="margin-left:100px">
+                            <span class="glyphicon glyphicon-shopping-cart"> </span>
+                        </a>
 
-                    <a href="@Url.Action("viewProductUSER","Products", new { id=item.prod_id} )" class="learn_more" target="_blank" style="margin-left:50px">
-                        <span class="glyphicon glyphicon-camera"> More Info</span>
-                    </a>
+                    </p>
                 </div>
 
             </div>
