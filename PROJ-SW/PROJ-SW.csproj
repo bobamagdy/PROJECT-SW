@@ -360,6 +360,7 @@
     <Content Include="Views\Cart_Product\Details.cshtml" />
     <Content Include="Views\Cart_Product\Edit.cshtml" />
     <Content Include="Views\Cart_Product\Index.cshtml" />
+    <Content Include="Views\User\UserRegistration.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

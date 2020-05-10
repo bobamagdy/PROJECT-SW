@@ -11,7 +11,8 @@ namespace PROJ_SW.Model
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class User
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -20,17 +21,29 @@ namespace PROJ_SW.Model
             this.Carts = new HashSet<Cart>();
             this.Credits = new HashSet<Credit>();
         }
-    
+
         public int user_id { get; set; }
+        [Required(ErrorMessage = "This Field Is Required")]
+        [MinLength(3), MaxLength(14)]
         public string FName { get; set; }
+        [Required(ErrorMessage = "This Field Is Required")]
+        [MinLength(3), MaxLength(14)]
         public string LName { get; set; }
+        [Required(ErrorMessage = "This Field Is Required")]
+        [EmailAddress(ErrorMessage = "Enter Correct Email")]
         public string Email { get; set; }
+        [Required(ErrorMessage = "This Field Is Required")]
+        [MinLength(3), MaxLength(14)]
+        [DataType(DataType.Password)]
         public string Password { get; set; }
+        [Required(ErrorMessage = "This Field Is Required")]
         public Nullable<int> Phone { get; set; }
+        [Required(ErrorMessage = "This Field Is Required")]
         public string Address { get; set; }
+        [Required(ErrorMessage = "This Field Is Required")]
         public string City { get; set; }
         public Nullable<int> Login_Id { get; set; }
-    
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Cart> Carts { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
