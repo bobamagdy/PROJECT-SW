@@ -343,10 +343,6 @@
     <Content Include="Views\LatestFeatured\FProduct4.cshtml" />
     <Content Include="Views\LatestFeatured\FProduct5.cshtml" />
     <Content Include="Views\LatestFeatured\FProduct6.cshtml" />
-    <Content Include="Views\Artical\Artical.cshtml" />
-    <Content Include="Views\Artical\Artical1.cshtml" />
-    <Content Include="Views\Artical\Artical2.cshtml" />
-    <Content Include="Views\Artical\Atrical3.cshtml" />
     <Content Include="Views\Categories\ViewProduct.cshtml" />
     <Content Include="Views\Products\HomePage.cshtml" />
     <Content Include="Views\Products\viewProductUSER.cshtml" />
@@ -362,7 +358,9 @@
     <Content Include="Views\Cart_Product\Index.cshtml" />
     <Content Include="Views\User\UserRegistration.cshtml" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Views\Artical\" />
+  </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
