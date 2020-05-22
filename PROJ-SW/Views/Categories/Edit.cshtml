@@ -6,10 +6,10 @@
 
 <h2>Edit</h2>
 
-@using (Html.BeginForm())
+@using (Html.BeginForm(Html.BeginForm("Edit", "Categories", FormMethod.Post, new { enctype = "multipart/form-data" })))
 {
-    @Html.AntiForgeryToken()
-    
+@Html.AntiForgeryToken()
+
 <div class="form-horizontal">
     <h4>Category</h4>
     <hr />
@@ -24,23 +24,19 @@
         </div>
     </div>
 
-    @*<div class="form-group">
-            @Html.LabelFor(model => model.Cate_Image, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Cate_Image, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Cate_Image, "", new { @class = "text-danger" })
-            </div>
-        </div>*@
-    <div class="form-group" style="color:blue;font-size:xx-large">
+
+
+    <div class="form-group">
         @Html.LabelFor(model => model.Cate_Image, htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
-            <img src="@Url.Content(Model.Cate_Image)" alt=".........." width="110" height="100" />
-            <Input Type="file" id="file" name="file" class="form-control" />
-
-            @Html.ValidationMessageFor(model => model.Cate_Image, "", new { @class = "text-danger" })
+            <img src="@Url.Content(Model.Cate_Image)" alt="..." width="242" height="200">
+            @*@Html.EditorFor(model => model.Cate_Image, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Cate_Image, "", new { @class = "text-danger" })*@
+            <input type="file" id="imgFile" name="imgFile" class="form-control" />
         </div>
-
     </div>
+
+
 
     <div class="form-group">
         <div class="col-md-offset-2 col-md-10">

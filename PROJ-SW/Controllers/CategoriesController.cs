@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using PROJ_SW.Model;
+using System.IO;
 
 namespace PROJ_SW.Controllers
 {
@@ -60,6 +61,7 @@ namespace PROJ_SW.Controllers
         }
 
         // GET: Categories/Edit/5
+
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -74,36 +76,79 @@ namespace PROJ_SW.Controllers
             }
             return View(category);
         }
+        //public ActionResult Edit(int? id)
+        //{
+        //    if (id == null)
+        //    {
+        //        return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+        //    }
+        //    Category category = db.Categories.Find(id);
+        //    TempData["imgpath"] = category.Cate_Image;
+        //    if (category == null)
+        //    {
+        //        return HttpNotFound();
+        //    }
+        //    return View(category);
+        //}
 
         // POST: Categories/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "cate_id,cate_name,Cate_Image")] Category category, HttpPostedFileBase file)
+        public ActionResult Edit([Bind(Include = "cate_id,cate_name,Cate_Image")] Category category, HttpPostedFileBase imgFile)
         {
-            String path = "";
-            if (/*file.FileName.Length > 0*/file != null)
+            if (ModelState.IsValid)
             {
-                //path = "~/Images/" + Path.GetFileName(file.FileName);
-                //file.SaveAs(Server.MapPath(path));
-            }
-            else
-            {
-                category.Cate_Image = TempData["imgpath"].ToString();
-                db.Entry(category).State = EntityState.Modified;
-                if (db.SaveChanges() > 0)
+                if (imgFile != null)
                 {
-                    TempData["msg"] = "Data Updated successfully";
-                    ////////////////////////////////////////////heba/////////////////////////////////////////////////
+                    String path = "";
+                    if (imgFile.FileName.Length > 0)
+                    {
+                        path = "~/Images/" + Path.GetFileName(imgFile.FileName);
+                        imgFile.SaveAs(Server.MapPath(path));
+                    }
+                    category.Cate_Image = path;
+                    db.Entry(category).State = EntityState.Modified;
+                    db.SaveChanges();
                     return RedirectToAction("Index");
-                    ///////////////////////////////////////////////////////////////heba//////////////////////
                 }
+                else
+                {
+                    category.Cate_Image = TempData["imgpath"].ToString();
+                    db.Entry(category).State = EntityState.Modified;
+                    db.SaveChanges();
+                    return RedirectToAction("Index");
+                }
+
             }
-            return RedirectToAction("Index");
-            //}
             return View(category);
         }
+
+        //public ActionResult Edit([Bind(Include = "cate_id,cate_name,Cate_Image")] Category category, HttpPostedFileBase file)
+        //{
+        //    String path = "";
+        //    if (/*file.FileName.Length > 0*/file != null)
+        //    {
+        //        //path = "~/Images/" + Path.GetFileName(file.FileName);
+        //        //file.SaveAs(Server.MapPath(path));
+        //    }
+        //    else
+        //    {
+        //        category.Cate_Image = TempData["imgpath"].ToString();
+        //        db.Entry(category).State = EntityState.Modified;
+        //        if (db.SaveChanges() > 0)
+        //        {
+        //            TempData["msg"] = "Data Updated successfully";
+        //            ////////////////////////////////////////////heba/////////////////////////////////////////////////
+        //            return RedirectToAction("Index");
+        //            ///////////////////////////////////////////////////////////////heba//////////////////////
+        //        }
+        //    }
+        //    return RedirectToAction("Index");
+        //    //}
+        //    return View(category);
+        //}
 
         // GET: Categories/Delete/5
         public ActionResult Delete(int? id)

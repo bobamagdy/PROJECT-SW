@@ -13,8 +13,8 @@ namespace PROJ_SW.Controllers
     public class ProductsController : Controller
     {
         private databaseProEntities db = new databaseProEntities();
-       
-        
+
+
         // GET: Products
         public ActionResult Index()
         {
@@ -50,10 +50,10 @@ namespace PROJ_SW.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create( Product product,HttpPostedFileBase Prod_Image)
+        public ActionResult Create(Product product, HttpPostedFileBase Prod_Image)
         {
             if (ModelState.IsValid)
-                {
+            {
                 String path = "";
                 if (Prod_Image.FileName.Length > 0)
                 {
@@ -74,7 +74,9 @@ namespace PROJ_SW.Controllers
             return View(product);
         }
 
+
         // GET: Products/Edit/5
+
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -97,39 +99,34 @@ namespace PROJ_SW.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "prod_id,prod_name,Price,Prod_Image,Description,MGF_Date,Expiry_Date,Batch_No,Cate_Id,inventory_id")] Product product, HttpPostedFileBase file)
+
+        public ActionResult Edit([Bind(Include = "prod_id,prod_name,Price,Prod_Image,Description,MGF_Date,Expiry_Date,Batch_No,Cate_Id,inventory_id")] Product product, HttpPostedFileBase imgFile)
         {
-            String path = "";
-            if (/*file.FileName.Length > 0*/file != null)
+            if (ModelState.IsValid)
             {
-                path = "~/Images/" + Path.GetFileName(file.FileName);
-                file.SaveAs(Server.MapPath(path));
-            }
-            else
-            {
-                product.Prod_Image = TempData["imgpath"].ToString();
-                db.Entry(product).State = EntityState.Modified;
-                if (db.SaveChanges() > 0)
+                if (imgFile != null)
                 {
-                    TempData["msg"] = "Data Updated successfully";
+                    String path = "";
+                    if (imgFile.FileName.Length > 0)
+                    {
+                        path = "~/Images/" + Path.GetFileName(imgFile.FileName);
+                        imgFile.SaveAs(Server.MapPath(path));
+                    }
+                    product.Prod_Image = path;
+                    db.Entry(product).State = EntityState.Modified;
+                    db.SaveChanges();
+                    return RedirectToAction("Index");
+
+                }
+                else
+                {
+                    product.Prod_Image = TempData["imgpath"].ToString();
+                    db.Entry(product).State = EntityState.Modified;
+                    db.SaveChanges();
                     return RedirectToAction("Index");
                 }
-            }
-            //if (ModelState.IsValid)
-            //{
-            //    String path = "";
-            //    if (file.FileName.Length > 0)
-            //    {
-            //        path = "~/Images/" + Path.GetFileName(file.FileName);
-            //        file.SaveAs(Server.MapPath(path));
-            //    }
-            //    product.Prod_Image = path;
 
-            //    db.Products.Add(product);
-            //    db.Entry(product).State = EntityState.Modified;
-            //    db.SaveChanges();
-            //    return RedirectToAction("Index");
-            //}
+            }
             ViewBag.Cate_Id = new SelectList(db.Categories, "cate_id", "cate_name", product.Cate_Id);
             ViewBag.inventory_id = new SelectList(db.Inventories, "inventory_id", "inventory_name", product.inventory_id);
             return View(product);
@@ -157,7 +154,7 @@ namespace PROJ_SW.Controllers
         {
             Product product = db.Products.Find(id);
             db.Products.Remove(product);
-             db.SaveChanges();
+            db.SaveChanges();
             return RedirectToAction("Index");
         }
         //public ActionResult ProductPage()
@@ -173,7 +170,7 @@ namespace PROJ_SW.Controllers
             }
             base.Dispose(disposing);
         }
-        public ActionResult HomePage(int ? id)
+        public ActionResult HomePage(int? id)
         {
 
             //var res = db.Products.ToList();
