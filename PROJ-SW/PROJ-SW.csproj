@@ -358,6 +358,8 @@
     <Content Include="Views\Carts\Edit.cshtml" />
     <Content Include="Views\Carts\Index.cshtml" />
     <Content Include="Views\Carts\AddToCart.cshtml" />
+    <Content Include="Views\Products\AddToCart.cshtml" />
+    <Content Include="Views\Products\ProductPage.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\Artical\" />

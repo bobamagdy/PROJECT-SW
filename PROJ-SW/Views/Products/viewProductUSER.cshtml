@@ -1,5 +1,4 @@
-﻿[1:35 PM, 5/26/2020] Heba:
-[1:36 PM, 5/26/2020] Heba: @model PROJ_SW.Model.Product
+﻿@model PROJ_SW.Model.Product
 
 @{
     ViewBag.Title = "viewProductUSER";
@@ -76,7 +75,7 @@
                             </label>
                         </form>
                     </div>
-                    <a href="@Url.Action("AddToCart","Carts",new { id = Model.prod_id })" class="btn btn-primary" target="_blank" style="margin-left:100px">
+                    <a href="@Url.Action("AddToCart","Products",new { id = Model.prod_id })" class="btn btn-primary" target="_blank" style="margin-left:100px">
                         <span class="glyphicon glyphicon-shopping-cart"> </span>
                     </a>
                 </div>
