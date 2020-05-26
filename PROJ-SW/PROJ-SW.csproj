@@ -346,17 +346,17 @@
     <Content Include="Views\Categories\ViewProduct.cshtml" />
     <Content Include="Views\Products\HomePage.cshtml" />
     <Content Include="Views\Products\viewProductUSER.cshtml" />
-    <Content Include="Views\Carts\Create.cshtml" />
-    <Content Include="Views\Carts\Delete.cshtml" />
-    <Content Include="Views\Carts\Details.cshtml" />
-    <Content Include="Views\Carts\Edit.cshtml" />
-    <Content Include="Views\Carts\Index.cshtml" />
     <Content Include="Views\Cart_Product\Create.cshtml" />
     <Content Include="Views\Cart_Product\Delete.cshtml" />
     <Content Include="Views\Cart_Product\Details.cshtml" />
     <Content Include="Views\Cart_Product\Edit.cshtml" />
     <Content Include="Views\Cart_Product\Index.cshtml" />
     <Content Include="Views\User\UserRegistration.cshtml" />
+    <Content Include="Views\Carts\Create.cshtml" />
+    <Content Include="Views\Carts\Delete.cshtml" />
+    <Content Include="Views\Carts\Details.cshtml" />
+    <Content Include="Views\Carts\Edit.cshtml" />
+    <Content Include="Views\Carts\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\Artical\" />

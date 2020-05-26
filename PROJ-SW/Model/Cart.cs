@@ -23,11 +23,17 @@ namespace PROJ_SW.Model
     
         public int cart_id { get; set; }
         public Nullable<int> User_Id { get; set; }
+        public Nullable<int> prod_id { get; set; }
+        public string prod_name { get; set; }
+        public Nullable<int> quan { get; set; }
+        public Nullable<double> bill { get; set; }
+        public Nullable<double> price { get; set; }
     
         public virtual User User { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Cart_Product> Cart_Product { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Payment> Payments { get; set; }
+        public virtual Product Product { get; set; }
     }
 }

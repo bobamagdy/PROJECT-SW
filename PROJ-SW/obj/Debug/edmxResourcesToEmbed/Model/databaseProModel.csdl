@@ -9,6 +9,12 @@
     <NavigationProperty Name="User" Relationship="Self.FK__Cart__User_Id__7C1A6C5A" FromRole="Cart" ToRole="User" />
     <NavigationProperty Name="Cart_Product" Relationship="Self.FK__Cart_Prod__Cart___1B9317B3" FromRole="Cart" ToRole="Cart_Product" />
     <NavigationProperty Name="Payments" Relationship="Self.FK__Payment__cart_id__607251E5" FromRole="Cart" ToRole="Payment" />
+    <Property Name="prod_id" Type="Int32" />
+    <Property Name="prod_name" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+    <Property Name="quan" Type="Int32" />
+    <Property Name="bill" Type="Double" />
+    <Property Name="price" Type="Double" />
+    <NavigationProperty Name="Product" Relationship="databaseProModel.FK__Cart__prod_id__3FD07829" FromRole="Cart" ToRole="Product" />
   </EntityType>
   <EntityType Name="Cart_Product">
     <Key>
@@ -90,6 +96,7 @@
     <NavigationProperty Name="Cart_Product" Relationship="Self.FK__Cart_Prod__Prod___1C873BEC" FromRole="Product" ToRole="Cart_Product" />
     <NavigationProperty Name="Category" Relationship="Self.FK__Product__cat_id__76619304" FromRole="Product" ToRole="Category" />
     <NavigationProperty Name="Inventory" Relationship="Self.FK__Product__invento__7755B73D" FromRole="Product" ToRole="Inventory" />
+    <NavigationProperty Name="Carts" Relationship="databaseProModel.FK__Cart__prod_id__3FD07829" FromRole="Product" ToRole="Cart" />
   </EntityType>
   <EntityType Name="Role">
     <Key>
@@ -271,5 +278,21 @@
       <End Role="Login" EntitySet="Logins" />
       <End Role="User" EntitySet="Users" />
     </AssociationSet>
+    <AssociationSet Name="FK__Cart__prod_id__3FD07829" Association="databaseProModel.FK__Cart__prod_id__3FD07829">
+      <End Role="Product" EntitySet="Products" />
+      <End Role="Cart" EntitySet="Carts" />
+    </AssociationSet>
   </EntityContainer>
+  <Association Name="FK__Cart__prod_id__3FD07829">
+    <End Type="databaseProModel.Product" Role="Product" Multiplicity="0..1" />
+    <End Type="databaseProModel.Cart" Role="Cart" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="prod_id" />
+      </Principal>
+      <Dependent Role="Cart">
+        <PropertyRef Name="prod_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema>

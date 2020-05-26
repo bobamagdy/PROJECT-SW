@@ -18,6 +18,7 @@ namespace PROJ_SW.Model
         public Product()
         {
             this.Cart_Product = new HashSet<Cart_Product>();
+            this.Carts = new HashSet<Cart>();
         }
     
         public int prod_id { get; set; }
@@ -35,5 +36,7 @@ namespace PROJ_SW.Model
         public virtual ICollection<Cart_Product> Cart_Product { get; set; }
         public virtual Category Category { get; set; }
         public virtual Inventory Inventory { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Cart> Carts { get; set; }
     }
 }

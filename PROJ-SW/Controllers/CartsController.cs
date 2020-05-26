@@ -17,7 +17,7 @@ namespace PROJ_SW.Controllers
         // GET: Carts
         public ActionResult Index()
         {
-            var carts = db.Carts.Include(c => c.User);
+            var carts = db.Carts.Include(c => c.User).Include(c => c.Product);
             return View(carts.ToList());
         }
 
@@ -40,6 +40,7 @@ namespace PROJ_SW.Controllers
         public ActionResult Create()
         {
             ViewBag.User_Id = new SelectList(db.Users, "user_id", "FName");
+            ViewBag.prod_id = new SelectList(db.Products, "prod_id", "prod_name");
             return View();
         }
 
@@ -48,7 +49,7 @@ namespace PROJ_SW.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "cart_id,User_Id")] Cart cart)
+        public ActionResult Create([Bind(Include = "cart_id,User_Id,prod_id,prod_name,quan,bill,price")] Cart cart)
         {
             if (ModelState.IsValid)
             {
@@ -58,6 +59,7 @@ namespace PROJ_SW.Controllers
             }
 
             ViewBag.User_Id = new SelectList(db.Users, "user_id", "FName", cart.User_Id);
+            ViewBag.prod_id = new SelectList(db.Products, "prod_id", "prod_name", cart.prod_id);
             return View(cart);
         }
 
@@ -74,6 +76,7 @@ namespace PROJ_SW.Controllers
                 return HttpNotFound();
             }
             ViewBag.User_Id = new SelectList(db.Users, "user_id", "FName", cart.User_Id);
+            ViewBag.prod_id = new SelectList(db.Products, "prod_id", "prod_name", cart.prod_id);
             return View(cart);
         }
 
@@ -82,7 +85,7 @@ namespace PROJ_SW.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "cart_id,User_Id")] Cart cart)
+        public ActionResult Edit([Bind(Include = "cart_id,User_Id,prod_id,prod_name,quan,bill,price")] Cart cart)
         {
             if (ModelState.IsValid)
             {
@@ -91,6 +94,7 @@ namespace PROJ_SW.Controllers
                 return RedirectToAction("Index");
             }
             ViewBag.User_Id = new SelectList(db.Users, "user_id", "FName", cart.User_Id);
+            ViewBag.prod_id = new SelectList(db.Products, "prod_id", "prod_name", cart.prod_id);
             return View(cart);
         }
 

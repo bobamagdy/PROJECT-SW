@@ -6,6 +6,11 @@
     </Key>
     <Property Name="cart_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="User_Id" Type="int" />
+    <Property Name="prod_id" Type="int" />
+    <Property Name="prod_name" Type="nchar" MaxLength="50" />
+    <Property Name="quan" Type="int" />
+    <Property Name="bill" Type="float" />
+    <Property Name="price" Type="float" />
   </EntityType>
   <EntityType Name="Cart_Product">
     <Key>
@@ -98,6 +103,18 @@
     <Property Name="City" Type="nchar" MaxLength="20" />
     <Property Name="Login_Id" Type="int" />
   </EntityType>
+  <Association Name="FK__Cart__prod_id__3FD07829">
+    <End Role="Product" Type="Self.Product" Multiplicity="0..1" />
+    <End Role="Cart" Type="Self.Cart" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="prod_id" />
+      </Principal>
+      <Dependent Role="Cart">
+        <PropertyRef Name="prod_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK__Cart__User_Id__7C1A6C5A">
     <End Role="User" Type="Self.User" Multiplicity="0..1" />
     <End Role="Cart" Type="Self.Cart" Multiplicity="*" />
@@ -217,6 +234,10 @@
     <EntitySet Name="Product" EntityType="Self.Product" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Role" EntityType="Self.Role" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__Cart__prod_id__3FD07829" Association="Self.FK__Cart__prod_id__3FD07829">
+      <End Role="Product" EntitySet="Product" />
+      <End Role="Cart" EntitySet="Cart" />
+    </AssociationSet>
     <AssociationSet Name="FK__Cart__User_Id__7C1A6C5A" Association="Self.FK__Cart__User_Id__7C1A6C5A">
       <End Role="User" EntitySet="User" />
       <End Role="Cart" EntitySet="Cart" />

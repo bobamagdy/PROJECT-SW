@@ -24,6 +24,7 @@
         <AssociationConnector Association="databaseProModel.FK__Product__invento__7755B73D" ManuallyRouted="false" />
         <AssociationConnector Association="databaseProModel.FK__Login__Role_Id__308E3499" ManuallyRouted="false" />
         <AssociationConnector Association="databaseProModel.FK__User__Login_Id__318258D2" ManuallyRouted="false" />
+        <AssociationConnector Association="databaseProModel.FK__Cart__prod_id__3FD07829" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

@@ -4,6 +4,11 @@
     <EntitySetMapping Name="Carts">
       <EntityTypeMapping TypeName="databaseProModel.Cart">
         <MappingFragment StoreEntitySet="Cart">
+          <ScalarProperty Name="price" ColumnName="price" />
+          <ScalarProperty Name="bill" ColumnName="bill" />
+          <ScalarProperty Name="quan" ColumnName="quan" />
+          <ScalarProperty Name="prod_name" ColumnName="prod_name" />
+          <ScalarProperty Name="prod_id" ColumnName="prod_id" />
           <ScalarProperty Name="cart_id" ColumnName="cart_id" />
           <ScalarProperty Name="User_Id" ColumnName="User_Id" />
         </MappingFragment>

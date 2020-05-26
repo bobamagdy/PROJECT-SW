@@ -4,13 +4,18 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="databaseProModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="databaseProModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Cart">
           <Key>
             <PropertyRef Name="cart_id" />
           </Key>
           <Property Name="cart_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="User_Id" Type="int" />
+          <Property Name="prod_id" Type="int" />
+          <Property Name="prod_name" Type="nchar" MaxLength="50" />
+          <Property Name="quan" Type="int" />
+          <Property Name="bill" Type="float" />
+          <Property Name="price" Type="float" />
         </EntityType>
         <EntityType Name="Cart_Product">
           <Key>
@@ -103,6 +108,18 @@
           <Property Name="City" Type="nchar" MaxLength="20" />
           <Property Name="Login_Id" Type="int" />
         </EntityType>
+        <Association Name="FK__Cart__prod_id__3FD07829">
+          <End Role="Product" Type="Self.Product" Multiplicity="0..1" />
+          <End Role="Cart" Type="Self.Cart" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product">
+              <PropertyRef Name="prod_id" />
+            </Principal>
+            <Dependent Role="Cart">
+              <PropertyRef Name="prod_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK__Cart__User_Id__7C1A6C5A">
           <End Role="User" Type="Self.User" Multiplicity="0..1" />
           <End Role="Cart" Type="Self.Cart" Multiplicity="*" />
@@ -222,6 +239,10 @@
           <EntitySet Name="Product" EntityType="Self.Product" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Role" EntityType="Self.Role" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__Cart__prod_id__3FD07829" Association="Self.FK__Cart__prod_id__3FD07829">
+            <End Role="Product" EntitySet="Product" />
+            <End Role="Cart" EntitySet="Cart" />
+          </AssociationSet>
           <AssociationSet Name="FK__Cart__User_Id__7C1A6C5A" Association="Self.FK__Cart__User_Id__7C1A6C5A">
             <End Role="User" EntitySet="User" />
             <End Role="Cart" EntitySet="Cart" />
@@ -259,8 +280,7 @@
             <End Role="User" EntitySet="User" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="databaseProModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -273,6 +293,12 @@
           <NavigationProperty Name="User" Relationship="Self.FK__Cart__User_Id__7C1A6C5A" FromRole="Cart" ToRole="User" />
           <NavigationProperty Name="Cart_Product" Relationship="Self.FK__Cart_Prod__Cart___1B9317B3" FromRole="Cart" ToRole="Cart_Product" />
           <NavigationProperty Name="Payments" Relationship="Self.FK__Payment__cart_id__607251E5" FromRole="Cart" ToRole="Payment" />
+          <Property Name="prod_id" Type="Int32" />
+          <Property Name="prod_name" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="quan" Type="Int32" />
+          <Property Name="bill" Type="Double" />
+          <Property Name="price" Type="Double" />
+          <NavigationProperty Name="Product" Relationship="databaseProModel.FK__Cart__prod_id__3FD07829" FromRole="Cart" ToRole="Product" />
         </EntityType>
         <EntityType Name="Cart_Product">
           <Key>
@@ -354,6 +380,7 @@
           <NavigationProperty Name="Cart_Product" Relationship="Self.FK__Cart_Prod__Prod___1C873BEC" FromRole="Product" ToRole="Cart_Product" />
           <NavigationProperty Name="Category" Relationship="Self.FK__Product__cat_id__76619304" FromRole="Product" ToRole="Category" />
           <NavigationProperty Name="Inventory" Relationship="Self.FK__Product__invento__7755B73D" FromRole="Product" ToRole="Inventory" />
+          <NavigationProperty Name="Carts" Relationship="databaseProModel.FK__Cart__prod_id__3FD07829" FromRole="Product" ToRole="Cart" />
         </EntityType>
         <EntityType Name="Role">
           <Key>
@@ -535,7 +562,23 @@
             <End Role="Login" EntitySet="Logins" />
             <End Role="User" EntitySet="Users" />
           </AssociationSet>
+          <AssociationSet Name="FK__Cart__prod_id__3FD07829" Association="databaseProModel.FK__Cart__prod_id__3FD07829">
+            <End Role="Product" EntitySet="Products" />
+            <End Role="Cart" EntitySet="Carts" />
+          </AssociationSet>
         </EntityContainer>
+        <Association Name="FK__Cart__prod_id__3FD07829">
+          <End Type="databaseProModel.Product" Role="Product" Multiplicity="0..1" />
+          <End Type="databaseProModel.Cart" Role="Cart" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product">
+              <PropertyRef Name="prod_id" />
+            </Principal>
+            <Dependent Role="Cart">
+              <PropertyRef Name="prod_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -545,6 +588,11 @@
           <EntitySetMapping Name="Carts">
             <EntityTypeMapping TypeName="databaseProModel.Cart">
               <MappingFragment StoreEntitySet="Cart">
+                <ScalarProperty Name="price" ColumnName="price" />
+                <ScalarProperty Name="bill" ColumnName="bill" />
+                <ScalarProperty Name="quan" ColumnName="quan" />
+                <ScalarProperty Name="prod_name" ColumnName="prod_name" />
+                <ScalarProperty Name="prod_id" ColumnName="prod_id" />
                 <ScalarProperty Name="cart_id" ColumnName="cart_id" />
                 <ScalarProperty Name="User_Id" ColumnName="User_Id" />
               </MappingFragment>

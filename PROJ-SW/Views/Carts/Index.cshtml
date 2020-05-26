@@ -12,7 +12,22 @@
 <table class="table">
     <tr>
         <th>
+            @Html.DisplayNameFor(model => model.prod_name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.quan)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.bill)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.price)
+        </th>
+        <th>
             @Html.DisplayNameFor(model => model.User.FName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Product.prod_name)
         </th>
         <th></th>
     </tr>
@@ -20,7 +35,22 @@
 @foreach (var item in Model) {
     <tr>
         <td>
+            @Html.DisplayFor(modelItem => item.prod_name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.quan)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.bill)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.price)
+        </td>
+        <td>
             @Html.DisplayFor(modelItem => item.User.FName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Product.prod_name)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.cart_id }) |
