@@ -7,6 +7,7 @@
 
 <style>
 
+
     .thumbnail:hover {
         box-shadow: 0 5px 10px rgba(0,0,0,0.5);
         transform: scale(0.95);
@@ -45,10 +46,9 @@
                         <a href="@Url.Action("viewProductUSER","Products", new { id=item.prod_id} )" class="btn btn-success" target="_blank" style="margin-left:30px">
                             <span class="glyphicon glyphicon-camera"> More Info</span>
                         </a>
-                        <a href="@Url.Action("viewProductUSER","Products", new { id=item.prod_id} )" class="btn btn-primary" target="_blank" style="margin-left:100px">
+                        <a href="@Url.Action("AddToCart","Carts",new { id = item.prod_id })" class="btn btn-primary" style="margin-left:100px">
                             <span class="glyphicon glyphicon-shopping-cart"> </span>
                         </a>
-
                     </p>
                 </div>
 
@@ -57,5 +57,3 @@
     }
 
 </div>
-
-

@@ -1,17 +1,18 @@
-﻿@model PROJ_SW.Model.Product
+﻿[1:35 PM, 5/26/2020] Heba:
+[1:36 PM, 5/26/2020] Heba: @model PROJ_SW.Model.Product
 
 @{
     ViewBag.Title = "viewProductUSER";
 }
-    <head>
-        <script type="text/javascript">
-            $(':radio').change(function () {
-                console.log('New star rating: ' + this.value);
-            });
-        </script>
+<head>
+    <script type="text/javascript">
+        $(':radio').change(function () {
+            console.log('New star rating: ' + this.value);
+        });
+    </script>
 
-        <link href="~/Content/viewProductUSER.css" type="text/css" rel="stylesheet" />
-    </head>
+    <link href="~/Content/viewProductUSER.css" type="text/css" rel="stylesheet" />
+</head>
 <br />
 <br />
 <div class="container">
@@ -75,11 +76,13 @@
                             </label>
                         </form>
                     </div>
-                    <a href="about.html" class="boxed-btn3 " style="margin-top:20px;text-align:center"><i class="fa fa-shopping-cart"></i>  Add to Cart</a>
+                    <a href="@Url.Action("AddToCart","Carts",new { id = Model.prod_id })" class="btn btn-primary" target="_blank" style="margin-left:100px">
+                        <span class="glyphicon glyphicon-shopping-cart"> </span>
+                    </a>
                 </div>
-               
+
             </div>
-           
+
         </div>
     </div>
 </div>

@@ -1,0 +1,110 @@
+﻿[1:35 PM, 5/26/2020] Heba:
+[1:35 PM, 5/26/2020] Heba: @model PROJ_SW.Model.Product
+@{
+    ViewBag.Title = "AddToCart";
+}
+<br />
+<br />
+<br />
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+
+    <style>
+
+
+
+        /*.container {
+            padding-top: 40px;
+        }*/
+
+        .product-title, .price, .sizes, .colors {
+            text-transform: UPPERCASE;
+            font-weight: bold;
+        }
+
+            .checked, .price span {
+                color: #ff9f1a;
+            }
+
+        .product-title, .rating, .product-description, .price, .vote, .sizes {
+            margin-bottom: 15px;
+        }
+
+        .product-title {
+            margin-top: 0;
+        }
+
+        .add-to-cart, .like {
+            background-color: dodgerblue;
+            padding: 1.2em 1.5em;
+            border: none;
+            border-radius: 5px;
+            text-transform: UPPERCASE;
+            font-weight: bold;
+            color: #fff;
+            -webkit-transition: background .3s ease;
+            transition: background .3s ease;
+        }
+
+            .add-to-cart:hover, .like:hover {
+                background: #b36800;
+                color: #fff;
+            }
+    </style>
+</head>
+<body>
+    @using (@Html.BeginForm())
+    {
+
+
+
+        <div class="container">
+
+            <div class="row">
+
+                <div class="col-lg-4 col-md-4 col-sm-4">
+
+                    <img style="min-height:330px; width:330px; border:solid; border-color: lightgrey;" src="@Url.Content(Model.Prod_Image)" class="img-circle" />
+                </div>
+
+
+                <div class="col-lg-8 col-md-8 col-sm-8">
+
+                    <h1 class="product-title">  @Model.prod_name</h1>
+                    <div class="rating">
+                        <div class="stars">
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
+                        </div>
+                        <span class="review-no">41 reviews</span>
+                    </div>
+                    <p class="product-description">@Model.Description</p>
+                    <h4 class="price">current price: <span>@Model.Price EGP</span></h4>
+
+                    <input type="number" name="qty" value="0" id="qty" class="form-control input-number"
+                           style="border-color: lightgrey; border-radius: 5px; height: 45px; width: 60px;
+                                  font-weight: bold; color: black; margin-bottom: 35px;" />
+                    <button class="add-to-cart btn btn-default" type="submit" value="Submit">Add to cart</button>
+                    <button class="like btn btn-default" type="button"><span class="fa fa-heart"></span></button>
+
+                </div>
+
+
+
+            </div>
+
+
+        </div>
+
+    }
+</body>
+</html>
