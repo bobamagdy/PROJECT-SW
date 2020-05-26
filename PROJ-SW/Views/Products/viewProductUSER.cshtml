@@ -75,8 +75,9 @@
                             </label>
                         </form>
                     </div>
-                    <a href="about.html" class="boxed-btn3 " style="margin-top:20px;text-align:center"><i class="fa fa-shopping-cart"></i>  Add to Cart</a>
-                </div>
+                    <a href="@Url.Action("AddToCart","Products",new { id = Model.prod_id })" class="btn btn-primary" target="_blank" style="margin-left:100px">
+                        <span class="glyphicon glyphicon-shopping-cart"> </span>
+                    </a>                </div>
                
             </div>
            

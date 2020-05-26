@@ -157,11 +157,11 @@ namespace PROJ_SW.Controllers
             db.SaveChanges();
             return RedirectToAction("Index");
         }
-        //public ActionResult ProductPage()
-        //{
-        //    var recs = db.Products.ToList();
-        //    return View(recs);
-        //}
+        public ActionResult ProductPage()
+        {
+            var recs = db.Products.ToList();
+            return View(recs);
+        }
         protected override void Dispose(bool disposing)
         {
             if (disposing)
@@ -191,6 +191,49 @@ namespace PROJ_SW.Controllers
                 return HttpNotFound();
             }
             return View(product);
+        }
+
+
+
+
+        public ActionResult AddToCart(int? Id)
+        {
+
+            Product p = db.Products.Where(x => x.prod_id == Id).SingleOrDefault();
+            return View(p);
+        }
+
+        List<Cart> li = new List<Cart>();
+        [HttpPost]
+        public ActionResult AddToCart(Product pi, string qty, int Id)
+        {
+            Product p = db.Products.Where(x => x.prod_id == Id).SingleOrDefault();
+
+            Cart c = new Cart();
+            c.prod_id = p.prod_id;
+            c.price = (float)p.Price;
+            c.quan = Convert.ToInt32(qty);
+            c.bill = c.price * c.quan;
+            c.prod_name = p.prod_name;
+            if (TempData["cart"] == null)
+            {
+                li.Add(c);
+                TempData["cart"] = li;
+
+            }
+            else
+            {
+                List<Cart> li2 = TempData["cart"] as List<Cart>;
+                li2.Add(c);
+                TempData["cart"] = li2;
+            }
+
+            TempData.Keep();
+
+
+
+
+            return RedirectToAction("ProductPage");
         }
     }
 }

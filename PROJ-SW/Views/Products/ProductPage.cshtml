@@ -1,0 +1,60 @@
+﻿@model IEnumerable<PROJ_SW.Model.Product>
+
+@{
+    ViewBag.Title = "Product Page";
+}
+
+<style>
+
+    .thumbnail:hover {
+        box-shadow: 0 5px 10px rgba(0,0,0,0.5);
+        transform: scale(0.95);
+        transition: 0.5s;
+    }
+</style>
+
+<br />
+<br />
+<div class="col-lg-2 col-md-2 col-sm-2">
+    <h3 style="color:#808080; font-family:'Arial Rounded MT';text-align:center;margin-top:2px"> <span class="btn btn-info">@Html.ActionLink("Check Out", "checkout", "Products")</span></h3>
+</div>
+<h2 style="color: #3498db; font-weight: lighter; border-bottom: 4px solid #3498db; text-transform: uppercase; font-size: 20px; font-weight: bold; text-align: center; ">Our Products</h2>
+<br />
+<div class="row">
+    @foreach (var item in Model)
+    {
+
+    <div class="col-xs-6 col-md-3">
+        <div class="thumbnail" style="height:540px">
+
+            <img src="@Url.Content(item.Prod_Image)" style="width:140px;height:250px">
+            <h3 style="color:black">
+                @item.prod_name
+            </h3>
+            <div class="caption">
+
+                <p style="color:purple">
+                    @item.Price EPG
+                </p>
+                <p>
+                    <a href="@Url.Action("Details","Products", new { id = item.prod_id })" style="font-size:large">
+                        <span class="glyphicon glyphicon-camera"> More Info</span>
+                    </a>
+                    <br />
+                    <hr style="color:black" />
+                    <a href="@Url.Action("AddToCart","Products", new { id = item.prod_id })" style="font-size:16px;color:blue">
+                        <span class="glyphicon glyphicon-shopping-cart">Add TO Cart</span>
+                    </a>
+                </p>
+
+            </div>
+        </div>
+
+
+    </div>
+
+
+    }
+
+</div>
+
