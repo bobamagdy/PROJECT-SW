@@ -235,5 +235,29 @@ namespace PROJ_SW.Controllers
 
             return RedirectToAction("ProductPage");
         }
+
+        private int IsExistingCheck(int? id)
+        {
+            List<Cart> IsCart = TempData["cart"] as List<Cart>;
+
+            for (int i = 0; i < IsCart.Count; i++)
+            {
+                if (IsCart[i].prod_id == id)
+                    return i;
+            }
+            return -1;
+        }
+
+        public ActionResult DeleteItem(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            int check = IsExistingCheck(id);
+            List<Cart> IsCart = TempData["cart"] as List<Cart>;
+            IsCart.RemoveAt(check);
+            return View("checkout");
+        }
     }
 }
