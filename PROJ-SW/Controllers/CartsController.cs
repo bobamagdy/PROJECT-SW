@@ -17,120 +17,59 @@ namespace PROJ_SW.Controllers
         // GET: Carts
         public ActionResult Index()
         {
-            var carts = db.Carts.Include(c => c.User).Include(c => c.Product);
-            return View(carts.ToList());
-        }
-
-        // GET: Carts/Details/5
-        public ActionResult Details(int? id)
-        {
-            if (id == null)
+            if (TempData["cart"] != null)
             {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Cart cart = db.Carts.Find(id);
-            if (cart == null)
-            {
-                return HttpNotFound();
-            }
-            return View(cart);
-        }
+                float x = 0;
+                List<Cart> li2 = TempData["cart"] as List<Cart>;
+                foreach (var item in li2)
+                {
+                    x += (float)item.bill;
 
-        // GET: Carts/Create
-        public ActionResult Create()
+                }
+
+                TempData["total"] = x;
+            }
+            TempData.Keep();
+            return View(db.Products.OrderByDescending(x => x.prod_id).ToList());
+        }
+        public ActionResult AddToCart(int? Id)
         {
-            ViewBag.User_Id = new SelectList(db.Users, "user_id", "FName");
-            ViewBag.prod_id = new SelectList(db.Products, "prod_id", "prod_name");
-            return View();
+
+            Product p = db.Products.Where(x => x.prod_id == Id).SingleOrDefault();
+            return View(p);
         }
 
-        // POST: Carts/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+        List<Cart> li = new List<Cart>();
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "cart_id,User_Id,prod_id,prod_name,quan,bill,price")] Cart cart)
+        public ActionResult AddToCart(Product pi, string qty, int Id)
         {
-            if (ModelState.IsValid)
+            Product p = db.Products.Where(x => x.prod_id == Id).SingleOrDefault();
+
+            Cart c = new Cart();
+            c.prod_id = p.prod_id;
+            c.price = (float)p.Price;
+            c.quan = Convert.ToInt32(qty);
+            c.bill = c.price * c.quan;
+            c.prod_name = p.prod_name;
+            if (TempData["cart"] == null)
             {
-                db.Carts.Add(cart);
-                db.SaveChanges();
-                return RedirectToAction("Index");
+                li.Add(c);
+                TempData["cart"] = li;
+
+            }
+            else
+            {
+                List<Cart> li2 = TempData["cart"] as List<Cart>;
+                li2.Add(c);
+                TempData["cart"] = li2;
             }
 
-            ViewBag.User_Id = new SelectList(db.Users, "user_id", "FName", cart.User_Id);
-            ViewBag.prod_id = new SelectList(db.Products, "prod_id", "prod_name", cart.prod_id);
-            return View(cart);
-        }
+            TempData.Keep();
 
-        // GET: Carts/Edit/5
-        public ActionResult Edit(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Cart cart = db.Carts.Find(id);
-            if (cart == null)
-            {
-                return HttpNotFound();
-            }
-            ViewBag.User_Id = new SelectList(db.Users, "user_id", "FName", cart.User_Id);
-            ViewBag.prod_id = new SelectList(db.Products, "prod_id", "prod_name", cart.prod_id);
-            return View(cart);
-        }
 
-        // POST: Carts/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "cart_id,User_Id,prod_id,prod_name,quan,bill,price")] Cart cart)
-        {
-            if (ModelState.IsValid)
-            {
-                db.Entry(cart).State = EntityState.Modified;
-                db.SaveChanges();
-                return RedirectToAction("Index");
-            }
-            ViewBag.User_Id = new SelectList(db.Users, "user_id", "FName", cart.User_Id);
-            ViewBag.prod_id = new SelectList(db.Products, "prod_id", "prod_name", cart.prod_id);
-            return View(cart);
-        }
 
-        // GET: Carts/Delete/5
-        public ActionResult Delete(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Cart cart = db.Carts.Find(id);
-            if (cart == null)
-            {
-                return HttpNotFound();
-            }
-            return View(cart);
-        }
 
-        // POST: Carts/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
-        {
-            Cart cart = db.Carts.Find(id);
-            db.Carts.Remove(cart);
-            db.SaveChanges();
             return RedirectToAction("Index");
-        }
-
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing)
-            {
-                db.Dispose();
-            }
-            base.Dispose(disposing);
         }
     }
 }
