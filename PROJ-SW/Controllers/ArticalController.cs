@@ -9,9 +9,9 @@ namespace PROJ_SW.Controllers
     public class ArticalController : Controller
     {
         // GET: Artical
-        public ActionResult Artical()
+        public ActionResult All()
         {
-            ViewBag.Message = "Your Artical page.";
+            ViewBag.Message = "Your All page.";
 
             return View();
         }
