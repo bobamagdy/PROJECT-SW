@@ -212,6 +212,7 @@
     <Content Include="Content\footer.css" />
     <Content Include="Content\index.css" />
     <Content Include="Content\style.css" />
+    <Content Include="Content\StyleArtical.css" />
     <Content Include="Content\Styles.css" />
     <Content Include="Content\UserIndex.css" />
     <Content Include="Content\viewProductUSER.css" />
@@ -360,10 +361,9 @@
     <Content Include="Views\Carts\AddToCart.cshtml" />
     <Content Include="Views\Products\AddToCart.cshtml" />
     <Content Include="Views\Products\ProductPage.cshtml" />
+    <Content Include="Views\Artical\Artical1.cshtml" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Views\Artical\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
