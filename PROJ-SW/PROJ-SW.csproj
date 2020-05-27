@@ -365,6 +365,7 @@
     <Content Include="Views\Artical\Artical2.cshtml" />
     <Content Include="Views\Artical\Artical3.cshtml" />
     <Content Include="Views\Artical\All.cshtml" />
+    <Content Include="Views\Products\checkout.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

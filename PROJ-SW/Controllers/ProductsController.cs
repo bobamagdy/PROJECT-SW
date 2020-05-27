@@ -259,5 +259,12 @@ namespace PROJ_SW.Controllers
             IsCart.RemoveAt(check);
             return View("checkout");
         }
+        public ActionResult checkout()
+        {
+            TempData.Keep();
+
+
+            return View();
+        }
     }
 }

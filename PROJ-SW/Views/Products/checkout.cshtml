@@ -1,0 +1,184 @@
+﻿
+@{
+    ViewBag.Title = "checkout";
+}
+<br />
+<br />
+@*<h2  align="center" style="height: 20%; padding-left: 2%" >CheckOut</h2>*@
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <style>
+        html, body, .wrapper {
+            background: #f7f7f7;
+        }
+
+        .steps {
+            margin-top: -41px;
+            display: inline-block;
+            float: right;
+            font-size: 25px
+        }
+
+        .step {
+            float: left;
+            background: white;
+            padding: 7px 13px;
+            border-radius: 1px;
+            text-align: center;
+            width: 100px;
+            position: relative
+        }
+
+        .step_line {
+            margin: 0;
+            width: 0;
+            height: 0;
+            border-left: 16px solid #fff;
+            border-top: 16px solid transparent;
+            border-bottom: 16px solid transparent;
+            z-index: 1008;
+            position: absolute;
+            left: 99px;
+            top: 1px
+        }
+
+            .step_line.backline {
+                border-left: 20px solid #f7f7f7;
+                border-top: 20px solid transparent;
+                border-bottom: 20px solid transparent;
+                z-index: 1006;
+                position: absolute;
+                left: 99px;
+                top: -3px
+            }
+
+        .step_complete {
+            background: #357ebd
+        }
+
+            .step_complete a.check-bc, .step_complete a.check-bc:hover, .afix-1, .afix-1:hover {
+                color: #eee;
+            }
+
+        .step_line.step_complete {
+            background: 0;
+            border-left: 16px solid #357ebd
+        }
+
+        .step_thankyou {
+            float: left;
+            background: white;
+            padding: 7px 13px;
+            border-radius: 1px;
+            text-align: center;
+            width: 150px;
+        }
+
+        .step.check_step {
+            margin-left: 5px;
+        }
+
+        .ch_pp {
+            text-decoration: none;
+        }
+
+            .ch_pp.sip {
+                margin-left: 10px;
+            }
+
+        .check-bc,
+        .check-bc:hover {
+            color: #222;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="row" style="margin-top: 15px; margin-bottom: 35px; font-size:20px;">
+        <div style="display: table; margin: auto;">
+            @*<span class="step step_complete"> <a  class="check-bc">Cart</a> <span class="step_line step_complete"> </span> <span class="step_line backline"> </span> </span>*@
+            <span class="step step_complete"> <a class="check-bc">Checkout</a> <span class="step_line "> </span> <span class="step_line step_complete"> </span> </span>
+            <span class="step_thankyou check-bc step_complete">Thank you</span>
+        </div>
+    </div>
+
+    <div style="margin-bottom: 100px;">
+        @if (TempData["cart"] != null)
+        {
+
+
+            <table class="table table-bordered  table-striped table-hover mar h-75 d-inline-block " style="width: 100%;">
+
+                <thead>
+                    <tr class="warning">
+                        @*<th>ID</th>*@
+                        <th align="center" style="height: 20%; padding-left: 2%">NAME</th>
+                        <th align="center" style="height: 20%; padding-left: 2%">PRICE</th>
+                        <th align="center" style="height: 20%; padding-left: 2%">QUANTITY</th>
+                        <th align="center" style="height: 20%; padding-left: 2%">BILL</th>
+                        <th align="center" style="height: 20%; padding-left: 2%">Total</th>
+
+                    </tr>
+
+                </thead>
+                <tbody>
+                    @foreach (var item in TempData["cart"] as List<PROJ_SW.Model.Cart>)
+                    {
+
+
+
+
+                        <tr>
+                            @*<td>@item.prod_id</td>*@
+                            <td>@item.prod_name</td>
+                            <td>@item.price</td>
+                            <td>@item.quan</td>
+                            <td>@item.bill</td>
+
+                        </tr>
+
+                    }
+
+                </tbody>
+
+                <tfoot>
+                    <tr>
+
+                        <td colspan="4"></td>
+
+                        <td>@TempData["total"]</td>
+
+                    </tr>
+                </tfoot>
+            </table>
+
+
+
+
+
+
+        }
+        else
+        {
+            <h2 align="center" style="height: 20%; padding-left: 2%; color:red"> Cart is empty....</h2>
+            <div align="center">
+                @Html.ActionLink(" Go-Back", "Index", "User", null, new { @class = "btn btn-primary btn-large glyphicon glyphicon-shopping-cart" })
+            </div>
+        }
+        <div align="center" style="margin-bottom:-50px; border-radius: 5px;">
+            @if (TempData["cart"] != null)
+            {
+                using (Html.BeginForm())
+                {
+                    @*<input type="button" value="Continue Shopping" class="btn btn-primary glyphicon-shopping-cart" />*@
+                    @Html.ActionLink(" Continue-Shopping", "Index", "User", null, new { @class = "btn btn-primary btn-large glyphicon glyphicon-shopping-cart" })
+
+                }
+            }
+        </div>
+    </div>
+</body>
+</html>
