@@ -363,6 +363,7 @@
     <Content Include="Views\Products\ProductPage.cshtml" />
     <Content Include="Views\Artical\Artical1.cshtml" />
     <Content Include="Views\Artical\Artical2.cshtml" />
+    <Content Include="Views\Artical\Artical3.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
