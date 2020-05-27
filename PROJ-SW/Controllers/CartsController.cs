@@ -71,5 +71,12 @@ namespace PROJ_SW.Controllers
 
             return RedirectToAction("Index");
         }
+        public ActionResult checkout()
+        {
+            TempData.Keep();
+
+
+            return View();
+        }
     }
 }
