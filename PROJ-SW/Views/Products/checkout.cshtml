@@ -132,21 +132,21 @@
 
 
 
-                    <tr>
-                        @*<td>@item.prod_id</td>*@
-                        <td>@item.prod_name</td>
-                        <td>@item.price</td>
-                        <td>@item.quan</td>
-                        <td>@item.bill</td>
-                        <td></td>
-                        <td>
-                     
-                            @Html.ActionLink("Delete", "DeleteItem", "Products", new { id = item.prod_id },
-                           new { onclick = "return confirm ('Are You Sure You Want To Delete This ?')" })
-                           
-                        </td>
+                        <tr>
+                            @*<td>@item.prod_id</td>*@
+                            <td>@item.prod_name</td>
+                            <td>@item.price</td>
+                            <td>@item.quan</td>
+                            <td>@item.bill</td>
+                            <td></td>
+                            <td>
 
-                    </tr>
+                                @Html.ActionLink("Delete", "DeleteItem", "Products", new { id = item.prod_id },
+                               new { onclick = "return confirm ('Are You Sure You Want To Delete This ?')" })
+
+                            </td>
+
+                        </tr>
 
                     }
 
@@ -184,8 +184,12 @@
                     @*<input type="button" value="Continue Shopping" class="btn btn-primary glyphicon-shopping-cart" />*@
                     @Html.ActionLink(" Continue-Shopping", "Index", "User", null, new { @class = "btn btn-primary btn-large glyphicon glyphicon-shopping-cart" })
 
+                    <h1>
+                        @Html.ActionLink(" Payment", "Create", "Credits", null, new { @class = "btn btn-primary btn-large glyphicon fa fa-credit-card" })
+                    </h1>
                 }
             }
+
         </div>
     </div>
 </body>
