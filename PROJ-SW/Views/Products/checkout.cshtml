@@ -120,6 +120,7 @@
                         <th align="center" style="height: 20%; padding-left: 2%">QUANTITY</th>
                         <th align="center" style="height: 20%; padding-left: 2%">BILL</th>
                         <th align="center" style="height: 20%; padding-left: 2%">Total</th>
+                        <th align="center" style="height: 20%; padding-left: 2%">Delete</th>
 
                     </tr>
 
@@ -131,14 +132,21 @@
 
 
 
-                        <tr>
-                            @*<td>@item.prod_id</td>*@
-                            <td>@item.prod_name</td>
-                            <td>@item.price</td>
-                            <td>@item.quan</td>
-                            <td>@item.bill</td>
+                    <tr>
+                        @*<td>@item.prod_id</td>*@
+                        <td>@item.prod_name</td>
+                        <td>@item.price</td>
+                        <td>@item.quan</td>
+                        <td>@item.bill</td>
+                        <td></td>
+                        <td>
+                     
+                            @Html.ActionLink("Delete", "DeleteItem", "Products", new { id = item.prod_id },
+                           new { onclick = "return confirm ('Are You Sure You Want To Delete This ?')" })
+                           
+                        </td>
 
-                        </tr>
+                    </tr>
 
                     }
 
