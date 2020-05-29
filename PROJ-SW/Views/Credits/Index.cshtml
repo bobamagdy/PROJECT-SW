@@ -1,0 +1,73 @@
+﻿@model IEnumerable<PROJ_SW.Model.Credit>
+
+@{
+    Layout = " ~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Credit_Holder_Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Credit_Expire)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Postal_Code)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CVV_Number)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.User.FName)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Credit_Holder_Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Credit_Expire)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Postal_Code)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CVV_Number)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.User.FName)
+                </td>
+                <td>
+
+
+                    <a href="@Url.Action("Edit","Credits", new { id=item.Credit_id  })" class="btn btn-success" target="_blank">
+                        <span class="glyphicon glyphicon-ok"> Edit</span>
+                    </a>
+
+
+                    <a href="@Url.Action("Delete","Credits", new { id=item.Credit_id })" class="btn btn-danger" target="_blank">
+                        <span class="glyphicon glyphicon-trash"> Delete</span>
+                    </a>
+                </td>
+            </tr>
+        }
+
+    </table>
+</body>
+</html>

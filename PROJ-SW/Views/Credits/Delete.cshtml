@@ -1,0 +1,78 @@
+﻿@model PROJ_SW.Model.Credit
+
+@{
+    Layout = Layout = " ~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Delete</title>
+</head>
+<body>
+    <h3>Are you sure you want to delete this?</h3>
+    <div>
+        <h4>Credit</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Credit_Holder_Name)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Credit_Holder_Name)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Credit_Expire)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Credit_Expire)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Postal_Code)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Postal_Code)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.CVV_Number)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.CVV_Number)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.User.FName)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.User.FName)
+            </dd>
+
+        </dl>
+
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+            <div class="form-actions no-color">
+                <input type="submit" value="Delete" class="btn btn-danger" style="margin-left:100px" />
+                <br />
+                <br />
+                <a href="@Url.Action("Index", "Credits")" class="btn btn-primary" style="text-align :center;margin-bottom:10px">
+                    <span class="glyphicon glyphicon-backward"></span>
+                    Back to List
+                </a>
+            </div>
+
+        }
+    </div>
+</body>
+</html>

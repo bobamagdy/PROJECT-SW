@@ -1,0 +1,66 @@
+﻿@model PROJ_SW.Model.Credit
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+</head>
+<body>
+    <div>
+        <h4>Credit</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Credit_Holder_Name)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Credit_Holder_Name)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Credit_Expire)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Credit_Expire)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Postal_Code)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Postal_Code)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.CVV_Number)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.CVV_Number)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.User.FName)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.User.FName)
+            </dd>
+    
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.Credit_id }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</body>
+</html>
