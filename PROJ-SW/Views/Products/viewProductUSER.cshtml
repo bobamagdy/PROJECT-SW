@@ -22,7 +22,7 @@
                 @Html.DisplayFor(model => model.prod_name)  "@Html.DisplayFor(model => model.Category.cate_name)"
                 <br />
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="@Url.Action("ProductPage","Products")" style="font-size: x-large">Home</a></li>
+                    <li class="breadcrumb-item"><a href="@Url.Action("Index","User")" style="font-size: x-large">Home</a></li>
                     <li class="breadcrumb-item"><a href="https://localhost:44344/LatestFeatured/FeaturedProducts" style="font-size: large">@Html.DisplayFor(model => model.Category.cate_name)</a></li>
                     <li class="breadcrumb-item active" style="font-size: medium">@Html.DisplayFor(model => model.prod_name)</li>
                 </ol>
