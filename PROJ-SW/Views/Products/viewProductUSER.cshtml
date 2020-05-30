@@ -16,11 +16,16 @@
 <br />
 <div class="container">
     <div class="about_area">
-
+            
         <div class="border_1px">
             <h2 class="name-med">
                 @Html.DisplayFor(model => model.prod_name)  "@Html.DisplayFor(model => model.Category.cate_name)"
-                <hr />
+                <br />
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="@Url.Action("ProductPage","Products")" style="font-size: x-large">Home</a></li>
+                    <li class="breadcrumb-item"><a href="https://localhost:44344/LatestFeatured/FeaturedProducts" style="font-size: large">@Html.DisplayFor(model => model.Category.cate_name)</a></li>
+                    <li class="breadcrumb-item active" style="font-size: medium">@Html.DisplayFor(model => model.prod_name)</li>
+                </ol>
             </h2>
             <div class="row align-items-center">
                 <div class="col-xl-6  col-md-6">

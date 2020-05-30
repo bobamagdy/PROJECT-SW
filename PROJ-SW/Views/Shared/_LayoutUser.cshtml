@@ -68,16 +68,13 @@
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Home", "Index", "User")</li>
                     <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Blog", "Artical", "Home")</li>
-                    <li>@Html.ActionLink("Cart", "Cart", "Home")</li>
+                    <li>@Html.ActionLink("Blog", "All", "Artical")</li>
                     <li>@Html.ActionLink("LogIn/SingUp", "Login", "Account")</li>
                     <li>@Html.ActionLink("LogOut", "Login", "Account")</li>
-                </ul>
-                <div class="wrapper">
-                    <input type="text" class="input"
-                           placeholder="What are you looking for?">
+                    <li style="margin-left:500px">@Html.ActionLink("Cart", "checkout", "Products")</li>
 
-                </div>
+                </ul>
+              
             </div>
         </div>
     </div>

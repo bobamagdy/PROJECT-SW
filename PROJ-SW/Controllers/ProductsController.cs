@@ -157,10 +157,20 @@ namespace PROJ_SW.Controllers
             db.SaveChanges();
             return RedirectToAction("Index");
         }
-        public ActionResult ProductPage()
+        public ActionResult ProductPage(string searchString)
         {
-            var recs = db.Products.ToList();
-            return View(recs);
+
+
+            var products = from s in db.Products
+                           select s;
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                products = products.Where(s => s.Category.cate_name.Contains(searchString));
+            }
+            var categories = products.OrderBy(p => p.Category.cate_name).Select(p => p.Category.cate_name).Distinct();
+            ViewBag.Category = new SelectList(categories);
+            return View(products.ToList());
+
         }
         protected override void Dispose(bool disposing)
         {
@@ -261,10 +271,21 @@ namespace PROJ_SW.Controllers
         }
         public ActionResult checkout()
         {
+            if (TempData["cart"] != null)
+            {
+                float x = 0;
+                List<Cart> li2 = TempData["cart"] as List<Cart>;
+                foreach (var item in li2)
+                {
+                    x += (float)item.bill;
+
+                }
+
+                TempData["total"] = x;
+            }
             TempData.Keep();
-
-
             return View();
         }
+       
     }
 }
