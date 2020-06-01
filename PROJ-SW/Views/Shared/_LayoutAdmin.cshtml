@@ -14,151 +14,232 @@
 
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("LifeServe Pharmacy", "Inventory", "Product", new { area = "" }, new { @class = "navbar-brand" })
+    <div class="container">
+        <div class="Box">
+            <div class="left-bar">
+                <span class="fa fa-cloud-download"></span>
+                <div class="menu-group">
+                    <span class="fa fa-television"></span>
+                    @*<span class="fa fa-shopping-cart active"></span>*@
+                    <div class="building">
+                        
+                        <span class="fa fa-building"></span>
+                        <span class="fa fa-building"></span>
+                        <a href="https://localhost:44344/Categories/CategoryPage">Category</a>
+                    </div>
+                    <div class="building">
+                        
+                        <span class="fa fa-building"></span>
+                        <span class="fa fa-building"></span>
+                        <a href="https://localhost:44344/Products/ProductPage">Product</a>
+                    </div>
+                    
+                    <span class="fa fa-cog" aria-hidden="true"></span>
+                </div>
+                <span class="fa fa-sign-out"></span>
             </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-
-
-                    <li>@Html.ActionLink("INVENTORY", "Index", "Inventories")</li>
-
-                    <li>@Html.ActionLink("PRODUCT", "Index", "Products")</li>
-
-                    <li>@Html.ActionLink("CATEGORY", "Index", "Categories")</li>
-                </ul>
+            <div class="warapper">
+                <div class="top-bar">
+                    <span class="cloud">Cloud Inventory</span>
+                    <div class="cta-button"><span>+</span></div>
+                </div>
+                <div class="content">
+                    <div class="menu">
+                        <div class="search">
+                            <label><span class="fa fa-search"></span></label>
+                            <input placeholder="Search Items"/>
+                        </div>
+                        <div class="list-info">
+                            <span>Items</span>
+                            <span class="fa fa-bars"></span>
+                            <span class="fa fa-th-large"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid">
+                    <div class="card">
+                        <div class="number"><span>1</span></div>
+                        <div class="img"></div>
+                        <div class="product-name"><span>Category</span></div>
+                        <div class="overlay">
+                            <div class="detail">
+                                <span>
+                                    <a href="https://localhost:44344/Categories/Index">Manage</a>
+                                </span>
+                                <span class="fa fa-pencil"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="number"><span>2</span></div>
+                        <div class="img"></div>
+                        <div class="product-name"><span>Product</span></div>
+                        <div class="overlay">
+                            <div class="detail">
+                                <span>
+                                    <a href="https://localhost:44344/Products/Index">Manage</a>
+                                </span>
+                                <span class="fa fa-pencil"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="number"><span>3</span></div>
+                        <div class="img"></div>
+                        <div class="product-name"><span>Inventory</span></div>
+                        <div class="overlay">
+                            <div class="detail">
+                                <span>
+                                    <a href="https://localhost:44344/Inventories/Index">Manage</a>
+                                </span>
+                            <span class="fa fa-pencil"></span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
             </div>
         </div>
     </div>
 
-    <div class="container1">
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    @*<div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    @Html.ActionLink("LifeServe Pharmacy", "Inventory", "Product", new { area = "" }, new { @class = "navbar-brand" })
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
 
-        <button class="btn btn1"  onclick="window.location.href = 'https://w3docs.com';">VIEW CUSTOMERS</button>
-        <button class="btn btn2"  onclick="window.location.href = 'https://w3docs.com';">VIEW FEEDBACK</button>
-        <button class="btn btn3"  onclick="window.location.href = 'https://w3docs.com';">VIEW RATINGS</button>
 
-    </div>
+                        <li>@Html.ActionLink("INVENTORY", "Index", "Inventories")</li>
 
-    <div class="card middle">
-        <div class="front">
-            <img src="~/Images/img.jpg" alt="">
+                        <li>@Html.ActionLink("PRODUCT", "Index", "Products")</li>
+
+                        <li>@Html.ActionLink("CATEGORY", "Index", "Categories")</li>
+                    </ul>
+                </div>
+            </div>
+        </div>*@
+
+    @*<div class="container1">
+
+            <button class="btn btn1" onclick="window.location.href = 'https://w3docs.com';">VIEW CUSTOMERS</button>
+            <button class="btn btn2" onclick="window.location.href = 'https://w3docs.com';">VIEW FEEDBACK</button>
+            <button class="btn btn3" onclick="window.location.href = 'https://w3docs.com';">VIEW RATINGS</button>
+
+        </div>*@
+
+    @*<div class="card middle">
+            <div class="front">
+                <img src="~/Images/img.jpg" alt="">
+            </div>
+            <div class="back">
+                <div class="back-content middle">
+                    <h2>LifeServe</h2>
+                    <h2>Pharmacy</h2>
+                    <div class="sm">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+
+        </div>*@
+
+
+
+    @*<br /><br /><br /><br /><br /><br /><br /><br /><br />
+
+
+        <div class="container2">
+            <button class="btnn btn11">VIEW MEDECINE</button>
+            <button class="btnn btn12">ADD MEDECINE</button>
+            <button class="btnn btn13">EDIT MEDECINE</button>
+            <button class="btnn btn14">DELETE MEDECINE</button>
+
         </div>
-        <div class="back">
-            <div class="back-content middle">
-                <h2>LifeServe</h2>
-                <h2>Pharmacy</h2>
-                <div class="sm">
+
+        <br /><br /><br /><br /><br /><br /><br /><br />
+        <br /><br /><br /><br /><br /><br /><br /><br />
+        <br /><br /><br /><br /><br /><br /><br /><br />*@
+
+    @*<div class="container body-content">*@
+    @RenderBody()
+    @*<hr />*@
+    @*<footer class="footer-distributed">
+
+            <div class="footer-left">
+                <img src="~/Images/pharmacy.png">
+                <h3>Lif<span>eS</span>erve<span>Phar</span>macy</h3>
+
+                <p class="footer-links">
+                    <a href="#">Home</a>
+                    |
+                    <a href="#">Blog</a>
+                    |
+                    <a href="#">About</a>
+                    |
+                    <a href="#">Contact</a>
+                </p>
+
+                <p class="footer-company-name" style="color: white;">© 2020 Medical Serviving Patients .</p>
+            </div>
+
+            <div class="footer-center">
+                <div>
+                    <i class="fa fa-map-marker"></i>
+                    <p>
+                        <span style="margin-left: 50px;">
+                            shop online
+                            select all what you need from the pharmacy through our online store on web or on mobile app.
+                        </span>
+
+                    </p>
+                </div>
+
+                <div>
+                    <i class="fa fa-phone"></i>
+                    <p>222222222222</p>
+                </div>
+                <div>
+                    <i class="fa fa-envelope"></i>
+                    <p><a href="mailto:support@eduonix.com">lifeservepharmacy@gmail.com</a></p>
+                </div>
+            </div>
+            <div class="footer-right">
+                <p class="footer-company-about" style="color: white;">
+                    <span>About the Pharmacy</span>
+                    We offer Blood pressure, sugar, and weight for free.
+                </p>
+                <div class="footer-icons">
                     <a href="#"><i class="fab fa-facebook-f"></i></a>
                     <a href="#"><i class="fab fa-twitter"></i></a>
                     <a href="#"><i class="fab fa-youtube"></i></a>
                     <a href="#"><i class="fab fa-instagram"></i></a>
                 </div>
             </div>
-        </div>
-
-    </div>
-
-
-
-    <br /><br /><br /><br /><br /><br /><br /><br /><br />
-
-
-    <div class="container2">
-        <button class="btnn btn11">VIEW MEDECINE</button>
-        <button class="btnn btn12">ADD MEDECINE</button>
-        <button class="btnn btn13">EDIT MEDECINE</button>
-        <button class="btnn btn14">DELETE MEDECINE</button>
-
-    </div>
-
-
-
-    <br /><br /><br /><br /><br /><br /><br /><br />
-    <br /><br /><br /><br /><br /><br /><br /><br />
-    <br /><br /><br /><br /><br /><br /><br /><br />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                                              <div class="container body-content">
-                                                  @RenderBody()
-                                                  <hr />
-                                                  <footer class="footer-distributed">
-
-                                                      <div class="footer-left">
-                                                          <img src="~/Images/pharmacy.png">
-                                                          <h3>Lif<span>eS</span>erve<span>Phar</span>macy</h3>
-
-                                                          <p class="footer-links">
-                                                              <a href="#">Home</a>
-                                                              |
-                                                              <a href="#">Blog</a>
-                                                              |
-                                                              <a href="#">About</a>
-                                                              |
-                                                              <a href="#">Contact</a>
-                                                          </p>
-
-                                                          <p class="footer-company-name" style="color: white;">© 2020 Medical Serviving Patients .</p>
-                                                      </div>
-
-                                                      <div class="footer-center">
-                                                          <div>
-                                                              <i class="fa fa-map-marker"></i>
-                                                              <p>
-                                                                  <span style="margin-left: 50px;">
-                                                                      shop online
-                                                                      select all what you need from the pharmacy through our online store on web or on mobile app.
-                                                                  </span>
-
-                                                              </p>
-                                                          </div>
-
-                                                          <div>
-                                                              <i class="fa fa-phone"></i>
-                                                              <p>222222222222</p>
-                                                          </div>
-                                                          <div>
-                                                              <i class="fa fa-envelope"></i>
-                                                              <p><a href="mailto:support@eduonix.com">lifeservepharmacy@gmail.com</a></p>
-                                                          </div>
-                                                      </div>
-                                                      <div class="footer-right">
-                                                          <p class="footer-company-about" style="color: white;">
-                                                              <span>About the Pharmacy</span>
-                                                              We offer Blood pressure, sugar, and weight for free.
-                                                          </p>
-                                                          <div class="footer-icons">
-                                                              <a href="#"><i class="fab fa-facebook-f"></i></a>
-                                                              <a href="#"><i class="fab fa-twitter"></i></a>
-                                                              <a href="#"><i class="fab fa-youtube"></i></a>
-                                                              <a href="#"><i class="fab fa-instagram"></i></a>
-                                                          </div>
-                                                      </div>
-                                                  </footer>
-                                              </div>
+        </footer>*@
+    @*</div>*@
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
