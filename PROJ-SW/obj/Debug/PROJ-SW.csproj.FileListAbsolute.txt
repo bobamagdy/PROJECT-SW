@@ -1142,7 +1142,6 @@ C:\Users\ht\source\repos\PROJECT-SW\PROJ-SW\bin\Microsoft.CodeDom.Providers.DotN
 C:\Users\ht\source\repos\PROJECT-SW\PROJ-SW\obj\Debug\PROJ-SW.csproj.CopyComplete
 C:\Users\ht\source\repos\PROJECT-SW\PROJ-SW\obj\Debug\PROJ-SW.dll
 C:\Users\ht\source\repos\PROJECT-SW\PROJ-SW\obj\Debug\PROJ-SW.pdb
-C:\Users\ht\source\repos\PROJECT-SW\PROJ-SW\obj\Debug\PROJ-SW.csprojAssemblyReference.cache
 C:\Users\mac\Source\sw\PROJ-SW\bin\PROJ-SW.dll.config
 C:\Users\mac\Source\sw\PROJ-SW\bin\PROJ-SW.dll
 C:\Users\mac\Source\sw\PROJ-SW\bin\PROJ-SW.pdb
@@ -2220,3 +2219,4 @@ C:\Users\rawda\source\repos\PROJECT-SW4\PROJ-SW\obj\Debug\PROJ-SW.csproj.CoreCom
 C:\Users\rawda\source\repos\PROJECT-SW4\PROJ-SW\obj\Debug\PROJ-SW.csproj.CopyComplete
 C:\Users\rawda\source\repos\PROJECT-SW4\PROJ-SW\obj\Debug\PROJ-SW.dll
 C:\Users\rawda\source\repos\PROJECT-SW4\PROJ-SW\obj\Debug\PROJ-SW.pdb
+C:\Users\ht\source\repos\PROJECT-SW\PROJ-SW\obj\Debug\PROJ-SW.csprojAssemblyReference.cache

@@ -102,15 +102,19 @@
     <EntitySetMapping Name="Users">
       <EntityTypeMapping TypeName="databaseProModel.User">
         <MappingFragment StoreEntitySet="User">
-          <ScalarProperty Name="user_id" ColumnName="user_id" />
-          <ScalarProperty Name="FName" ColumnName="FName" />
-          <ScalarProperty Name="LName" ColumnName="LName" />
-          <ScalarProperty Name="Email" ColumnName="Email" />
-          <ScalarProperty Name="Password" ColumnName="Password" />
-          <ScalarProperty Name="Phone" ColumnName="Phone" />
-          <ScalarProperty Name="Address" ColumnName="Address" />
-          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="CVV_Number" ColumnName="CVV Number" />
+          <ScalarProperty Name="Postel_code" ColumnName="Postel code" />
+          <ScalarProperty Name="time_credit_name" ColumnName="time credit name" />
+          <ScalarProperty Name="Credit_Holder_Name" ColumnName="Credit Holder Name" />
           <ScalarProperty Name="Login_Id" ColumnName="Login_Id" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="LName" ColumnName="LName" />
+          <ScalarProperty Name="FName" ColumnName="FName" />
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

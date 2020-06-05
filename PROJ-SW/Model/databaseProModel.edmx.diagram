@@ -14,17 +14,17 @@
         <EntityTypeShape EntityType="databaseProModel.Payment" Width="1.5" PointX="9.75" PointY="5.25" IsExpanded="true" />
         <EntityTypeShape EntityType="databaseProModel.Product" Width="1.5" PointX="7.5" PointY="9.75" IsExpanded="true" />
         <EntityTypeShape EntityType="databaseProModel.Role" Width="1.5" PointX="0.75" PointY="4.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="databaseProModel.User" Width="1.5" PointX="5.25" PointY="3.5" IsExpanded="true" />
-        <AssociationConnector Association="databaseProModel.FK__Cart__User_Id__7C1A6C5A" ManuallyRouted="false" />
         <AssociationConnector Association="databaseProModel.FK__Cart_Prod__Cart___1B9317B3" ManuallyRouted="false" />
         <AssociationConnector Association="databaseProModel.FK__Payment__cart_id__607251E5" ManuallyRouted="false" />
         <AssociationConnector Association="databaseProModel.FK__Cart_Prod__Prod___1C873BEC" ManuallyRouted="false" />
         <AssociationConnector Association="databaseProModel.FK__Product__cat_id__76619304" ManuallyRouted="false" />
-        <AssociationConnector Association="databaseProModel.FK__Credit__User_Id__7A3223E8" ManuallyRouted="false" />
         <AssociationConnector Association="databaseProModel.FK__Product__invento__7755B73D" ManuallyRouted="false" />
         <AssociationConnector Association="databaseProModel.FK__Login__Role_Id__308E3499" ManuallyRouted="false" />
-        <AssociationConnector Association="databaseProModel.FK__User__Login_Id__318258D2" ManuallyRouted="false" />
         <AssociationConnector Association="databaseProModel.FK__Cart__prod_id__3FD07829" />
+        <EntityTypeShape EntityType="databaseProModel.User" Width="1.5" PointX="5.25" PointY="3.5" />
+        <AssociationConnector Association="databaseProModel.FK__Cart__User_Id__56B3DD81" />
+        <AssociationConnector Association="databaseProModel.FK__Credit__User_Id__55BFB948" />
+        <AssociationConnector Association="databaseProModel.FK__User__Login_Id__54CB950F" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

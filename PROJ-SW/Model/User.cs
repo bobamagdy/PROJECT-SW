@@ -30,6 +30,10 @@ namespace PROJ_SW.Model
         public string Address { get; set; }
         public string City { get; set; }
         public Nullable<int> Login_Id { get; set; }
+        public string Credit_Holder_Name { get; set; }
+        public Nullable<System.DateTime> time_credit_name { get; set; }
+        public Nullable<int> Postel_code { get; set; }
+        public Nullable<int> CVV_Number { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Cart> Carts { get; set; }

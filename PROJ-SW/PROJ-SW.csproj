@@ -162,6 +162,7 @@
     <Compile Include="Model\CustomizeCredits.cs" />
     <Compile Include="Model\CustomizeInventory.cs" />
     <Compile Include="Model\CustomizeProduct.cs" />
+    <Compile Include="Model\CustomizeUser.cs" />
     <Compile Include="Model\databaseProModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -321,7 +322,6 @@
     <Content Include="Views\Inventories\Index.cshtml" />
     <Content Include="Views\Account\Login.cshtml" />
     <Content Include="Views\Admin\Index.cshtml" />
-    <Content Include="Views\User\Index.cshtml" />
     <Content Include="Views\Shared\_LayoutAdmin.cshtml" />
     <Content Include="Views\Shared\_LayoutUser.cshtml" />
     <Content Include="Views\Home\index.cshtml" />
@@ -354,7 +354,6 @@
     <Content Include="Views\Cart_Product\Details.cshtml" />
     <Content Include="Views\Cart_Product\Edit.cshtml" />
     <Content Include="Views\Cart_Product\Index.cshtml" />
-    <Content Include="Views\User\UserRegistration.cshtml" />
     <Content Include="Views\Carts\Create.cshtml" />
     <Content Include="Views\Carts\Delete.cshtml" />
     <Content Include="Views\Carts\Details.cshtml" />
@@ -373,6 +372,8 @@
     <Content Include="Views\Credits\Details.cshtml" />
     <Content Include="Views\Credits\Edit.cshtml" />
     <Content Include="Views\Credits\Index.cshtml" />
+    <Content Include="Views\User\UserRegistration.cshtml" />
+    <Content Include="Views\User\Index.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

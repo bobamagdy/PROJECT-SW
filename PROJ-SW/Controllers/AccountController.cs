@@ -31,10 +31,14 @@ namespace PROJ_SW.Controllers
                 {
                     return RedirectToAction("../Admin/Index");
                 }
+
+
                 else if (result[0].Role_Id == 2)
                 {
                     return RedirectToAction("../User/Index");
                 }
+
+
             }
             else
             {

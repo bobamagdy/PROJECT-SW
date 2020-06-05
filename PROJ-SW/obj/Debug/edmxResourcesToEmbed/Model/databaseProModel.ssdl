@@ -102,6 +102,10 @@
     <Property Name="Address" Type="nchar" MaxLength="100" />
     <Property Name="City" Type="nchar" MaxLength="20" />
     <Property Name="Login_Id" Type="int" />
+    <Property Name="Credit Holder Name" Type="nchar" MaxLength="100" />
+    <Property Name="time credit name" Type="datetime" />
+    <Property Name="Postel code" Type="int" />
+    <Property Name="CVV Number" Type="int" />
   </EntityType>
   <Association Name="FK__Cart__prod_id__3FD07829">
     <End Role="Product" Type="Self.Product" Multiplicity="0..1" />
@@ -115,7 +119,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Cart__User_Id__7C1A6C5A">
+  <Association Name="FK__Cart__User_Id__0E04126B">
     <End Role="User" Type="Self.User" Multiplicity="0..1" />
     <End Role="Cart" Type="Self.Cart" Multiplicity="*" />
     <ReferentialConstraint>
@@ -151,7 +155,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Credit__User_Id__7A3223E8">
+  <Association Name="FK__Credit__User_Id__0EF836A4">
     <End Role="User" Type="Self.User" Multiplicity="0..1" />
     <End Role="Credit" Type="Self.Credit" Multiplicity="*" />
     <ReferentialConstraint>
@@ -211,7 +215,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__User__Login_Id__318258D2">
+  <Association Name="FK__User__Login_Id__0FEC5ADD">
     <End Role="Login" Type="Self.Login" Multiplicity="0..1" />
     <End Role="User" Type="Self.User" Multiplicity="*" />
     <ReferentialConstraint>
@@ -238,7 +242,7 @@
       <End Role="Product" EntitySet="Product" />
       <End Role="Cart" EntitySet="Cart" />
     </AssociationSet>
-    <AssociationSet Name="FK__Cart__User_Id__7C1A6C5A" Association="Self.FK__Cart__User_Id__7C1A6C5A">
+    <AssociationSet Name="FK__Cart__User_Id__0E04126B" Association="Self.FK__Cart__User_Id__0E04126B">
       <End Role="User" EntitySet="User" />
       <End Role="Cart" EntitySet="Cart" />
     </AssociationSet>
@@ -250,7 +254,7 @@
       <End Role="Product" EntitySet="Product" />
       <End Role="Cart_Product" EntitySet="Cart_Product" />
     </AssociationSet>
-    <AssociationSet Name="FK__Credit__User_Id__7A3223E8" Association="Self.FK__Credit__User_Id__7A3223E8">
+    <AssociationSet Name="FK__Credit__User_Id__0EF836A4" Association="Self.FK__Credit__User_Id__0EF836A4">
       <End Role="User" EntitySet="User" />
       <End Role="Credit" EntitySet="Credit" />
     </AssociationSet>
@@ -270,7 +274,7 @@
       <End Role="Inventory" EntitySet="Inventory" />
       <End Role="Product" EntitySet="Product" />
     </AssociationSet>
-    <AssociationSet Name="FK__User__Login_Id__318258D2" Association="Self.FK__User__Login_Id__318258D2">
+    <AssociationSet Name="FK__User__Login_Id__0FEC5ADD" Association="Self.FK__User__Login_Id__0FEC5ADD">
       <End Role="Login" EntitySet="Login" />
       <End Role="User" EntitySet="User" />
     </AssociationSet>
